@@ -26,7 +26,9 @@
     linkedin: '<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6Z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>',
     lock: '<rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>',
     unlock: '<rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/>',
-    logout: '<path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/>'
+    logout: '<path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/>',
+    flag: '<path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1Z"/><path d="M4 22v-7"/>',
+    info: '<circle cx="12" cy="12" r="9"/><path d="M12 16v-4M12 8h.01"/>'
   };
 
   function ico(name, cls) {
@@ -49,14 +51,23 @@
     return months[m] + " " + parseInt(parts[2], 10) + ", " + parts[0];
   }
 
-  function statusPill(status) {
-    var s = String(status || "").toLowerCase();
-    var cls = "pill", icon = "check";
-    if (s.indexOf("open") === 0 || s.indexOf("open ") > -1 || s.indexOf("— open") > -1) {
-      cls += " pill--attn"; icon = "alert";
-    } else if (s.indexOf("resolved") > -1 || s.indexOf("closed") > -1) {
-      cls += " pill--resolved"; icon = "check";
-    }
+  // Resolve an escalation's explicit open/closed state.
+  // The explicit `state` field wins; otherwise infer "closed" from a status
+  // beginning with "Closed"/"Resolved"; default to "open".
+  function escState(e) {
+    var st = String((e && e.state) || "").trim().toLowerCase();
+    if (st === "closed" || st === "open") return st;
+    var s = String((e && e.status) || "").trim().toLowerCase();
+    if (s.indexOf("closed") === 0 || s.indexOf("resolved") === 0) return "closed";
+    return "open";
+  }
+
+  // Status pill keyed off the (resolved) open/closed state — accessible:
+  // icon + descriptive text carry meaning, never color alone.
+  function statusPill(status, state) {
+    var isClosed = state === "closed";
+    var cls = "pill " + (isClosed ? "pill--resolved" : "pill--attn");
+    var icon = isClosed ? "check" : "alert";
     return '<span class="' + cls + '">' + ico(icon) + esc(status) + "</span>";
   }
 
@@ -157,15 +168,20 @@
         el.innerHTML = '<div class="notice"><h2>No escalations yet</h2><p>The log is empty.</p></div>';
         return;
       }
+      // Sort by LAST ACTIVITY (updated) descending; fall back to `opened`
+      // when `updated` is missing. Tie-break on id. Never filters.
+      function activity(e) { return String(e.updated || e.opened || ""); }
       var sorted = list.slice().sort(function (a, b) {
-        return String(b.opened).localeCompare(String(a.opened)) || String(b.id).localeCompare(String(a.id));
+        return activity(b).localeCompare(activity(a)) || String(b.id).localeCompare(String(a.id));
       });
       el.innerHTML = sorted.map(function (e) {
+        var state = escState(e);
+        var cardCls = "esc-card" + (state === "closed" ? " esc-card--closed" : "");
         return '' +
-          '<a class="esc-card" href="escalation.html?id=' + encodeURIComponent(e.id) + '">' +
+          '<a class="' + cardCls + '" href="escalation.html?id=' + encodeURIComponent(e.id) + '">' +
             '<div class="card-top">' +
               '<span class="id-badge">#' + esc(e.id) + '</span>' +
-              statusPill(e.status) +
+              statusPill(e.status, state) +
             '</div>' +
             '<span class="card-cat">' + ico("tag") + esc(e.category) + '</span>' +
             '<h3>' + esc(e.title) + '</h3>' +
@@ -229,7 +245,7 @@
         '<header class="detail-header">' +
           '<div class="detail-headrow">' +
             '<span class="id-badge">#' + esc(e.id) + '</span>' +
-            statusPill(e.status) +
+            statusPill(e.status, escState(e)) +
             '<span class="card-cat">' + ico("tag") + esc(e.category) + '</span>' +
           '</div>' +
           '<h1>' + esc(e.title) + '</h1>' +
@@ -244,6 +260,8 @@
 
         section("Summary", "doc",
           '<p class="lede">' + esc(e.summary) + '</p>') +
+
+        noteCardHtml(e.note) +
 
         section("Impact", "alert",
           '<ul class="bullets">' + (e.impact || []).map(function (i) {
@@ -356,6 +374,24 @@
         '</li>';
     }).join("");
     return legend + '<ol class="timeline">' + rows + '</ol>';
+  }
+
+  /* ---------------- Public note callout ---------------- */
+  // Branded callout for a public ownership/clarification statement.
+  // `note` shape: { title: "...", html: "<p>...</p>" }. Trusted static content
+  // (no script injected). Returns "" when absent — section simply omitted.
+  function noteCardHtml(note) {
+    if (!note || (!note.title && !note.html)) return "";
+    return '' +
+      '<section class="detail-section note-section">' +
+        '<div class="note-card">' +
+          '<div class="note-head">' +
+            '<span class="note-ico-wrap">' + ico("flag") + '</span>' +
+            '<h3 class="note-title">' + esc(note.title || "") + '</h3>' +
+          '</div>' +
+          '<div class="note-body">' + (note.html || "") + '</div>' +
+        '</div>' +
+      '</section>';
   }
 
   /* ---------------- Confidential (client-side AES-GCM) ---------------- */

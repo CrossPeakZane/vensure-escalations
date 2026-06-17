@@ -90,7 +90,9 @@ a:focus-visible,button:focus-visible{outline:none;box-shadow:var(--ring);border-
 .intro{padding:var(--space-5) 0 var(--space-1)}
 .intro p{font-size:1.08rem;max-width:820px}
 .section-label{font-family:'Montserrat',sans-serif;font-weight:700;
-  color:var(--cps-navy);font-size:1.35rem;margin:var(--space-4) 0 var(--space-3)}
+  color:var(--cps-navy);font-size:1.35rem;margin:var(--space-4) 0 var(--space-1)}
+.section-caption{color:var(--cps-gray);font-size:.95rem;font-weight:600;
+  margin:0 0 var(--space-3)}
 
 /* ---------- Status pill ---------- */
 .pill{display:inline-flex;align-items:center;gap:7px;
@@ -114,6 +116,10 @@ a:focus-visible,button:focus-visible{outline:none;box-shadow:var(--ring);border-
 .esc-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);
   border-color:#BFD8E8;text-decoration:none}
 .esc-card:focus-visible{box-shadow:var(--ring),var(--shadow-md)}
+/* Closed escalations stay fully visible & clickable; only a slightly lower-key
+   border softens them. The accessible status pill (green + check icon + the
+   word "Closed") carries the closed meaning — not this border alone. */
+.esc-card--closed{border-color:#E3ECF3}
 .card-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 .id-badge{font-family:'Montserrat',sans-serif;font-weight:800;
   font-size:.82rem;letter-spacing:.04em;color:var(--cps-white);
@@ -259,6 +265,29 @@ ul.refs li .svg-ico{position:absolute;left:0;top:3px;color:var(--cps-gray)}
 .tl-legend{display:flex;gap:var(--space-2);flex-wrap:wrap;
   margin-bottom:var(--space-3);font-size:.86rem;font-weight:600;color:var(--cps-body)}
 .tl-legend span{display:inline-flex;align-items:center;gap:7px}
+
+/* ---------- Public note callout ---------- */
+.note-card{position:relative;
+  background:var(--cps-bg-soft);
+  border:1px solid var(--cps-line);
+  border-left:5px solid var(--cps-action);
+  border-radius:var(--radius);
+  padding:var(--space-3)}
+.note-head{display:flex;align-items:center;gap:10px;margin-bottom:var(--space-1)}
+.note-ico-wrap{display:inline-flex;align-items:center;justify-content:center;
+  color:var(--cps-action)}
+.note-ico-wrap .svg-ico{width:20px;height:20px}
+.note-title{margin:0;color:var(--cps-navy);font-size:1.18rem;line-height:1.25}
+.note-body{font-size:1rem;color:var(--cps-body)}
+.note-body p{margin:0 0 var(--space-2);font-size:1rem}
+.note-body p:last-child{margin-bottom:0}
+.note-body strong{color:var(--cps-ink)}
+.note-body em{font-style:italic}
+.note-body a{color:var(--cps-action);font-weight:600}
+.note-body a:hover{text-decoration:underline}
+.note-body a:focus-visible{outline:none;box-shadow:var(--ring);border-radius:6px}
+.note-body ul{margin:0 0 var(--space-2);padding-left:22px}
+.note-body li{margin-bottom:8px}
 
 /* ---------- Confidential (locked) section ---------- */
 .locked-section > h2{align-items:center}

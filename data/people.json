@@ -23,7 +23,10 @@
       "shortName": "Paychex",
       "logo": "assets/img/paychex-logo.svg",
       "site": "https://www.paychex.com"
-    }
+    },
+    "prismhr":  { "name": "PrismHR",          "shortName": "PrismHR",  "logo": null, "site": "https://www.prismhr.com" },
+    "slavic":   { "name": "Slavic401k",       "shortName": "Slavic401k","logo": null, "site": "https://www.slavic401k.com" },
+    "gdol":     { "name": "Georgia Department of Labor", "shortName": "GDOL", "logo": null, "site": "https://dol.georgia.gov" }
   },
   "people": {
     "zane-perry":       { "name": "Zane Perry",       "title": "Partner",                                    "company": "crosspeak", "photo": "assets/people/zane-perry.jpg",       "linkedin": null },
@@ -37,6 +40,22 @@
     "brie-dixon":             { "name": "Brie Dixon",             "title": "HCM & PEO Consultant",                     "company": "paychex", "formerCompany": "vensure", "photo": "assets/people/brie-dixon.jpg",             "linkedin": "https://www.linkedin.com/in/brie-dixon-48b496a9/" },
     "angel-deaton":           { "name": "Angel Deaton",           "title": "Implementation Consultant",                "company": "vensure", "photo": "assets/people/angel-deaton.jpg",           "linkedin": "https://www.linkedin.com/in/angel-deaton-a11aa912b/" },
     "stella-anah":            { "name": "Stella Anah",            "title": "Senior HR Business Partner",               "company": "vensure", "photo": null,                                       "linkedin": "https://www.linkedin.com/in/stella-anah/" },
-    "nick-boeschen":          { "name": "Nick Boeschen",          "title": "President & CEO, UNIQ Benefit Solutions",  "company": "uniq",    "photo": "assets/people/nick-boeschen.jpg",          "linkedin": "https://www.linkedin.com/in/nickboeschen/" }
+    "nick-boeschen":          { "name": "Nick Boeschen",          "title": "President & CEO, UNIQ Benefit Solutions",  "company": "uniq",    "photo": "assets/people/nick-boeschen.jpg",          "linkedin": "https://www.linkedin.com/in/nickboeschen/" },
+    "misty-ramsey":     { "name": "Misty Ramsey",     "title": "Senior Vice President, Payroll Tax", "company": "vensure",  "photo": null, "linkedin": null },
+    "shawn-helie":      { "name": "Shawn Helie",       "title": "Unemployment Claims Specialist",     "company": "vensure",  "photo": null, "linkedin": null },
+    "elizabeth-kinsella":{ "name": "Elizabeth Kinsella","title": "Service Operations Manager",         "company": "vensure",  "photo": null, "linkedin": null },
+    "amiee-caldwell":   { "name": "Amiee Caldwell",    "title": "Implementation / Payroll Lead (former)", "company": "vensure", "photo": null, "linkedin": null },
+    "hannah-windish":   { "name": "Hannah Windish",    "title": "Onboarding Specialist",              "company": "vensure",  "photo": null, "linkedin": null },
+    "jose-ochoa":       { "name": "Jose Ochoa",        "title": "Payroll",                            "company": "vensure",  "photo": null, "linkedin": null },
+    "austin-watson":    { "name": "Austin Watson",     "title": "Partner",                            "company": "crosspeak","photo": null, "linkedin": null },
+    "fred-gerster":     { "name": "Fred Gerster",      "title": "Partner",                            "company": "crosspeak","photo": null, "linkedin": null },
+    "donna-hudson":     { "name": "Donna Hudson",      "title": "Director of Delivery",               "company": "crosspeak","photo": null, "linkedin": null },
+    "natalie-christie": { "name": "Natalie Christie",  "title": "People Operations / Payroll",        "company": "crosspeak","photo": null, "linkedin": null },
+    "ty-mitchell":      { "name": "Ty Mitchell",       "title": "Project Manager (new hire)",         "company": "crosspeak","photo": null, "linkedin": null },
+    "olivia-small":     { "name": "Olivia Small",      "title": "Customer Success Manager (new hire)","company": "crosspeak","photo": null, "linkedin": null },
+    "brian-kurtz":      { "name": "Brian Kurtz",       "title": "CPA (external advisor to CrossPeak)","company": "crosspeak","photo": null, "linkedin": null },
+    "bracken-el-bakri": { "name": "Bracken El-Bakri",  "title": "401(k) Support",                     "company": "prismhr",  "photo": null, "linkedin": null },
+    "james-kaiser":     { "name": "James Kaiser",      "title": "Client Service",                     "company": "prismhr",  "photo": null, "linkedin": null },
+    "velzie-martin":    { "name": "Velzie Martin",     "title": "Georgia Department of Labor",        "company": "gdol",     "photo": null, "linkedin": null }
   }
 }

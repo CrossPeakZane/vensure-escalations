@@ -105,6 +105,9 @@
     if (companyId === "crosspeak") return "av--crosspeak";
     if (companyId === "uniq") return "av--uniq";
     if (companyId === "paychex") return "av--paychex";
+    if (companyId === "prismhr") return "av--prismhr";
+    if (companyId === "slavic") return "av--slavic";
+    if (companyId === "gdol") return "av--gdol";
     return "av--vensure";
   }
 

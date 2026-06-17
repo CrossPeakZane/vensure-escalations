@@ -144,6 +144,10 @@ a:focus-visible,button:focus-visible{outline:none;box-shadow:var(--ring);border-
 .av--uniq .avatar-initials{background:var(--cps-gray)}
 /* Paychex — distinct accessible teal (white text passes AA: #0F6E6E). */
 .av--paychex .avatar-initials{background:#0F6E6E}
+/* PrismHR / Slavic401k / GDOL — distinct accessible backgrounds; white text passes AA. */
+.av--prismhr .avatar-initials{background:#5B3A8E}
+.av--slavic .avatar-initials{background:#9A5B00}
+.av--gdol .avatar-initials{background:#1F5C8B}
 .avatar--card{width:60px;height:60px}
 .avatar--card .avatar-initials{font-size:1.18rem}
 .avatar--stack{width:32px;height:32px;box-shadow:0 0 0 2px #fff}

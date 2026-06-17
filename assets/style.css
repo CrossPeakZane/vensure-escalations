@@ -88,7 +88,7 @@ a:focus-visible,button:focus-visible{outline:none;box-shadow:var(--ring);border-
 
 /* Full-bleed hero photo + navy→action gradient overlay for AA-legible text. */
 .hero--img{padding:var(--space-6) 0;
-  background:var(--cps-navy) url("img/hero-bg.png") center/cover no-repeat}
+  background:var(--cps-navy) url("img/hero-bg.jpg") center/cover no-repeat}
 .hero--img .hero-overlay{position:absolute;inset:0;z-index:1;pointer-events:none;
   background:linear-gradient(120deg,rgba(10,50,81,.92) 0%,rgba(10,50,81,.84) 45%,rgba(21,119,174,.74) 100%)}
 .hero--img::before{z-index:1}

@@ -1,0 +1,42 @@
+{
+  "escalations": [
+    {
+      "id": "01",
+      "slug": "ancillary-open-enrollment-2026",
+      "title": "Mandatory ancillary benefits re-enrollment by 6/30 — never disclosed at signup",
+      "status": "Open — leadership call requested",
+      "category": "Benefits & Open Enrollment",
+      "account": "CROSSPEAK SOLUTIONS — 45248",
+      "opened": "2026-06-12",
+      "updated": "2026-06-17",
+      "summary": "CrossPeak Solutions enrolled with Vensure in January 2026 under the understanding of a standard annual benefits term, with open enrollment at year-end. On June 12, 2026, Vensure announced a June 17–24 open-enrollment window with elections effective July 1, 2026. When CrossPeak questioned a mid-year enrollment, Vensure clarified that ancillary benefits run on a July 1–June 30 plan year (separate from major medical's January 1–December 30 year) and that ancillary coverage will LAPSE on June 30 if employees do not actively re-enroll. The July 1–June 30 ancillary cycle and the active re-enrollment requirement were never disclosed during sales or onboarding.",
+      "impact": [
+        "Roughly two weeks' notice on a hard deadline: ancillary coverage lapses June 30 if enrollment is not completed.",
+        "Risk that employees lose ancillary coverage through no fault of their own.",
+        "Directly contradicts the expectation set at signup — a single annual term with year-end enrollment.",
+        "Described by CrossPeak as the latest in a recurring pattern of service failures with Vensure."
+      ],
+      "timeline": [
+        { "date": "2026-06-12", "time": "2:53 PM ET", "actor": "Jadiel Aponte", "role": "Benefits Manager", "party": "vensure", "text": "Announces 2026 Open Enrollment: portal open June 17–24; all employees must log in to elect or waive; elections effective July 1, 2026." },
+        { "date": "2026-06-12", "time": "4:58 PM ET", "actor": "Zane Perry", "role": "Partner, CrossPeak", "party": "crosspeak", "text": "\"Why am I receiving this?\" — questions why an enrollment is being requested at all." },
+        { "date": "2026-06-17", "time": "10:40 AM ET", "actor": "Brittany Shively", "role": "AVP, Service Operations", "party": "vensure", "text": "Clarifies the enrollment is for ancillaries, which run 7/1–6/30; major medical runs 1/1–12/30." },
+        { "date": "2026-06-17", "time": "11:20 AM ET", "actor": "Zane Perry", "role": "Partner, CrossPeak", "party": "crosspeak", "text": "States no one with proper knowledge has explained this; was repeatedly told coverage was good for the year; expects year-end enrollment and asks that someone knowledgeable take charge and settle what must happen." },
+        { "date": "2026-06-17", "time": "11:45 AM ET", "actor": "Brittany Shively", "role": "AVP, Service Operations", "party": "vensure", "text": "Confirms ancillaries will end 6/30 if no enrollment takes place; points to the benefit manager for plan questions." },
+        { "date": "2026-06-17", "time": "11:57 AM ET", "actor": "Zane Perry", "role": "Partner, CrossPeak", "party": "crosspeak", "text": "Asks why this was not raised at signup; requests a call with Vensure's CEO and all parties; states this is one in a series of poor experiences." },
+        { "date": "2026-06-17", "time": "12:15 PM ET", "actor": "Brittany Shively", "role": "AVP, Service Operations", "party": "vensure", "text": "Will connect with leadership to find available times. (Executive Richard Heckner added to the thread.)" },
+        { "date": "2026-06-17", "time": "12:19 PM ET", "actor": "Zane Perry", "role": "Partner, CrossPeak", "party": "crosspeak", "text": "Will compile a detailed, published record of every issue for review, and will review the signed agreements regarding the ancillary coverage term." }
+      ],
+      "asks": [
+        "Written confirmation of the exact ancillary benefits term CrossPeak agreed to at signup (e.g., a 12-month commitment from January 2026), citing the signed agreement.",
+        "An explanation of why the 7/1–6/30 ancillary plan year and the active re-enrollment requirement were not disclosed during sales or onboarding.",
+        "A call with Vensure leadership — CEO included — with all current parties on copy.",
+        "Confirmation of CrossPeak's options if enrollment is not completed by 6/30, and whether the lapse can be avoided given the late notice."
+      ],
+      "references": [
+        "Email thread: \"Action Requested: Open Enrollment Dates Available Now — CROSSPEAK SOLUTIONS — 45248\" (June 12–17, 2026).",
+        "Vensure participants: Jadiel Aponte (Benefits Manager), Brittany Shively (AVP Service Operations), Brittany Taylor, Nate Schoenbrun, Richard Heckner (executive).",
+        "CrossPeak: Zane Perry (Partner)."
+      ]
+    }
+  ]
+}

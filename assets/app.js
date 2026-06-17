@@ -169,11 +169,11 @@
         el.innerHTML = '<div class="notice"><h2>No escalations yet</h2><p>The log is empty.</p></div>';
         return;
       }
-      // Sort by LAST ACTIVITY (updated) descending; fall back to `opened`
+      // Sort by LAST ACTIVITY (updated) ascending (oldest activity first); fall back to `opened`
       // when `updated` is missing. Tie-break on id. Never filters.
       function activity(e) { return String(e.updated || e.opened || ""); }
       var sorted = list.slice().sort(function (a, b) {
-        return activity(b).localeCompare(activity(a)) || String(b.id).localeCompare(String(a.id));
+        return activity(a).localeCompare(activity(b)) || String(a.id).localeCompare(String(b.id));
       });
       el.innerHTML = sorted.map(function (e) {
         var state = escState(e);

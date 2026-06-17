@@ -1,0 +1,24 @@
+{
+  "companies": {
+    "vensure": {
+      "name": "Vensure Employer Services",
+      "shortName": "Vensure",
+      "logo": "assets/img/vensure-logo.svg",
+      "site": "https://www.vensure.com"
+    },
+    "crosspeak": {
+      "name": "CrossPeak Solutions LLC",
+      "shortName": "CrossPeak",
+      "logo": "assets/cps-logo.png",
+      "site": "https://www.crosspeaksolutions.com"
+    }
+  },
+  "people": {
+    "zane-perry":       { "name": "Zane Perry",       "title": "Partner",                                    "company": "crosspeak", "photo": "assets/people/zane-perry.jpg",       "linkedin": null },
+    "jadiel-aponte":    { "name": "Jadiel Aponte",    "title": "Benefits Manager",                           "company": "vensure",   "photo": "assets/people/jadiel-aponte.jpg",    "linkedin": "https://www.linkedin.com/in/jadiel-a-765393223/" },
+    "brittany-shively": { "name": "Brittany Shively", "title": "Associate Vice President, Service Operations", "company": "vensure",  "photo": "assets/people/brittany-shively.jpg", "linkedin": "https://www.linkedin.com/in/brittany-shively-40a353378/" },
+    "brittany-taylor":  { "name": "Brittany Taylor",  "title": "Payroll Supervisor",                         "company": "vensure",   "photo": "assets/people/brittany-taylor.jpg",  "linkedin": "https://www.linkedin.com/in/brittany-taylor-b6607347/" },
+    "nate-schoenbrun":  { "name": "Nate Schoenbrun",  "title": "Client Growth Consultant",                   "company": "vensure",   "photo": "assets/people/nate-schoenbrun.jpg",  "linkedin": "https://www.linkedin.com/in/nateschoenbrun/" },
+    "richard-heckner":  { "name": "Richard Heckner",  "title": "Regional Vice President, Client Relations",  "company": "vensure",   "photo": "assets/people/richard-heckner.jpg",  "linkedin": "https://www.linkedin.com/in/rich-heckner/" }
+  }
+}

@@ -129,6 +129,60 @@ a:focus-visible,button:focus-visible{outline:none;box-shadow:var(--ring);border-
 .card-cta{display:inline-flex;align-items:center;gap:6px;font-weight:700;
   color:var(--cps-action)}
 
+/* ---------- Avatars (shared) ---------- */
+.avatar{display:inline-flex;align-items:center;justify-content:center;
+  border-radius:50%;overflow:hidden;flex:none;background:var(--cps-bg-soft);
+  position:relative}
+.avatar-img{width:100%;height:100%;object-fit:cover;display:block}
+.avatar-initials{display:flex;align-items:center;justify-content:center;
+  width:100%;height:100%;font-family:'Montserrat',sans-serif;font-weight:800;
+  color:#fff;letter-spacing:.02em;line-height:1}
+/* Company-coded initials backgrounds — color is a SECONDARY cue;
+   the company is always also shown as a text chip. White text passes AA. */
+.av--vensure .avatar-initials{background:var(--cps-navy)}
+.av--crosspeak .avatar-initials{background:var(--cps-action)}
+.avatar--card{width:60px;height:60px}
+.avatar--card .avatar-initials{font-size:1.18rem}
+.avatar--stack{width:32px;height:32px;box-shadow:0 0 0 2px #fff}
+.avatar--stack .avatar-initials{font-size:.78rem}
+
+/* ---------- Avatar stack (index cards) ---------- */
+.avatar-stack{display:flex;align-items:center;padding-left:8px}
+.avatar-stack .avatar{margin-left:-8px}
+.avatar--more{margin-left:-8px;background:var(--cps-bg-soft);
+  border:1px solid var(--cps-line);color:var(--cps-navy);
+  font-family:'Montserrat',sans-serif;font-weight:800;font-size:.74rem;
+  box-shadow:0 0 0 2px #fff}
+
+/* ---------- Players section (detail) ---------- */
+.players-grid{display:grid;gap:var(--space-2);
+  grid-template-columns:1fr}
+@media(min-width:560px){.players-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:900px){.players-grid{grid-template-columns:1fr 1fr 1fr}}
+.player-card{display:flex;flex-direction:column;gap:12px;
+  background:var(--cps-white);border:1px solid var(--cps-line);
+  border-radius:var(--radius-sm);padding:var(--space-2);
+  box-shadow:var(--shadow-sm);
+  transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.player-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);
+  border-color:#BFD8E8}
+.player-top{display:flex;align-items:center;gap:12px}
+.player-id{display:flex;flex-direction:column;gap:3px;min-width:0}
+.player-name{font-family:'Montserrat',sans-serif;font-weight:800;
+  color:var(--cps-ink);font-size:1rem;line-height:1.2}
+.player-title{font-size:.85rem;color:var(--cps-gray);font-weight:600}
+.company-chip{display:inline-flex;align-items:center;gap:6px;
+  align-self:flex-start;margin-top:2px;
+  font-size:.74rem;font-weight:700;color:var(--cps-action);
+  background:var(--cps-bg-soft);border:1px solid var(--cps-line);
+  padding:3px 9px;border-radius:var(--radius-pill)}
+.company-chip-logo{height:13px;width:auto;display:block}
+.player-role{margin:0;font-size:.9rem;color:var(--cps-body);
+  border-top:1px solid var(--cps-bg-soft);padding-top:10px}
+.player-linkedin{display:inline-flex;align-items:center;gap:6px;align-self:flex-start;
+  margin-top:auto;font-size:.85rem;font-weight:700;color:var(--cps-action)}
+.player-linkedin .svg-ico{width:16px;height:16px}
+
 /* ---------- Detail page ---------- */
 .back-link{display:inline-flex;align-items:center;gap:7px;
   margin:var(--space-4) 0 var(--space-2);font-weight:700}
@@ -214,4 +268,5 @@ ul.refs li .svg-ico{position:absolute;left:0;top:3px;color:var(--cps-gray)}
 @media(prefers-reduced-motion:reduce){
   *{transition:none !important;scroll-behavior:auto !important}
   .esc-card:hover{transform:none}
+  .player-card:hover{transform:none}
 }

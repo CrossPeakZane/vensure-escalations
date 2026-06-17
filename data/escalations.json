@@ -9,6 +9,14 @@
       "account": "CROSSPEAK SOLUTIONS — 45248",
       "opened": "2026-06-12",
       "updated": "2026-06-17",
+      "players": [
+        { "id": "jadiel-aponte",    "issueRole": "Sent the open-enrollment notice; assigned benefit manager" },
+        { "id": "brittany-shively", "issueRole": "Primary Vensure responder; confirmed the 6/30 lapse" },
+        { "id": "richard-heckner",  "issueRole": "Executive looped in for the requested leadership call" },
+        { "id": "brittany-taylor",  "issueRole": "Service operations contact on the account" },
+        { "id": "nate-schoenbrun",  "issueRole": "Copied on the escalation thread" },
+        { "id": "zane-perry",       "issueRole": "Raised the escalation on behalf of CrossPeak" }
+      ],
       "summary": "CrossPeak Solutions enrolled with Vensure in January 2026 under the understanding of a standard annual benefits term, with open enrollment at year-end. On June 12, 2026, Vensure announced a June 17–24 open-enrollment window with elections effective July 1, 2026. When CrossPeak questioned a mid-year enrollment, Vensure clarified that ancillary benefits run on a July 1–June 30 plan year (separate from major medical's January 1–December 30 year) and that ancillary coverage will LAPSE on June 30 if employees do not actively re-enroll. The July 1–June 30 ancillary cycle and the active re-enrollment requirement were never disclosed during sales or onboarding.",
       "impact": [
         "Roughly two weeks' notice on a hard deadline: ancillary coverage lapses June 30 if enrollment is not completed.",

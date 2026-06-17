@@ -3,6 +3,7 @@
   "use strict";
 
   var DATA_URL = "data/escalations.json";
+  var PEOPLE_URL = "data/people.json";
 
   /* ---- lucide-style inline SVG icons (no emoji) ---- */
   var ICONS = {
@@ -19,7 +20,9 @@
     doc: '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/>',
     target: '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/>',
     list: '<path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/>',
-    clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>'
+    clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+    users: '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>',
+    linkedin: '<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6Z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>'
   };
 
   function ico(name, cls) {
@@ -53,18 +56,89 @@
     return '<span class="' + cls + '">' + ico(icon) + esc(status) + "</span>";
   }
 
-  function load() {
-    return fetch(DATA_URL, { cache: "no-cache" })
+  function fetchJson(url, optional) {
+    return fetch(url, { cache: "no-cache" })
       .then(function (r) {
         if (!r.ok) throw new Error("HTTP " + r.status);
         return r.json();
       })
-      .then(function (d) { return (d && d.escalations) || []; });
+      .catch(function (err) {
+        if (optional) return null; // registry is optional — degrade gracefully
+        throw err;
+      });
+  }
+
+  // Loads escalations (required) + people/company registry (optional).
+  // Returns { list, registry } where registry = { people, companies }.
+  function load() {
+    return Promise.all([
+      fetchJson(DATA_URL, false),
+      fetchJson(PEOPLE_URL, true)
+    ]).then(function (res) {
+      var d = res[0];
+      var p = res[1] || {};
+      return {
+        list: (d && d.escalations) || [],
+        registry: { people: (p && p.people) || {}, companies: (p && p.companies) || {} }
+      };
+    });
+  }
+
+  /* ---- people / company registry helpers ---- */
+  function initials(name) {
+    var parts = String(name || "").trim().split(/\s+/).filter(Boolean);
+    if (!parts.length) return "?";
+    if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase();
+    return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+  }
+
+  // company id -> initials-avatar bg class (color-blind-safe navy vs action-blue,
+  // and the company is ALWAYS also shown as a text chip, never color alone).
+  function avatarColorClass(companyId) {
+    return companyId === "crosspeak" ? "av--crosspeak" : "av--vensure";
+  }
+
+  // Resolve a player {id, issueRole} against the registry. Returns null if unknown.
+  function resolvePlayer(player, registry) {
+    if (!player || !player.id) return null;
+    var person = registry.people[player.id];
+    if (!person) return null;
+    var company = registry.companies[person.company] || null;
+    return { id: player.id, issueRole: player.issueRole || "", person: person, company: company };
+  }
+
+  function resolvePlayers(players, registry) {
+    return (players || []).map(function (p) { return resolvePlayer(p, registry); })
+      .filter(function (x) { return x; });
+  }
+
+  // Avatar markup with photo + onerror initials fallback. `size` = "card" | "stack".
+  function avatarHtml(rp, size) {
+    var person = rp.person;
+    var companyId = person.company;
+    var shortName = rp.company ? rp.company.shortName : "";
+    var alt = person.name + (person.title ? ", " + person.title : "") + (shortName ? ", " + shortName : "");
+    var colorCls = avatarColorClass(companyId);
+    var ini = initials(person.name);
+    // Initials fallback element (shown if no photo or photo fails to load).
+    var fallback = '<span class="avatar-initials ' + colorCls + '" aria-hidden="true">' + esc(ini) + '</span>';
+    var wrapCls = "avatar avatar--" + size + " " + colorCls;
+    if (person.photo) {
+      var onerr = "this.style.display='none';var f=this.nextElementSibling;if(f)f.style.display='flex';";
+      return '<span class="' + wrapCls + '">' +
+        '<img class="avatar-img" src="' + esc(person.photo) + '" alt="' + esc(alt) + '" ' +
+          'loading="lazy" onerror="' + onerr + '">' +
+        '<span class="avatar-initials ' + colorCls + '" aria-hidden="true" style="display:none">' + esc(ini) + '</span>' +
+      '</span>';
+    }
+    // No photo: render initials, but keep an accessible label on the wrapper.
+    return '<span class="' + wrapCls + '" role="img" aria-label="' + esc(alt) + '">' + fallback + '</span>';
   }
 
   /* ---------------- INDEX ---------------- */
   function renderIndex(el) {
-    load().then(function (list) {
+    load().then(function (data) {
+      var list = data.list, registry = data.registry;
       if (!list.length) {
         el.innerHTML = '<div class="notice"><h2>No escalations yet</h2><p>The log is empty.</p></div>';
         return;
@@ -82,6 +156,7 @@
             '<span class="card-cat">' + ico("tag") + esc(e.category) + '</span>' +
             '<h3>' + esc(e.title) + '</h3>' +
             '<p class="card-summary">' + esc(oneLine(e.summary)) + '</p>' +
+            avatarStackHtml(resolvePlayers(e.players, registry)) +
             '<div class="card-meta">' +
               '<span class="meta-i">' + ico("calendar") + 'Opened ' + esc(fmtDate(e.opened)) + '</span>' +
               '<span class="card-cta">View details ' + ico("arrowRight") + '</span>' +
@@ -91,6 +166,21 @@
     }).catch(function (err) {
       el.innerHTML = '<div class="notice"><h2>Couldn\'t load the log</h2><p>' + esc(err.message) + '</p></div>';
     });
+  }
+
+  // Subtle overlapping avatar stack for index cards (max ~5, then "+N").
+  function avatarStackHtml(resolved) {
+    if (!resolved || !resolved.length) return "";
+    var MAX = 5;
+    var shown = resolved.slice(0, MAX);
+    var extra = resolved.length - shown.length;
+    var avatars = shown.map(function (rp) { return avatarHtml(rp, "stack"); }).join("");
+    var more = extra > 0
+      ? '<span class="avatar avatar--stack avatar--more" aria-hidden="true">+' + extra + '</span>'
+      : "";
+    var label = resolved.length + (resolved.length === 1 ? " person" : " people") + " involved";
+    return '<div class="avatar-stack" role="img" aria-label="' + esc(label) + '">' +
+      avatars + more + '</div>';
   }
 
   function oneLine(summary) {
@@ -107,7 +197,8 @@
 
   function renderDetail(el) {
     var id = getParam("id");
-    load().then(function (list) {
+    load().then(function (data) {
+      var list = data.list, registry = data.registry;
       var e = list.filter(function (x) { return String(x.id) === String(id); })[0];
       if (!e) {
         el.innerHTML =
@@ -134,6 +225,8 @@
             '<span class="meta-i">' + ico("refresh") + 'Updated <strong>' + esc(fmtDate(e.updated)) + '</strong></span>' +
           '</div>' +
         '</header>' +
+
+        playersSection(resolvePlayers(e.players, registry)) +
 
         section("Summary", "doc",
           '<p class="lede">' + esc(e.summary) + '</p>') +
@@ -163,6 +256,46 @@
 
   function section(title, icon, body) {
     return '<section class="detail-section"><h2>' + ico(icon) + esc(title) + '</h2>' + body + '</section>';
+  }
+
+  // Company chip: logo (onerror hides img, keeps text) + shortName text.
+  function companyChip(company) {
+    if (!company) return "";
+    var logo = company.logo
+      ? '<img class="company-chip-logo" src="' + esc(company.logo) + '" alt="" ' +
+        'onerror="this.style.display=\'none\'">'
+      : "";
+    return '<span class="company-chip">' + logo + esc(company.shortName || company.name || "") + '</span>';
+  }
+
+  function playerCard(rp) {
+    var person = rp.person;
+    var linkedinBtn = person.linkedin
+      ? '<a class="player-linkedin" href="' + esc(person.linkedin) + '" target="_blank" ' +
+        'rel="noopener noreferrer">' + ico("linkedin") + 'LinkedIn</a>'
+      : "";
+    return '' +
+      '<div class="player-card">' +
+        '<div class="player-top">' +
+          avatarHtml(rp, "card") +
+          '<div class="player-id">' +
+            '<span class="player-name">' + esc(person.name) + '</span>' +
+            '<span class="player-title">' + esc(person.title || "") + '</span>' +
+            companyChip(rp.company) +
+          '</div>' +
+        '</div>' +
+        (rp.issueRole ? '<p class="player-role">' + esc(rp.issueRole) + '</p>' : "") +
+        linkedinBtn +
+      '</div>';
+  }
+
+  function playersSection(resolved) {
+    if (!resolved || !resolved.length) return "";
+    var cards = resolved.map(playerCard).join("");
+    return '<section class="detail-section players-section">' +
+      '<h2>' + ico("users") + 'Players</h2>' +
+      '<div class="players-grid">' + cards + '</div>' +
+    '</section>';
   }
 
   function timelineHtml(items) {

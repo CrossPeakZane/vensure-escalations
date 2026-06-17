@@ -11,6 +11,12 @@
       "shortName": "CrossPeak",
       "logo": "assets/cps-logo.png",
       "site": "https://www.crosspeaksolutions.com"
+    },
+    "uniq": {
+      "name": "UNIQ Benefit Solutions",
+      "shortName": "UNIQ",
+      "logo": null,
+      "site": "https://uniqbenefits.com"
     }
   },
   "people": {
@@ -19,6 +25,12 @@
     "brittany-shively": { "name": "Brittany Shively", "title": "Associate Vice President, Service Operations", "company": "vensure",  "photo": "assets/people/brittany-shively.jpg", "linkedin": "https://www.linkedin.com/in/brittany-shively-40a353378/" },
     "brittany-taylor":  { "name": "Brittany Taylor",  "title": "Payroll Supervisor",                         "company": "vensure",   "photo": "assets/people/brittany-taylor.jpg",  "linkedin": "https://www.linkedin.com/in/brittany-taylor-b6607347/" },
     "nate-schoenbrun":  { "name": "Nate Schoenbrun",  "title": "Client Growth Consultant",                   "company": "vensure",   "photo": "assets/people/nate-schoenbrun.jpg",  "linkedin": "https://www.linkedin.com/in/nateschoenbrun/" },
-    "richard-heckner":  { "name": "Richard Heckner",  "title": "Regional Vice President, Client Relations",  "company": "vensure",   "photo": "assets/people/richard-heckner.jpg",  "linkedin": "https://www.linkedin.com/in/rich-heckner/" }
+    "richard-heckner":  { "name": "Richard Heckner",  "title": "Regional Vice President, Client Relations",  "company": "vensure",   "photo": "assets/people/richard-heckner.jpg",  "linkedin": "https://www.linkedin.com/in/rich-heckner/" },
+    "jenny-theriot":          { "name": "Jenny Theriot",          "title": "Associate Vice President, Benefits",       "company": "vensure", "photo": null,                                       "linkedin": null },
+    "kitisha-battle-stimage": { "name": "Kitisha Battle-Stimage", "title": "Benefit Specialist",                       "company": "vensure", "photo": "assets/people/kitisha-battle-stimage.jpg", "linkedin": "https://www.linkedin.com/in/kitisha-battle-stimage/" },
+    "brie-dixon":             { "name": "Brie Dixon",             "title": "Business Consultant",                      "company": "vensure", "photo": "assets/people/brie-dixon.jpg",             "linkedin": "https://www.linkedin.com/in/brie-dixon-48b496a9/" },
+    "angel-deaton":           { "name": "Angel Deaton",           "title": "Implementation Consultant",                "company": "vensure", "photo": "assets/people/angel-deaton.jpg",           "linkedin": "https://www.linkedin.com/in/angel-deaton-a11aa912b/" },
+    "stella-anah":            { "name": "Stella Anah",            "title": "Senior HR Business Partner",               "company": "vensure", "photo": null,                                       "linkedin": "https://www.linkedin.com/in/stella-anah/" },
+    "nick-boeschen":          { "name": "Nick Boeschen",          "title": "President & CEO, UNIQ Benefit Solutions",  "company": "uniq",    "photo": "assets/people/nick-boeschen.jpg",          "linkedin": "https://www.linkedin.com/in/nickboeschen/" }
   }
 }

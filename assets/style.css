@@ -141,6 +141,7 @@ a:focus-visible,button:focus-visible{outline:none;box-shadow:var(--ring);border-
    the company is always also shown as a text chip. White text passes AA. */
 .av--vensure .avatar-initials{background:var(--cps-navy)}
 .av--crosspeak .avatar-initials{background:var(--cps-action)}
+.av--uniq .avatar-initials{background:var(--cps-gray)}
 .avatar--card{width:60px;height:60px}
 .avatar--card .avatar-initials{font-size:1.18rem}
 .avatar--stack{width:32px;height:32px;box-shadow:0 0 0 2px #fff}
@@ -245,6 +246,53 @@ ul.refs li .svg-ico{position:absolute;left:0;top:3px;color:var(--cps-gray)}
   margin-bottom:var(--space-3);font-size:.86rem;font-weight:600;color:var(--cps-body)}
 .tl-legend span{display:inline-flex;align-items:center;gap:7px}
 
+/* ---------- Confidential (locked) section ---------- */
+.locked-section > h2{align-items:center}
+.lock-ico-wrap{display:inline-flex;align-items:center;justify-content:center;
+  color:var(--cps-navy)}
+.lock-ico-wrap .svg-ico{width:20px;height:20px}
+.locked-pill{display:inline-flex;align-items:center;gap:6px;margin-left:auto;
+  font-family:'Inter',sans-serif;font-size:.74rem;font-weight:800;
+  letter-spacing:.04em;text-transform:uppercase;
+  padding:5px 11px;border-radius:var(--radius-pill);
+  background:var(--cps-navy);color:#fff}
+.locked-pill .svg-ico{width:13px;height:13px}
+.locked-pill--open{background:#10623E}
+.locked-card{position:relative;
+  background:linear-gradient(180deg,#F3F9FC 0%,#ffffff 100%);
+  border:1.5px dashed #BFD8E8;border-radius:var(--radius);
+  padding:var(--space-3)}
+.locked-sub{margin:0 0 var(--space-2);color:var(--cps-body);font-size:.96rem}
+.locked-form{margin:0}
+.locked-label{display:block;font-size:.84rem;font-weight:700;
+  color:var(--cps-navy);margin-bottom:7px}
+.locked-row{display:flex;gap:10px;flex-wrap:wrap;align-items:stretch}
+.locked-input{flex:1 1 220px;min-width:0;font-family:'Inter',sans-serif;
+  font-size:1rem;color:var(--cps-ink);padding:11px 14px;
+  border:1.5px solid var(--cps-line);border-radius:var(--radius-sm);
+  background:#fff}
+.locked-input:focus-visible{outline:none;box-shadow:var(--ring);
+  border-color:var(--cps-action)}
+.locked-btn{display:inline-flex;align-items:center;gap:8px;
+  font-family:'Montserrat',sans-serif;font-weight:800;font-size:.95rem;
+  color:#fff;background:var(--cps-navy);border:none;cursor:pointer;
+  padding:11px 20px;border-radius:var(--radius-sm);
+  transition:background .18s ease,transform .18s ease}
+.locked-btn:hover{background:var(--cps-action)}
+.locked-btn:focus-visible{outline:none;box-shadow:var(--ring)}
+.locked-btn .svg-ico{width:16px;height:16px}
+.locked-err{margin:12px 0 0;color:#8A2B00;font-size:.9rem;font-weight:700}
+.locked-body{font-size:1rem;color:var(--cps-body)}
+.locked-body h3{margin:var(--space-3) 0 var(--space-1);color:var(--cps-navy)}
+.locked-body h3:first-child{margin-top:0}
+.locked-body p{margin:0 0 var(--space-2);font-size:1rem}
+.locked-body ul{margin:0 0 var(--space-2);padding-left:22px}
+.locked-body li{margin-bottom:8px}
+.locked-body blockquote{margin:var(--space-2) 0;padding:8px 0 8px var(--space-2);
+  border-left:4px solid var(--cps-navy);font-style:italic;color:var(--cps-ink)}
+.locked-body .locked-lead{font-size:1.06rem;font-weight:600;color:var(--cps-ink)}
+.locked-body .locked-note{font-size:.86rem;color:var(--cps-gray)}
+
 /* ---------- States ---------- */
 .notice{background:var(--cps-bg-soft);border:1px solid var(--cps-line);
   border-radius:var(--radius);padding:var(--space-4);text-align:center;
@@ -269,4 +317,5 @@ ul.refs li .svg-ico{position:absolute;left:0;top:3px;color:var(--cps-gray)}
   *{transition:none !important;scroll-behavior:auto !important}
   .esc-card:hover{transform:none}
   .player-card:hover{transform:none}
+  .locked-btn{transition:none}
 }

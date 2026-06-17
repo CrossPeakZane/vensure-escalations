@@ -4,6 +4,7 @@
 
   var DATA_URL = "data/escalations.json";
   var PEOPLE_URL = "data/people.json";
+  var LOCKED_URL = "data/locked.json";
 
   /* ---- lucide-style inline SVG icons (no emoji) ---- */
   var ICONS = {
@@ -22,7 +23,9 @@
     list: '<path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/>',
     clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
     users: '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>',
-    linkedin: '<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6Z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>'
+    linkedin: '<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6Z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>',
+    lock: '<rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>',
+    unlock: '<rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/>'
   };
 
   function ico(name, cls) {
@@ -68,18 +71,21 @@
       });
   }
 
-  // Loads escalations (required) + people/company registry (optional).
-  // Returns { list, registry } where registry = { people, companies }.
+  // Loads escalations (required) + people/company registry (optional)
+  // + locked confidential blobs (optional). Returns { list, registry, locked }.
   function load() {
     return Promise.all([
       fetchJson(DATA_URL, false),
-      fetchJson(PEOPLE_URL, true)
+      fetchJson(PEOPLE_URL, true),
+      fetchJson(LOCKED_URL, true)
     ]).then(function (res) {
       var d = res[0];
       var p = res[1] || {};
+      var l = res[2] || {};
       return {
         list: (d && d.escalations) || [],
-        registry: { people: (p && p.people) || {}, companies: (p && p.companies) || {} }
+        registry: { people: (p && p.people) || {}, companies: (p && p.companies) || {} },
+        locked: l || {}
       };
     });
   }
@@ -95,7 +101,9 @@
   // company id -> initials-avatar bg class (color-blind-safe navy vs action-blue,
   // and the company is ALWAYS also shown as a text chip, never color alone).
   function avatarColorClass(companyId) {
-    return companyId === "crosspeak" ? "av--crosspeak" : "av--vensure";
+    if (companyId === "crosspeak") return "av--crosspeak";
+    if (companyId === "uniq") return "av--uniq";
+    return "av--vensure";
   }
 
   // Resolve a player {id, issueRole} against the registry. Returns null if unknown.
@@ -198,7 +206,7 @@
   function renderDetail(el) {
     var id = getParam("id");
     load().then(function (data) {
-      var list = data.list, registry = data.registry;
+      var list = data.list, registry = data.registry, locked = data.locked || {};
       var e = list.filter(function (x) { return String(x.id) === String(id); })[0];
       if (!e) {
         el.innerHTML =
@@ -243,10 +251,15 @@
             return '<li>' + esc(a) + '</li>';
           }).join("") + '</ol>') +
 
+        lockedCardHtml(locked[String(e.id)]) +
+
         section("References", "list",
           '<ul class="refs">' + (e.references || []).map(function (r) {
             return '<li>' + ico("doc") + esc(r) + '</li>';
           }).join("") + '</ul>');
+
+      // Wire the confidential unlock form (no-op if the card wasn't rendered).
+      wireLockedCard(el, locked[String(e.id)]);
     }).catch(function (err) {
       el.innerHTML =
         '<a class="back-link" href="index.html">' + ico("arrowLeft") + 'All escalations</a>' +
@@ -326,6 +339,83 @@
         '</li>';
     }).join("");
     return legend + '<ol class="timeline">' + rows + '</ol>';
+  }
+
+  /* ---------------- Confidential (client-side AES-GCM) ---------------- */
+  // Returns "" when there is no blob for this escalation — card simply omitted.
+  function lockedCardHtml(blob) {
+    if (!blob || !blob.ct) return "";
+    return '' +
+      '<section class="detail-section locked-section" data-locked="1">' +
+        '<h2>' +
+          '<span class="lock-ico-wrap" data-lock-ico>' + ico("lock") + '</span>' +
+          'Confidential analysis' +
+          '<span class="locked-pill">' + ico("lock") + 'Locked</span>' +
+        '</h2>' +
+        '<div class="locked-card">' +
+          '<div class="locked-gate" data-locked-gate>' +
+            '<p class="locked-sub">CrossPeak internal — password required.</p>' +
+            '<form class="locked-form" data-locked-form>' +
+              '<label class="locked-label" for="locked-pw">Password</label>' +
+              '<div class="locked-row">' +
+                '<input class="locked-input" id="locked-pw" type="password" ' +
+                  'autocomplete="off" autocapitalize="off" spellcheck="false" ' +
+                  'aria-describedby="locked-err" />' +
+                '<button class="locked-btn" type="submit">' + ico("unlock") + 'Unlock</button>' +
+              '</div>' +
+              '<p class="locked-err" id="locked-err" role="alert" hidden></p>' +
+            '</form>' +
+          '</div>' +
+          '<div class="locked-body" data-locked-body hidden></div>' +
+        '</div>' +
+      '</section>';
+  }
+
+  async function unlockBlob(blob, password){
+    var b64 = function (s) { return Uint8Array.from(atob(s), function (c) { return c.charCodeAt(0); }); };
+    var salt = b64(blob.salt), iv = b64(blob.iv), data = b64(blob.ct);
+    var baseKey = await crypto.subtle.importKey('raw', new TextEncoder().encode(password), 'PBKDF2', false, ['deriveKey']);
+    var key = await crypto.subtle.deriveKey(
+      { name:'PBKDF2', salt: salt, iterations: blob.iter || 210000, hash:'SHA-256' },
+      baseKey, { name:'AES-GCM', length:256 }, false, ['decrypt']);
+    var plain = await crypto.subtle.decrypt({ name:'AES-GCM', iv: iv }, key, data); // throws on wrong password
+    return new TextDecoder().decode(plain);
+  }
+
+  function wireLockedCard(root, blob) {
+    if (!blob || !blob.ct) return;
+    var form = root.querySelector("[data-locked-form]");
+    if (!form) return;
+    var input = root.querySelector("#locked-pw");
+    var errEl = root.querySelector("#locked-err");
+    var gate = root.querySelector("[data-locked-gate]");
+    var body = root.querySelector("[data-locked-body]");
+    var lockIco = root.querySelector("[data-lock-ico]");
+    var pill = root.querySelector(".locked-pill");
+
+    function showError(msg) {
+      errEl.textContent = msg;
+      errEl.hidden = false;
+      input.value = "";
+      input.focus();
+    }
+
+    form.addEventListener("submit", function (ev) {
+      ev.preventDefault();
+      errEl.hidden = true;
+      var pw = input.value;
+      if (!pw) { showError("Enter the password."); return; }
+      unlockBlob(blob, pw).then(function (html) {
+        // Inject decrypted HTML fragment, then swap to the unlocked state.
+        body.innerHTML = html;
+        body.hidden = false;
+        gate.hidden = true;
+        if (lockIco) lockIco.innerHTML = ico("unlock");
+        if (pill) { pill.innerHTML = ico("unlock") + "Unlocked"; pill.classList.add("locked-pill--open"); }
+      }).catch(function () {
+        showError("Incorrect password");
+      });
+    });
   }
 
   /* ---------------- boot ---------------- */

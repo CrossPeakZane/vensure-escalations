@@ -28,7 +28,8 @@
     unlock: '<rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/>',
     logout: '<path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/>',
     flag: '<path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1Z"/><path d="M4 22v-7"/>',
-    info: '<circle cx="12" cy="12" r="9"/><path d="M12 16v-4M12 8h.01"/>'
+    info: '<circle cx="12" cy="12" r="9"/><path d="M12 16v-4M12 8h.01"/>',
+    award: '<circle cx="12" cy="8" r="6"/><path d="M15.5 12.6 17 22l-5-3-5 3 1.5-9.4"/>'
   };
 
   function ico(name, cls) {
@@ -256,6 +257,8 @@
           '</div>' +
         '</header>' +
 
+        kudosCardHtml(e.kudos, registry) +
+
         playersSection(resolvePlayers(e.players, registry)) +
 
         section("Summary", "doc",
@@ -390,6 +393,40 @@
             '<h3 class="note-title">' + esc(note.title || "") + '</h3>' +
           '</div>' +
           '<div class="note-body">' + (note.html || "") + '</div>' +
+        '</div>' +
+      '</section>';
+  }
+
+  /* ---------------- Kudos callout (positive / corrective-action) ---------------- */
+  // Celebratory green callout for resolved items. `kudos` shape:
+  // { title: "...", heroIds: ["person-id", ...], html: "<p>...</p>" }.
+  // Trusted static content (no script injected). Returns "" when absent.
+  function kudosCardHtml(kudos, registry) {
+    if (!kudos || (!kudos.title && !kudos.html && !(kudos.heroIds && kudos.heroIds.length))) return "";
+    var heroes = (kudos.heroIds || []).map(function (id) {
+      return resolvePlayer({ id: id }, registry);
+    }).filter(function (x) { return x; });
+    var heroesHtml = heroes.length
+      ? '<div class="kudos-heroes">' + heroes.map(function (rp) {
+          var shortName = rp.company ? rp.company.shortName : "";
+          return '<span class="kudos-hero">' +
+            avatarHtml(rp, "stack") +
+            '<span class="kudos-hero-id">' +
+              '<span class="kudos-hero-name">' + esc(rp.person.name) + '</span>' +
+              (shortName ? '<span class="kudos-hero-co">' + esc(shortName) + '</span>' : "") +
+            '</span>' +
+          '</span>';
+        }).join("") + '</div>'
+      : "";
+    return '' +
+      '<section class="detail-section kudos-section">' +
+        '<div class="kudos-card">' +
+          '<div class="kudos-head">' +
+            '<span class="kudos-ico-wrap">' + ico("award") + '</span>' +
+            '<h3 class="kudos-title">' + esc(kudos.title || "") + '</h3>' +
+          '</div>' +
+          heroesHtml +
+          '<div class="kudos-body">' + (kudos.html || "") + '</div>' +
         '</div>' +
       '</section>';
   }

@@ -78,7 +78,13 @@
       "id": "02",
       "slug": "payroll-near-miss-april-2026",
       "title": "Payroll nearly missed and ran late — a first — right after Vensure swapped account resources with no handoff",
-      "status": "Open — no written root-cause analysis or fee-reimbursement confirmation received",
+      "state": "closed",
+      "status": "Closed — payroll stabilized; no missed run since, thanks to Brittany Taylor",
+      "kudos": {
+        "title": "Corrective action — credit where it's due",
+        "heroIds": ["brittany-taylor"],
+        "html": "<p><strong>Brittany Taylor turned this around.</strong> Since taking over CrossPeak's payroll she has not missed a single run, and has been responsive, reliable, and genuinely good to work with. The original miss was a broken hand-off, not her doing — and her steady follow-through is exactly the kind of ownership that rebuilds trust. Thank you, Brittany.</p>"
+      },
       "category": "Payroll",
       "account": "CROSSPEAK SOLUTIONS — 45248",
       "opened": "2026-04-13",
@@ -104,7 +110,8 @@
         { "date": "2026-04-15", "time": "", "actor": "Zane Perry", "role": "Partner, CrossPeak", "party": "crosspeak", "text": "Payroll nearly missed; after escalation it is processed LATE that day — the first late payroll in CrossPeak's history." },
         { "date": "2026-04-15", "time": "", "actor": "Brittany Taylor", "role": "Service Operations Supervisor, Vensure", "party": "vensure", "text": "Newly assigned supervisor; later states she 'recently just obtained this case' and is unsure whether the prior lead left any notes." },
         { "date": "2026-04-16", "time": "", "actor": "Vensure", "role": "Service Operations", "party": "vensure", "text": "Attributes the delay to a 'stuck approval workflow' and promises a root-cause review — conveyed only by phone/Slack, never in writing." },
-        { "date": "2026-04-17", "time": "", "actor": "Zane Perry", "role": "Partner, CrossPeak", "party": "crosspeak", "text": "Requests a written root-cause analysis and confirmation of a fee credit for the disruption." }
+        { "date": "2026-04-17", "time": "", "actor": "Zane Perry", "role": "Partner, CrossPeak", "party": "crosspeak", "text": "Requests a written root-cause analysis and confirmation of a fee credit for the disruption." },
+        { "date": "2026-06-17", "time": "", "actor": "Zane Perry", "role": "Partner, CrossPeak", "party": "crosspeak", "text": "Marks this resolved: payroll has been stable with no missed runs since, and Brittany Taylor has been reliable and great to work with. Closing with thanks to her for the turnaround." }
       ],
       "asks": [
         "A written root-cause analysis of the late payroll and the specific controls Vensure has put in place so it cannot recur.",
@@ -231,7 +238,13 @@
       "id": "05",
       "slug": "401k-slavic-breakdown",
       "title": "401(k) breakdown after migration — missing statements and loan-repayment deductions not taken",
-      "status": "Open — access, statements, and missed-deduction reconciliation outstanding",
+      "state": "closed",
+      "status": "Closed — resolved directly with the 401(k) / Slavic team",
+      "kudos": {
+        "title": "Resolved — thank you to the team",
+        "heroIds": [],
+        "html": "<p>Donna Hudson was able to work directly with the Slavic401k / PrismHR team to restore her access, get her statements, and correct the missed loan-repayment deductions. Thank you to the team for stepping in and supporting Donna all the way to a clean resolution.</p>"
+      },
       "category": "Benefits / 401(k)",
       "account": "CROSSPEAK SOLUTIONS — 45248",
       "opened": "2026-04-22",
@@ -253,7 +266,8 @@
         { "date": "2026-04-22", "time": "", "actor": "Donna Hudson", "role": "Employee, CrossPeak", "party": "crosspeak", "text": "Reports she cannot access any 401(k) information since the move to Vensure, has no statement of postings since the transfer, and that deductions have not been taken for many pay periods, throwing off her goal." },
         { "date": "2026-04-22", "time": "", "actor": "Zane Perry", "role": "Partner, CrossPeak", "party": "crosspeak", "text": "Escalates to Vensure and asks who can answer for the Slavic401k account and correct the missed deductions." },
         { "date": "2026-04-23", "time": "", "actor": "Bracken El-Bakri", "role": "401(k) Support, PrismHR", "party": "vensure", "text": "Assigned as 401(k) POC but does not have the credentials to access the account and answer the questions." },
-        { "date": "2026-04-24", "time": "", "actor": "James Kaiser", "role": "Client Service, PrismHR", "party": "vensure", "text": "Surfaces in the contact-handoff chain for the Slavic/PrismHR 401(k) platform." }
+        { "date": "2026-04-24", "time": "", "actor": "James Kaiser", "role": "Client Service, PrismHR", "party": "vensure", "text": "Surfaces in the contact-handoff chain for the Slavic/PrismHR 401(k) platform." },
+        { "date": "2026-06-17", "time": "", "actor": "Donna Hudson", "role": "Employee, CrossPeak", "party": "crosspeak", "text": "Worked directly with the Slavic401k / PrismHR team to restore access, obtain statements, and correct the missed loan-repayment deductions — issue resolved." }
       ],
       "asks": [
         "Confirm in writing whether loan-repayment deductions were missed, for which pay periods, and the plan to correct the schedule and any make-up contributions.",
@@ -271,7 +285,13 @@
       "id": "06",
       "slug": "rep-turnover-no-account-owner",
       "title": "Chronic turnover and no single account owner — repeated reassignments with no warm handoff",
-      "status": "Open — no single accountable owner or documented escalation path confirmed",
+      "state": "closed",
+      "status": "Closed — Brittany Shively driving escalations; Brittany Taylor anchoring the account, absent an assigned account manager",
+      "kudos": {
+        "title": "Who showed up",
+        "heroIds": ["brittany-taylor", "brittany-shively"],
+        "html": "<p><strong>Brittany Taylor</strong> has effectively served as CrossPeak's primary point of contact — despite being titled Payroll Supervisor — and has supported the account well. <strong>Brittany Shively</strong> has actively backed escalations and recently apologized to CrossPeak directly for how a recent call was handled. In a rough situation, both have been the bright spots. Thank you.</p>"
+      },
       "category": "Account Management",
       "account": "CROSSPEAK SOLUTIONS — 45248",
       "opened": "2026-05-11",
@@ -286,20 +306,24 @@
         { "id": "richard-heckner",  "issueRole": "Regional VP, Client Relations; relationship-level escalation contact" },
         { "id": "zane-perry",       "issueRole": "Had to reverse-engineer his own support team and repeatedly ask 'who is my contact?'" }
       ],
-      "summary": "Across the relationship CrossPeak has cycled through a rotating cast of Vensure contacts who left or were reassigned mid-stream with no warm handoff, and never received a proper account kickoff. CrossPeak repeatedly had to ask who its official contacts even were — for HR, for payroll, for the account overall. Zane tied the April payroll near-miss directly to the 'improper offboarding of Amiee Caldwell and insufficient onboarding of Brittany Taylor.' Contacts have continued to churn: the business consultant who onboarded the account has since left Vensure entirely. The pattern is the root cause behind several of the other escalations on this log.",
+      "summary": "Across the relationship CrossPeak has cycled through a rotating cast of Vensure contacts who left or were reassigned mid-stream with no warm handoff, and never received a proper account kickoff. CrossPeak repeatedly had to ask who its official contacts even were — for HR, for payroll, for the account overall. Zane tied the April payroll near-miss directly to the 'improper offboarding of Amiee Caldwell and insufficient onboarding of Brittany Taylor.' Contacts have continued to churn: the business consultant who onboarded the account has since left Vensure entirely. The pattern is the root cause behind several of the other escalations on this log. This is being closed in recognition of the individuals who have shown up for CrossPeak — not because the underlying instability is resolved: CrossPeak still has no formally assigned account manager, and a Payroll Supervisor has had to fill that gap.",
       "impact": [
         "No proper kickoff and no single accountable owner — CrossPeak has had to reconstruct its own support roster.",
         "Reassignments happened with no warm handoff, directly contributing to the late payroll and the stalled state registrations.",
         "Key contacts departed mid-engagement (Amiee Caldwell; Brie Dixon, now at a competitor), taking institutional knowledge with them.",
         "New contacts were introduced months into the relationship, restarting context each time.",
-        "Repeated 'who is my contact?' requests reflect time lost to chasing ownership instead of resolving issues."
+        "Repeated 'who is my contact?' requests reflect time lost to chasing ownership instead of resolving issues.",
+        "No official account manager has ever been assigned to CrossPeak — a Payroll Supervisor has had to fill the role unofficially."
       ],
       "timeline": [
         { "date": "2026-05-08", "time": "", "actor": "Zane Perry", "role": "Partner, CrossPeak", "party": "crosspeak", "text": "Notes there is still no official HR contact identified for the account, months into the relationship." },
         { "date": "2026-05-11", "time": "", "actor": "Zane Perry", "role": "Partner, CrossPeak", "party": "crosspeak", "text": "'Handoff' email: 'This has been an absolute nightmare of an experience… Who is my official HR contact moving forward?'" },
         { "date": "2026-05-11", "time": "", "actor": "Nate Schoenbrun", "role": "Client Growth Consultant, Vensure", "party": "vensure", "text": "Introduced as a brand-new 'Client Growth Consultant' — a new face months into the engagement." },
         { "date": "2026-04-13", "time": "", "actor": "Vensure", "role": "Service Operations reorg", "party": "vensure", "text": "Reorg merges Client Relations and Payroll into 'Service Operations'; CrossPeak's payroll contact changes with no advance notice (precipitating the 4/15 late payroll)." },
-        { "date": "2026-06-17", "time": "", "actor": "Zane Perry", "role": "Partner, CrossPeak", "party": "crosspeak", "text": "Confirms via LinkedIn that the onboarding business consultant (Brie Dixon) has left Vensure for a competitor — the latest example of contact instability." }
+        { "date": "2026-06-17", "time": "", "actor": "Zane Perry", "role": "Partner, CrossPeak", "party": "crosspeak", "text": "Confirms via LinkedIn that the onboarding business consultant (Brie Dixon) has left Vensure for a competitor — the latest example of contact instability." },
+        { "date": "2026-06-16", "time": "", "actor": "Brittany Shively", "role": "AVP Service Operations, Vensure", "party": "vensure", "text": "Apologizes to CrossPeak directly for how the open-states progress call was handled; the tax lead (Misty Ramsey) acknowledged she had not been prepared for that call." },
+        { "date": "2026-06-17", "time": "", "actor": "Zane Perry", "role": "Partner, CrossPeak", "party": "crosspeak", "text": "Notes CrossPeak still has no officially assigned account manager — Brittany Taylor (titled Payroll Supervisor) has filled that role unofficially and supported the account well." },
+        { "date": "2026-06-17", "time": "", "actor": "Zane Perry", "role": "Partner, CrossPeak", "party": "crosspeak", "text": "Closing this as actively supported — but the underlying instability that caused it is real and remains documented across the open escalations." }
       ],
       "asks": [
         "Assign one named, accountable owner for the CrossPeak account, with a named backup.",
@@ -311,44 +335,6 @@
         "Email 'Handoff' (5/11/2026) and 'Introducing Your Client Growth Consultant' (5/11–5/14/2026).",
         "State-registration and payroll threads documenting the lack of a single owner and the reorg-driven contact change.",
         "LinkedIn: Brie Dixon now lists Paychex as her employer (formerly Vensure)."
-      ]
-    },
-    {
-      "id": "07",
-      "slug": "portal-reporting-access-qbo",
-      "title": "PEO portal and reporting access never provisioned; QuickBooks integration reported broken",
-      "status": "Open — CPA/bookkeeper access and the QBO connection unresolved",
-      "category": "Platform & Reporting Access",
-      "account": "CROSSPEAK SOLUTIONS — 45248",
-      "opened": "2026-03-12",
-      "updated": "2026-06-17",
-      "players": [
-        { "id": "brian-kurtz",      "issueRole": "CrossPeak's external CPA — repeatedly could not get portal access to pull payroll/allocation reports" },
-        { "id": "natalie-christie", "issueRole": "CrossPeak People Operations — coordinated the access and reporting requests" },
-        { "id": "brittany-taylor",  "issueRole": "Service Operations Supervisor; account POC for provisioning the access" },
-        { "id": "zane-perry",       "issueRole": "Escalated the unprovisioned access and the broken integration" }
-      ],
-      "summary": "CrossPeak's finance team — its external CPA (Brian Kurtz) and bookkeeper — were never properly provisioned in the Vensure/PrismHR portal. Without access and without the PEO line items classified, CrossPeak could not complete its Budget vs. Actuals, and the CPA was never added to pull payroll and allocation reports. A QuickBooks Online (QBO/ACBT) integration was also reported broken. These are basic, account-setup-level provisioning items that remained open well into the relationship.",
-      "impact": [
-        "CrossPeak's Budget vs. Actuals could not be completed because PEO ('People Inc.') line items were not classified and the CPA had no access.",
-        "The external CPA and bookkeeper were never added as portal users to pull payroll/allocation reports.",
-        "The QBO/ACBT integration was reported broken, breaking the accounting data flow.",
-        "Financial close and reporting were delayed by missing, basic provisioning that should have been completed at setup."
-      ],
-      "timeline": [
-        { "date": "2026-03-12", "time": "", "actor": "Zane Perry", "role": "Partner, CrossPeak", "party": "crosspeak", "text": "Internal 'Payroll Reports' thread: needs the CPA (Brian) set up as a user to pull reports; notes the ACBT and QBO connection are reported broken." },
-        { "date": "2026-03-24", "time": "", "actor": "Natalie Christie", "role": "People Operations, CrossPeak", "party": "crosspeak", "text": "Follows up that the CPA still needs a Vensure license/access to pull payroll and allocation reports." },
-        { "date": "2026-04-01", "time": "", "actor": "Zane Perry", "role": "Partner, CrossPeak", "party": "crosspeak", "text": "Reiterates to Vensure that finance-team portal access and the QBO connection remain unresolved, blocking budget-vs-actuals." }
-      ],
-      "asks": [
-        "Provision CrossPeak's CPA and bookkeeper as portal users with the access needed to pull payroll and allocation reports.",
-        "Fix the QBO/ACBT integration so accounting data flows correctly.",
-        "Help classify the PEO line items so CrossPeak can complete Budget vs. Actuals.",
-        "Confirm the standard reporting-access setup for a new client and why it was not completed at onboarding."
-      ],
-      "references": [
-        "Internal 'Payroll Reports' email thread (3/12–3/24/2026); Slack #cps-partners and Zane↔Natalie DMs on portal access.",
-        "Participants: Brian Kurtz (CrossPeak external CPA), Natalie Christie (CrossPeak), Brittany Taylor (Vensure). No financial account numbers included."
       ]
     }
   ]

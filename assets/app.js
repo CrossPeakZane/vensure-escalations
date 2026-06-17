@@ -162,6 +162,57 @@
   }
 
   /* ---------------- INDEX ---------------- */
+  // WITHIN-section sort: ascending by last activity (updated, falling back to
+  // opened), tie-break id ascending. Matches the prior single-list ordering.
+  function sortByActivity(list) {
+    function activity(e) { return String(e.updated || e.opened || ""); }
+    return list.slice().sort(function (a, b) {
+      return activity(a).localeCompare(activity(b)) || String(a.id).localeCompare(String(b.id));
+    });
+  }
+
+  // One escalation card (anchor). Used by both Active and Resolved sections.
+  function escCardHtml(e, registry) {
+    var state = escState(e);
+    var cardCls = "esc-card" + (state === "closed" ? " esc-card--closed" : "");
+    return '' +
+      '<a class="' + cardCls + '" href="escalation.html?id=' + encodeURIComponent(e.id) + '">' +
+        '<div class="card-top">' +
+          '<span class="id-badge">#' + esc(e.id) + '</span>' +
+          statusPill(e.status, state) +
+        '</div>' +
+        '<span class="card-cat">' + ico("tag") + esc(e.category) + '</span>' +
+        '<h3>' + esc(e.title) + '</h3>' +
+        '<p class="card-summary">' + esc(oneLine(e.summary)) + '</p>' +
+        avatarStackHtml(resolvePlayers(e.players, registry)) +
+        '<div class="card-meta">' +
+          '<span class="meta-i">' + ico("calendar") + 'Opened ' + esc(fmtDate(e.opened)) + '</span>' +
+          '<span class="meta-i">' + ico("refresh") + 'Updated ' + esc(fmtDate(e.updated || e.opened)) + '</span>' +
+          '<span class="card-cta">View details ' + ico("arrowRight") + '</span>' +
+        '</div>' +
+      '</a>';
+  }
+
+  // A titled section (header row with count pill + grid of cards). Hidden when empty.
+  function escSectionHtml(opts) {
+    if (!opts.items.length) return "";
+    var note = opts.note
+      ? '<p class="section-sub">' + esc(opts.note) + '</p>'
+      : "";
+    var cards = opts.items.map(function (e) {
+      return escCardHtml(e, opts.registry);
+    }).join("");
+    return '' +
+      '<section class="esc-section ' + opts.cls + '">' +
+        '<div class="section-head">' +
+          '<h2 class="section-title">' + ico(opts.icon) + esc(opts.title) + '</h2>' +
+          '<span class="count-pill ' + opts.pillCls + '">' + esc(opts.title) + ' · ' + opts.items.length + '</span>' +
+        '</div>' +
+        note +
+        '<div class="card-grid">' + cards + '</div>' +
+      '</section>';
+  }
+
   function renderIndex(el) {
     load().then(function (data) {
       var list = data.list, registry = data.registry;
@@ -169,34 +220,45 @@
         el.innerHTML = '<div class="notice"><h2>No escalations yet</h2><p>The log is empty.</p></div>';
         return;
       }
-      // Sort by LAST ACTIVITY (updated) ascending (oldest activity first); fall back to `opened`
-      // when `updated` is missing. Tie-break on id. Never filters.
-      function activity(e) { return String(e.updated || e.opened || ""); }
-      var sorted = list.slice().sort(function (a, b) {
-        return activity(a).localeCompare(activity(b)) || String(a.id).localeCompare(String(b.id));
-      });
-      el.innerHTML = sorted.map(function (e) {
-        var state = escState(e);
-        var cardCls = "esc-card" + (state === "closed" ? " esc-card--closed" : "");
-        return '' +
-          '<a class="' + cardCls + '" href="escalation.html?id=' + encodeURIComponent(e.id) + '">' +
-            '<div class="card-top">' +
-              '<span class="id-badge">#' + esc(e.id) + '</span>' +
-              statusPill(e.status, state) +
-            '</div>' +
-            '<span class="card-cat">' + ico("tag") + esc(e.category) + '</span>' +
-            '<h3>' + esc(e.title) + '</h3>' +
-            '<p class="card-summary">' + esc(oneLine(e.summary)) + '</p>' +
-            avatarStackHtml(resolvePlayers(e.players, registry)) +
-            '<div class="card-meta">' +
-              '<span class="meta-i">' + ico("calendar") + 'Opened ' + esc(fmtDate(e.opened)) + '</span>' +
-              '<span class="card-cta">View details ' + ico("arrowRight") + '</span>' +
-            '</div>' +
-          '</a>';
-      }).join("");
+      // Classify with the shared escState() helper, then sort WITHIN each group.
+      var active = sortByActivity(list.filter(function (e) { return escState(e) === "open"; }));
+      var resolved = sortByActivity(list.filter(function (e) { return escState(e) === "closed"; }));
+
+      el.innerHTML =
+        escSectionHtml({
+          title: "Active", icon: "alert", cls: "esc-section--active",
+          pillCls: "count-pill--active", items: active, registry: registry,
+          note: "Open service issues, sorted by oldest activity first."
+        }) +
+        escSectionHtml({
+          title: "Resolved", icon: "check", cls: "esc-section--resolved",
+          pillCls: "count-pill--resolved", items: resolved, registry: registry,
+          note: "Closed and resolved matters, kept on the record."
+        });
     }).catch(function (err) {
       el.innerHTML = '<div class="notice"><h2>Couldn\'t load the log</h2><p>' + esc(err.message) + '</p></div>';
     });
+  }
+
+  // Hero stat chips — computed from data, injected into the hero on the index page.
+  function renderHeroStats(el) {
+    load().then(function (data) {
+      var list = data.list;
+      var total = list.length;
+      var active = list.filter(function (e) { return escState(e) === "open"; }).length;
+      var resolved = list.filter(function (e) { return escState(e) === "closed"; }).length;
+      var chips = [
+        { ico: "list",   num: total,    label: total === 1 ? "Escalation" : "Escalations" },
+        { ico: "alert",  num: active,   label: "Active" },
+        { ico: "check",  num: resolved, label: "Resolved" },
+        { ico: "tag",    num: null,     label: "Vendor: Vensure" }
+      ];
+      el.innerHTML = chips.map(function (c) {
+        var val = c.num === null ? "" : '<span class="stat-num">' + c.num + '</span>';
+        return '<span class="stat-chip">' + ico(c.ico) + val +
+          '<span class="stat-label">' + esc(c.label) + '</span></span>';
+      }).join("");
+    }).catch(function () { el.innerHTML = ""; });
   }
 
   // Subtle overlapping avatar stack for index cards (max ~5, then "+N").
@@ -512,6 +574,8 @@
   document.addEventListener("DOMContentLoaded", function () {
     var idx = document.getElementById("escalation-list");
     if (idx) renderIndex(idx);
+    var stats = document.getElementById("hero-stats");
+    if (stats) renderHeroStats(stats);
     var det = document.getElementById("escalation-detail");
     if (det) renderDetail(det);
   });

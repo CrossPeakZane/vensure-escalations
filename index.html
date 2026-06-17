@@ -4,8 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vensure Escalation Log — CrossPeak Solutions</title>
-  <meta name="description" content="A factual, time-stamped public record of open service escalations between CrossPeak Solutions and its PEO vendor, Vensure." />
+  <meta name="description" content="A factual, time-stamped public record of open and resolved service issues between CrossPeak Solutions and its PEO vendor, Vensure." />
   <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph / social -->
+  <meta property="og:title" content="Vensure Escalation Log — CrossPeak Solutions" />
+  <meta property="og:description" content="A factual, time-stamped public record of open and resolved service issues between CrossPeak Solutions and its PEO vendor, Vensure." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://crosspeakzane.github.io/vensure-escalations/assets/img/og-card.png" />
+  <meta property="og:url" content="https://crosspeakzane.github.io/vensure-escalations/" />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Vensure Escalation Log — CrossPeak Solutions" />
+  <meta name="twitter:description" content="A factual, time-stamped public record of open and resolved service issues between CrossPeak Solutions and its PEO vendor, Vensure." />
+  <meta name="twitter:image" content="https://crosspeakzane.github.io/vensure-escalations/assets/img/og-card.png" />
+
   <link rel="icon" href="assets/cps-logo.png" type="image/png" />
   <link rel="apple-touch-icon" href="assets/cps-logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -25,28 +38,39 @@
     </div>
   </header>
 
-  <section class="hero">
+  <section class="hero hero--img">
+    <div class="hero-overlay" aria-hidden="true"></div>
     <div class="container">
       <span class="hero-eyebrow">Public Service Record</span>
       <h1>Vensure Escalation Log</h1>
-      <p class="subtitle">A factual, time-stamped record of open service issues — CrossPeak Solutions × Vensure.</p>
+      <p class="subtitle">A factual, time-stamped record of open and resolved service issues — CrossPeak Solutions × Vensure.</p>
+      <div id="hero-stats" class="hero-stats" aria-label="Escalation summary"></div>
     </div>
   </section>
 
   <main class="container">
     <section class="intro">
-      <p>This is a public, factual record of open service escalations between CrossPeak Solutions and its PEO vendor, Vensure. Each entry documents what happened, who said what and when, the business impact, and exactly what resolution CrossPeak is asking for. Entries are maintained as matters progress.</p>
-      <h2 class="section-label">All escalations</h2>
-      <p class="section-caption">Sorted by oldest activity first.</p>
+      <p>This is a public, factual record of service escalations between CrossPeak Solutions and its PEO vendor, Vensure. Each entry documents what happened, who said what and when, the business impact, and exactly what resolution CrossPeak is asking for. Entries are maintained as matters progress.</p>
     </section>
-    <div id="escalation-list" class="card-grid"></div>
+    <div id="escalation-list"></div>
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <span class="f-brand">CrossPeak Solutions LLC</span>
-      <span class="f-tag">Your Success is our Business</span>
-      <span><a href="mailto:info@crosspeaksolutions.com">info@crosspeaksolutions.com</a></span>
+      <div class="footer-main">
+        <div class="footer-brand">
+          <img src="assets/cps-logo.png" alt="" class="footer-logo" />
+          <div>
+            <span class="f-brand">CrossPeak Solutions LLC</span>
+            <span class="f-tag">Your Success is our Business</span>
+          </div>
+        </div>
+        <div class="footer-links">
+          <a href="mailto:info@crosspeaksolutions.com">info@crosspeaksolutions.com</a>
+          <a href="index.html">Escalation Log</a>
+        </div>
+      </div>
+      <p class="footer-note">A factual, public service record. Maintained as matters progress.</p>
     </div>
   </footer>
 

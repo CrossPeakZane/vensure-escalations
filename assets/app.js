@@ -25,7 +25,8 @@
     users: '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>',
     linkedin: '<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6Z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>',
     lock: '<rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>',
-    unlock: '<rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/>'
+    unlock: '<rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/>',
+    logout: '<path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/>'
   };
 
   function ico(name, cls) {
@@ -103,6 +104,7 @@
   function avatarColorClass(companyId) {
     if (companyId === "crosspeak") return "av--crosspeak";
     if (companyId === "uniq") return "av--uniq";
+    if (companyId === "paychex") return "av--paychex";
     return "av--vensure";
   }
 
@@ -112,7 +114,8 @@
     var person = registry.people[player.id];
     if (!person) return null;
     var company = registry.companies[person.company] || null;
-    return { id: player.id, issueRole: player.issueRole || "", person: person, company: company };
+    var formerCompany = person.formerCompany ? (registry.companies[person.formerCompany] || null) : null;
+    return { id: player.id, issueRole: player.issueRole || "", person: person, company: company, formerCompany: formerCompany };
   }
 
   function resolvePlayers(players, registry) {
@@ -281,6 +284,16 @@
     return '<span class="company-chip">' + logo + esc(company.shortName || company.name || "") + '</span>';
   }
 
+  // Turnover marker: rendered after the CURRENT company chip when a person has
+  // since left a (former) vendor. Text + icon, never color alone. WCAG AA.
+  function formerBadge(formerCompany) {
+    if (!formerCompany) return "";
+    var label = formerCompany.shortName || formerCompany.name || "";
+    var title = "Was at " + label + " during this issue; has since left.";
+    return '<span class="former-chip" title="' + esc(title) + '">' +
+      ico("logout") + 'Formerly ' + esc(label) + '</span>';
+  }
+
   function playerCard(rp) {
     var person = rp.person;
     var linkedinBtn = person.linkedin
@@ -295,6 +308,7 @@
             '<span class="player-name">' + esc(person.name) + '</span>' +
             '<span class="player-title">' + esc(person.title || "") + '</span>' +
             companyChip(rp.company) +
+            formerBadge(rp.formerCompany) +
           '</div>' +
         '</div>' +
         (rp.issueRole ? '<p class="player-role">' + esc(rp.issueRole) + '</p>' : "") +

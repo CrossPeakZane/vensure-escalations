@@ -142,6 +142,8 @@ a:focus-visible,button:focus-visible{outline:none;box-shadow:var(--ring);border-
 .av--vensure .avatar-initials{background:var(--cps-navy)}
 .av--crosspeak .avatar-initials{background:var(--cps-action)}
 .av--uniq .avatar-initials{background:var(--cps-gray)}
+/* Paychex — distinct accessible teal (white text passes AA: #0F6E6E). */
+.av--paychex .avatar-initials{background:#0F6E6E}
 .avatar--card{width:60px;height:60px}
 .avatar--card .avatar-initials{font-size:1.18rem}
 .avatar--stack{width:32px;height:32px;box-shadow:0 0 0 2px #fff}
@@ -178,6 +180,14 @@ a:focus-visible,button:focus-visible{outline:none;box-shadow:var(--ring);border-
   background:var(--cps-bg-soft);border:1px solid var(--cps-line);
   padding:3px 9px;border-radius:var(--radius-pill)}
 .company-chip-logo{height:13px;width:auto;display:block}
+/* Turnover marker — muted factual footnote (not an alert). Text + icon
+   carry the meaning; color is secondary. Gray-on-soft passes WCAG AA. */
+.former-chip{display:inline-flex;align-items:center;gap:5px;
+  align-self:flex-start;margin-top:5px;
+  font-size:.72rem;font-weight:600;color:var(--cps-body);
+  background:var(--cps-bg-soft);border:1px solid var(--cps-line);
+  padding:2px 8px;border-radius:var(--radius-pill);cursor:default}
+.former-chip .svg-ico{width:12px;height:12px;color:var(--cps-gray)}
 .player-role{margin:0;font-size:.9rem;color:var(--cps-body);
   border-top:1px solid var(--cps-bg-soft);padding-top:10px}
 .player-linkedin{display:inline-flex;align-items:center;gap:6px;align-self:flex-start;

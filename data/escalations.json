@@ -4,11 +4,11 @@
       "id": "01",
       "slug": "ancillary-open-enrollment-2026",
       "title": "Mandatory ancillary benefits re-enrollment by 6/30 — never disclosed at signup",
-      "status": "Open — leadership call requested",
+      "status": "Exception granted — ancillaries realigned to the 1/1 renewal (no 6/30 lapse, no 7/1 re-enrollment); CEO & leadership meeting still requested",
       "category": "Benefits & Open Enrollment",
       "account": "CROSSPEAK SOLUTIONS — 45248",
       "opened": "2026-06-12",
-      "updated": "2026-06-17",
+      "updated": "2026-06-26",
       "players": [
         { "id": "jadiel-aponte",          "issueRole": "Sent the June 12 open-enrollment notice; assigned benefit manager" },
         { "id": "brittany-shively",       "issueRole": "Primary escalation point; confirmed the 6/30 lapse; tasked 5/15 to review contracts (no follow-up)" },
@@ -25,8 +25,8 @@
       ],
       "summary": "CrossPeak Solutions moved to Vensure (PEO) and completed benefits enrollment in December 2025, effective January 1, 2026. Vensure's 2026 Benefits Presentation described the coverage as the \"2026 plan year,\" effective \"January 1, 2026 through December 31, 2026.\" Beginning in March 2026 — roughly three months after enrollment — Vensure began telling CrossPeak that its ancillary benefits (dental, vision, life, disability, accident, and similar lines) actually run on a July 1–June 30 master plan year and would lapse on June 30, 2026 unless employees actively re-enrolled during a June 17–24 window. This July 1–June 30 ancillary cycle and the active re-enrollment requirement were never disclosed during sales or onboarding. Across roughly nine email threads over eight months, multiple Vensure representatives gave inconsistent answers or non-answers, and a documented commitment to review the contract for ancillary timelines went unanswered. The dispute over what CrossPeak was sold versus what Vensure now asserts remains open; CrossPeak has requested a call with Vensure leadership. On June 17, 2026, CrossPeak confirmed that the signed Benefit Election Contract does state coverage is effective through June 30, 2026 — a detail CrossPeak did not catch and that Vensure never pointed out; the core failure is that this was never surfaced during onboarding.",
       "note": {
-        "title": "What we've confirmed — and where CrossPeak owns it",
-        "html": "<p><strong>Confirmed today (June 17, 2026):</strong> the signed Vensure Benefit Election Contract (BEC) does state that the elections and rates are <em>\"effective through June 30, 2026.\"</em> In fairness, that language is in the document CrossPeak signed, and Zane did not catch it at signing.</p><p>The issue CrossPeak is raising is not that the date is missing — it is that <strong>no one at Vensure ever mentioned, flagged, or walked through the June 30 ancillary cutoff</strong> during sales, signing, or onboarding, while Vensure's own 2026 Benefits Presentation simultaneously described the coverage as the <em>\"January 1 – December 31, 2026 plan year.\"</em> Surfacing a buried, consequential end date is exactly what a PEO's onboarding is supposed to do.</p><p>Paired with the onboarding failures documented in <a href=\"escalation.html?id=04\">escalation #04</a> — where CrossPeak's policy and agreement templates were never requested or loaded — this reflects a <strong>significant onboarding miss on Vensure's part</strong>, not a one-off oversight.</p>"
+        "title": "Update — Vensure granted the exception; the leadership conversation is still owed",
+        "html": "<p><strong>Update (June 18, 2026):</strong> after escalation, Vensure's benefit leadership <strong>approved an exception</strong>. Per AVP Brittany Shively, Vensure is <em>\"shutting down the ancillary open enrollment\"</em>; CrossPeak's ancillary benefits <strong>will now align with the January 1 renewal of the medical plan for all future renewals</strong>, and CrossPeak <em>\"will not be required to renew ancillaries on the 7/1 renewal date.\"</em> This removes the June 30 lapse risk and the forced mid-year re-enrollment — the outcome CrossPeak asked for. What remains open is the larger conversation: CrossPeak's standing request to meet Vensure's CEO and the account's supporting leadership — reiterated June 26 — has not yet been scheduled.</p><p><strong>Confirmed June 17, 2026:</strong> the signed Vensure Benefit Election Contract (BEC) does state that the elections and rates are <em>\"effective through June 30, 2026.\"</em> In fairness, that language is in the document CrossPeak signed, and Zane did not catch it at signing.</p><p>The issue CrossPeak is raising is not that the date is missing — it is that <strong>no one at Vensure ever mentioned, flagged, or walked through the June 30 ancillary cutoff</strong> during sales, signing, or onboarding, while Vensure's own 2026 Benefits Presentation simultaneously described the coverage as the <em>\"January 1 – December 31, 2026 plan year.\"</em> Surfacing a buried, consequential end date is exactly what a PEO's onboarding is supposed to do.</p><p>Paired with the onboarding failures documented in <a href=\"escalation.html?id=04\">escalation #04</a> — where CrossPeak's policy and agreement templates were never requested or loaded — this reflects a <strong>significant onboarding miss on Vensure's part</strong>, not a one-off oversight.</p>"
       },
       "impact": [
         "Roughly two weeks' notice on a hard deadline: ancillary coverage lapses June 30, 2026 if enrollment is not completed.",
@@ -60,13 +60,15 @@
         { "date": "2026-06-17", "time": "12:15 PM ET", "actor": "Brittany Shively", "role": "AVP, Service Operations, Vensure", "party": "vensure", "text": "Will connect with leadership to find available times. Executive Richard Heckner added to the thread." },
         { "date": "2026-06-17", "time": "12:19 PM ET", "actor": "Zane Perry", "role": "Partner, CrossPeak", "party": "crosspeak", "text": "Will compile this published record and review the signed agreements regarding the ancillary term." },
         { "date": "2026-06-17", "time": "", "actor": "Zane Perry", "role": "Partner, CrossPeak", "party": "crosspeak", "text": "Separately messaged Vensure's CEO directly on LinkedIn to request a meeting — in addition to asking Brittany Shively to schedule a leadership call — to ensure the request reaches leadership." },
-        { "date": "2026-06-17", "time": "", "actor": "Zane Perry", "role": "Partner, CrossPeak", "party": "crosspeak", "text": "On reviewing the signed Benefit Election Contract, CrossPeak confirms it does state coverage is 'effective through June 30, 2026' — language CrossPeak did not catch at signing and that Vensure never flagged or explained during onboarding." }
+        { "date": "2026-06-17", "time": "", "actor": "Zane Perry", "role": "Partner, CrossPeak", "party": "crosspeak", "text": "On reviewing the signed Benefit Election Contract, CrossPeak confirms it does state coverage is 'effective through June 30, 2026' — language CrossPeak did not catch at signing and that Vensure never flagged or explained during onboarding." },
+        { "date": "2026-06-18", "time": "11:17 AM ET", "actor": "Zane Perry", "role": "Partner, CrossPeak", "party": "crosspeak", "text": "With hours left before the enrollment window and the 6/30 cutoff, presses for the next step to keep his team's ancillary coverage in place while the escalation is pending." },
+        { "date": "2026-06-18", "time": "3:38 PM ET", "actor": "Brittany Shively", "role": "AVP, Service Operations, Vensure", "party": "vensure", "text": "Exception granted: 'We escalated this to the benefit leadership, and we have received approval for the exception… we will be proceeding with shutting down the ancillary open enrollment. Your ancillary benefits will now align with the 1/1 renewal of your medical moving forward for all renewals. You will not be required to renew ancillaries on the 7/1 renewal date.' Removes the 6/30 lapse and the forced re-enrollment." },
+        { "date": "2026-06-26", "time": "11:06 AM ET", "actor": "Zane Perry", "role": "Partner, CrossPeak", "party": "crosspeak", "text": "Reiterates the standing request to meet Vensure's CEO and all supporting leadership of the account, asking to schedule the discussion as soon as he returns on Tuesday — still unscheduled." }
       ],
       "asks": [
-        "Written confirmation of the ancillary benefits term CrossPeak agreed to, reconciled against Vensure's own 2026 Benefits Presentation (which states a January 1–December 31, 2026 plan year).",
+        "Written confirmation of the approved exception — that CrossPeak's ancillary benefits now align to the January 1 renewal and that no July 1 re-enrollment is required — for CrossPeak's records. (Granted verbally by email 6/18; confirmation requested.)",
         "An explanation of why the July 1–June 30 ancillary cycle and the active re-enrollment requirement were not disclosed during sales or onboarding.",
-        "Given the late notice, that ancillary coverage be honored through December 31, 2026 as communicated — or that the June 30 lapse be waived and a no-cost extension granted.",
-        "A call with Vensure leadership — CEO included — with all current parties on copy."
+        "The requested call with Vensure leadership — CEO included — with all current parties on copy; reiterated June 26 and not yet scheduled."
       ],
       "references": [
         "Email cluster (Nov 2025 – Jun 2026), ~9 threads, incl.: \"Action Requested: Open Enrollment Dates Available Now — CROSSPEAK SOLUTIONS — 45248\"; \"2026 Open Enrollment Crosspeak Solutions\"; \"Vensure — Medical 1/1\"; \"Meeting follow up\"; \"Crosspeak Solutions: Benefit Timeline\".",
@@ -128,12 +130,12 @@
     {
       "id": "03",
       "slug": "state-tax-registration-2026",
-      "title": "Multi-state tax registration and access never completed after the PEO migration — unresolved ~37 weeks",
-      "status": "Open — tax working session held 6/10; South Carolina agent-role conflict still unresolved",
+      "title": "Multi-state tax registration and access never completed after the PEO migration — unresolved ~40 weeks",
+      "status": "Open — ~40 weeks; SC payroll-tax agent clarified 6/16 (Cohesive Networks 2 / SC8P2J); Georgia DOL-1N reactivation in GDOL's processing queue (6/18)",
       "category": "State Tax & Registration",
       "account": "CROSSPEAK SOLUTIONS — 45248",
       "opened": "2026-03-02",
-      "updated": "2026-06-17",
+      "updated": "2026-06-26",
       "players": [
         { "id": "brie-dixon",       "issueRole": "Onboarding business consultant; first raised the unfinished state tax-ID registrations (3/2); onboarding did not complete them" },
         { "id": "brittany-shively", "issueRole": "AVP Service Operations; primary escalation point; her 5/14 status reply omitted California" },
@@ -145,14 +147,15 @@
         { "id": "velzie-martin",    "issueRole": "GDOL staff (external); directed the Georgia DOL-1N reactivation path" },
         { "id": "zane-perry",       "issueRole": "Raised and tracked the escalation, and personally regained access to each state portal" }
       ],
-      "summary": "When CrossPeak migrated from Engage PEO to Vensure in late 2025, Vensure did not complete CrossPeak's state employment-tax registrations and access in four states — South Carolina, California, Georgia, and Illinois. It surfaced in March 2026, then stalled on a recurring blocker: CrossPeak's FEIN already had existing state accounts, so Vensure could not register new ones and instead needed either CrossPeak's portal logins or third-party-agent authority via signed POAs. Over the following months CrossPeak signed every POA requested and personally regained access to each state portal, while repeatedly asking Vensure to name one accountable owner and to hold a working call with its tax lead. By mid-May the items were in their 34th week; Zane requested a call three times between 5/27 and 6/8 with none scheduled, and Vensure's 5/14 status update omitted California entirely. A tax-team call finally occurred 6/10. As of 6/17, South Carolina filing access is still blocked by an unresolved agent-role conflict in the state portal.",
+      "summary": "When CrossPeak migrated from Engage PEO to Vensure in late 2025, Vensure did not complete CrossPeak's state employment-tax registrations and access in four states — South Carolina, California, Georgia, and Illinois. It surfaced in March 2026, then stalled on a recurring blocker: CrossPeak's FEIN already had existing state accounts, so Vensure could not register new ones and instead needed either CrossPeak's portal logins or third-party-agent authority via signed POAs. Over the following months CrossPeak signed every POA requested and personally regained access to each state portal, while repeatedly asking Vensure to name one accountable owner and to hold a working call with its tax lead. By mid-May the items were in their 34th week; Zane requested a call three times between 5/27 and 6/8 with none scheduled, and Vensure's 5/14 status update omitted California entirely. A tax-team call occurred 6/10. On 6/16 Vensure's payroll-tax SVP clarified the South Carolina SUITS roles — the payroll-tax agent is Cohesive Networks 2 Inc (SC8P2J), while the conflicting agent Vensure TPA LLC (SC9Z6Y) handles unemployment claims only — giving CrossPeak the direction to reassign the wage and payment roles. Georgia's DOL-1N reactivation was acknowledged by the GDOL Office of Adjudication on 6/18 and is in its processing queue. As of late June the matter is in roughly its 40th week, and CrossPeak still has no written confirmation that the overdue state filings have been completed.",
       "impact": [
-        "Four states (SC, CA, GA, IL) without confirmed Vensure tax access for roughly 37 weeks after migration — risk of late or missed employer state tax filings for Q1–Q2 2026.",
+        "Four states (SC, CA, GA, IL) without confirmed Vensure tax access for roughly 40 weeks after migration — risk of late or missed employer state tax filings for Q1–Q2 2026.",
         "Potential penalty/interest exposure; CrossPeak has no written confirmation of filing status per state or of who covers penalties under the Client Service Agreement.",
         "CrossPeak (the client) had to do the recovery work itself — regaining portal access, chasing the prior PEO and the states, and maintaining its own tracker.",
         "Three documented requests for a working call (5/27, 6/1–6/2, 6/5–6/8) went unscheduled; a 6/3 reply asked for credentials and ignored the call request.",
         "California was omitted from Vensure's 5/14 written status update despite Vensure holding the EDD credentials and TPA data since 4/30.",
-        "As of 6/17 South Carolina roles cannot be assigned because the SUITS portal allows one agent per role and Vensure's claims agent conflicts with its payroll-tax agent."
+        "South Carolina: on 6/16 Vensure clarified the SUITS roles (payroll-tax agent = Cohesive Networks 2 Inc / SC8P2J; Vensure TPA LLC / SC9Z6Y = unemployment claims only), so CrossPeak can now reassign the wage and payment roles — but the overdue SC filings are not yet confirmed complete.",
+        "Georgia: the DOL-1N reactivation was submitted 6/10 and acknowledged by GDOL on 6/18 as in its processing queue (confirmation letter to be mailed) — access not yet restored."
       ],
       "timeline": [
         { "date": "2026-03-02", "time": "3:42 PM ET", "actor": "Brie Dixon", "role": "Business Consultant, Vensure", "party": "vensure", "text": "States Vensure still needs to apply for CrossPeak's state tax IDs and asks for per-state start dates and whether Engage restored portal access." },
@@ -167,7 +170,9 @@
         { "date": "2026-06-05", "time": "4:23 PM ET", "actor": "Zane Perry", "role": "Partner, CrossPeak", "party": "crosspeak", "text": "Notes 'we have done a full circle,' that items are in their 37th week, and that he has asked for a call three times in a week and a half with none scheduled." },
         { "date": "2026-06-10", "time": "3:30 PM ET", "actor": "Misty Ramsey", "role": "SVP Payroll Tax, Vensure", "party": "vensure", "text": "Joins the working call (with both Brittanys) to address SC, IL and GA." },
         { "date": "2026-06-16", "time": "2:07 PM ET", "actor": "Zane Perry", "role": "Partner, CrossPeak", "party": "crosspeak", "text": "Explains again that the SC SUITS portal will not allow overlapping delegates for two organizations and asks how to proceed." },
-        { "date": "2026-06-16", "time": "7:25 PM ET", "actor": "Misty Ramsey", "role": "SVP Payroll Tax, Vensure", "party": "vensure", "text": "Clarifies which SC agent handles claims vs. payroll tax — but does not resolve the SUITS one-agent-per-role conflict." }
+        { "date": "2026-06-16", "time": "7:18 PM ET", "actor": "Misty Ramsey", "role": "SVP Payroll Tax, Vensure", "party": "vensure", "text": "Clarifies that SC9Z6Y (Vensure TPA LLC) is not the payroll-tax agent — 'Vensure TPA is for claims.'" },
+        { "date": "2026-06-16", "time": "7:25 PM ET", "actor": "Misty Ramsey", "role": "SVP Payroll Tax, Vensure", "party": "vensure", "text": "Confirms SC8P2J (Cohesive Networks 2 Inc) is Vensure's payroll-tax agent for wage submission, payments, and account maintenance per the POA — identifying which agent should hold the SUITS payroll-tax roles so CrossPeak can reassign them." },
+        { "date": "2026-06-18", "time": "8:37 AM ET", "actor": "Zane Perry", "role": "Partner, CrossPeak", "party": "crosspeak", "text": "Receives GDOL (Office of Adjudication) confirmation that Georgia's DOL-1N reactivation is in the processing queue; a confirmation letter will be mailed to the address on file once the application is processed." }
       ],
       "asks": [
         "Written confirmation of CrossPeak's Q1 and Q2 2026 state tax filing status in all four states — what is filed, what is late, and who covers any penalties or interest under the Client Service Agreement.",

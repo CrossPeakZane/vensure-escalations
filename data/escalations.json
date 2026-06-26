@@ -123,7 +123,7 @@
       ],
       "references": [
         "Email thread 'Payroll' / late-run escalation (April 2026); Vensure 'Service Operations' reorg announcement (effective 4/13/2026).",
-        "Vensure participants: Amiee Caldwell (former payroll lead), Brittany Taylor (Service Operations Supervisor), Brittany Shively (AVP Service Operations). CrossPeak: Zane Perry, Natalie Christie.",
+        "Vensure participants: Amiee Caldwell (former payroll lead), Brittany Taylor (Service Operations Supervisor), Brittany Shively (AVP Service Operations). CrossPeak: Zane Perry, N.C.",
         "Note: a small Vensure invoice ($152.56, dated 2/13/2026) was also left ~91 days past due."
       ]
     },
@@ -206,7 +206,7 @@
         { "id": "olivia-small",     "issueRole": "New hire (started 6/15) who received nothing from Vensure to sign" },
         { "id": "zane-perry",       "issueRole": "Raised the company-documents question repeatedly since January; rebuilt all templates overnight" }
       ],
-      "summary": "When CrossPeak migrated from Engage to Vensure, Vensure's implementation scope covered only tax and payroll setup — it never requested CrossPeak's existing-employee hire paperwork or its new-hire policy, handbook, and agreement templates, and none were ever loaded into the onboarding workflow. Zane raised the question of company onboarding documents repeatedly from January onward, and the May 15 'responsibilities' outline assigned no owner for template creation. The gap surfaced concretely on Monday 6/15/2026 when two new hires — Ty Mitchell and Olivia Small — started and received nothing to sign. Only on 6/16 was CrossPeak first told in writing that the finished templates had to come from CrossPeak; CrossPeak rebuilt them overnight and delivered them. On 6/17 Vensure said the new templates will take its Client Solutions team '2+ weeks' to process, and separately ruled that NDAs, non-competes, confidentiality, arbitration, and employment-contract documents are not permitted in the onboarding workflow at all.",
+      "summary": "When CrossPeak migrated from Engage to Vensure, Vensure's implementation scope covered only tax and payroll setup — it never requested CrossPeak's existing-employee hire paperwork or its new-hire policy, handbook, and agreement templates, and none were ever loaded into the onboarding workflow. Zane raised the question of company onboarding documents repeatedly from January onward, and the May 15 'responsibilities' outline assigned no owner for template creation. The gap surfaced concretely on Monday 6/15/2026 when two new hires — T.M. and O.S. — started and received nothing to sign. Only on 6/16 was CrossPeak first told in writing that the finished templates had to come from CrossPeak; CrossPeak rebuilt them overnight and delivered them. On 6/17 Vensure said the new templates will take its Client Solutions team '2+ weeks' to process, and separately ruled that NDAs, non-competes, confidentiality, arbitration, and employment-contract documents are not permitted in the onboarding workflow at all.",
       "impact": [
         "Two new hires started 6/15/2026 with no CrossPeak policy, handbook, or agreement documents to sign — no executed acknowledgements for either.",
         "Records gap: CrossPeak's signed employee-document library was never carried across PEO migrations (Engage never handed it over; Vensure never requested it).",
@@ -219,7 +219,7 @@
         { "date": "2025-12-10", "time": "", "actor": "Amiee Caldwell", "role": "Sr. Implementation Consultant, Vensure", "party": "vensure", "text": "Implementation welcome call. The 'Items Needed' list is entirely tax/payroll — no request for existing-employee hire paperwork or new-hire policy/handbook templates." },
         { "date": "2026-05-14", "time": "12:58 PM ET", "actor": "Zane Perry", "role": "Partner, CrossPeak", "party": "crosspeak", "text": "Leadership Alignment email: 'After approximately four months of asking about onboarding templates and historical HR documents being loaded… This should have been addressed during the initial onboarding phase.'" },
         { "date": "2026-05-15", "time": "2:44 PM ET", "actor": "Brittany Shively", "role": "AVP Service Operations, Vensure", "party": "vensure", "text": "Post-meeting responsibilities outline — no action item for onboarding-template creation is assigned to anyone." },
-        { "date": "2026-06-15", "time": "4:40 PM ET", "actor": "Zane Perry", "role": "Partner, CrossPeak", "party": "crosspeak", "text": "Reports new hire Ty has received nothing from Vensure; asks Vensure to confirm both new hires are in the onboarding process." },
+        { "date": "2026-06-15", "time": "4:40 PM ET", "actor": "Zane Perry", "role": "Partner, CrossPeak", "party": "crosspeak", "text": "Reports new hire T.M. has received nothing from Vensure; asks Vensure to confirm both new hires are in the onboarding process." },
         { "date": "2026-06-15", "time": "5:50 PM ET", "actor": "Zane Perry", "role": "Partner, CrossPeak", "party": "crosspeak", "text": "'What about the employment agreement and all other policy documents every employee signs?… there was an action to get all policies and employee agreements loaded into the system.'" },
         { "date": "2026-06-16", "time": "12:16 PM ET", "actor": "Stella Anah", "role": "Senior HR Business Partner, Vensure", "party": "vensure", "text": "First clear written statement of ownership: 'Vensure does not create onboarding document templates. However, you are welcome to provide the specific templates you would like included…' — after the hires had already started." },
         { "date": "2026-06-16", "time": "11:38 PM ET", "actor": "Zane Perry", "role": "Partner, CrossPeak", "party": "crosspeak", "text": "Delivers the finalized, rebuilt template set to Vensure for loading — rebuilt from the document set Engage previously had every new hire sign." },
@@ -234,9 +234,9 @@
         "Confirm the two new hires' statutory items (I-9 / E-Verify) are complete or on a tracked deadline, independent of the template backlog."
       ],
       "references": [
-        "Email threads: 'New Hire Onboarding — Ty Mitchell & Olivia Small (starting 6/15)'; 'CrossPeak Onboarding Policies & Employee Handbook — please load and send for signature'; 'Request for Leadership Alignment Meeting'; 'Meeting follow up' (5/15 responsibilities).",
+        "Email threads: 'New Hire Onboarding — T.M. & O.S. (starting 6/15)'; 'CrossPeak Onboarding Policies & Employee Handbook — please load and send for signature'; 'Request for Leadership Alignment Meeting'; 'Meeting follow up' (5/15 responsibilities).",
         "Drive: the rebuilt onboarding template set (created 6/16–6/17/2026); the Nov 2025 Implementation Welcome Call deck ('Items Needed' = tax/payroll only); Engage/Vensure 'Open Issues' notes.",
-        "Vensure participants: Stella Anah, Brittany Taylor, Brittany Shively, Amiee Caldwell, plus PrismHR platform contacts. New hires referenced by name and role only (no personal data)."
+        "Vensure participants: Stella Anah, Brittany Taylor, Brittany Shively, Amiee Caldwell, plus PrismHR platform contacts. New hires and staff referenced by initials and role only (no personal data)."
       ]
     },
     {
@@ -248,7 +248,7 @@
       "kudos": {
         "title": "Resolved — thank you to the team",
         "heroIds": [],
-        "html": "<p>Donna Hudson was able to work directly with the Slavic401k / PrismHR team to restore her access, get her statements, and correct the missed loan-repayment deductions. Thank you to the team for stepping in and supporting Donna all the way to a clean resolution.</p>"
+        "html": "<p>D.H. was able to work directly with the Slavic401k / PrismHR team to restore her access, get her statements, and correct the missed loan-repayment deductions. Thank you to the team for stepping in and supporting her all the way to a clean resolution.</p>"
       },
       "category": "Benefits / 401(k)",
       "account": "CROSSPEAK SOLUTIONS — 45248",
@@ -260,7 +260,7 @@
         { "id": "james-kaiser",     "issueRole": "PrismHR client-service contact in the handoff chain" },
         { "id": "zane-perry",       "issueRole": "Escalated on behalf of the affected employee" }
       ],
-      "summary": "After CrossPeak migrated to Vensure, a CrossPeak employee (Donna Hudson) lost access to her 401(k) information, received no statement of any postings since the transfer, and — most seriously — found that loan-repayment deductions were not being taken for multiple pay periods, throwing off her payoff schedule. The recordkeeper is Slavic401k, administered through the PrismHR platform. The assigned point of contact did not have the credentials needed to answer basic questions, leaving the employee without a clear path to resolution.",
+      "summary": "After CrossPeak migrated to Vensure, a CrossPeak employee (D.H.) lost access to her 401(k) information, received no statement of any postings since the transfer, and — most seriously — found that loan-repayment deductions were not being taken for multiple pay periods, throwing off her payoff schedule. The recordkeeper is Slavic401k, administered through the PrismHR platform. The assigned point of contact did not have the credentials needed to answer basic questions, leaving the employee without a clear path to resolution.",
       "impact": [
         "Loan-repayment deductions not taken for multiple pay periods — a payroll-accuracy and fiduciary concern, not just an access annoyance.",
         "No 401(k) statements or visibility into postings since the transfer began, so the employee cannot verify her own account.",
@@ -268,11 +268,11 @@
         "Undermines employee trust in retirement administration during the PEO transition."
       ],
       "timeline": [
-        { "date": "2026-04-22", "time": "", "actor": "Donna Hudson", "role": "Employee, CrossPeak", "party": "crosspeak", "text": "Reports she cannot access any 401(k) information since the move to Vensure, has no statement of postings since the transfer, and that deductions have not been taken for many pay periods, throwing off her goal." },
+        { "date": "2026-04-22", "time": "", "actor": "D.H.", "role": "Employee, CrossPeak", "party": "crosspeak", "text": "Reports she cannot access any 401(k) information since the move to Vensure, has no statement of postings since the transfer, and that deductions have not been taken for many pay periods, throwing off her goal." },
         { "date": "2026-04-22", "time": "", "actor": "Zane Perry", "role": "Partner, CrossPeak", "party": "crosspeak", "text": "Escalates to Vensure and asks who can answer for the Slavic401k account and correct the missed deductions." },
         { "date": "2026-04-23", "time": "", "actor": "Bracken El-Bakri", "role": "401(k) Support, PrismHR", "party": "vensure", "text": "Assigned as 401(k) POC but does not have the credentials to access the account and answer the questions." },
         { "date": "2026-04-24", "time": "", "actor": "James Kaiser", "role": "Client Service, PrismHR", "party": "vensure", "text": "Surfaces in the contact-handoff chain for the Slavic/PrismHR 401(k) platform." },
-        { "date": "2026-06-17", "time": "", "actor": "Donna Hudson", "role": "Employee, CrossPeak", "party": "crosspeak", "text": "Worked directly with the Slavic401k / PrismHR team to restore access, obtain statements, and correct the missed loan-repayment deductions — issue resolved." }
+        { "date": "2026-06-17", "time": "", "actor": "D.H.", "role": "Employee, CrossPeak", "party": "crosspeak", "text": "Worked directly with the Slavic401k / PrismHR team to restore access, obtain statements, and correct the missed loan-repayment deductions — issue resolved." }
       ],
       "asks": [
         "Confirm in writing whether loan-repayment deductions were missed, for which pay periods, and the plan to correct the schedule and any make-up contributions.",
@@ -283,7 +283,7 @@
       "references": [
         "Slack DM (Zane ↔ affected employee, 4/22/2026): could not access 401(k) since moving to Vensure; no statement of posts; deductions not taken for many pay periods.",
         "Email 'Meeting follow up' and PrismHR contact handoff; recordkeeper Slavic401k via the PrismHR platform.",
-        "Participants: Donna Hudson (CrossPeak), Bracken El-Bakri and James Kaiser (PrismHR/Slavic). No account numbers or personal data included."
+        "Participants: D.H. (CrossPeak employee, by initials), Bracken El-Bakri and James Kaiser (PrismHR/Slavic). No account numbers or personal data included."
       ]
     },
     {
@@ -340,6 +340,56 @@
         "Email 'Handoff' (5/11/2026) and 'Introducing Your Client Growth Consultant' (5/11–5/14/2026).",
         "State-registration and payroll threads documenting the lack of a single owner and the reorg-driven contact change.",
         "LinkedIn: Brie Dixon now lists Paychex as her employer (formerly Vensure)."
+      ]
+    },
+    {
+      "id": "07",
+      "slug": "i9-approval-payroll-halt-2026",
+      "title": "New-hire I-9 approval stuck in PrismHR — Vensure says it is halting payroll, but the approval is not actionable on CrossPeak's side",
+      "status": "Open — Vensure says a pending I-9 Section 2 approval is halting payroll; the approval link is broken and nothing appears in CrossPeak's PrismHR queue",
+      "category": "Onboarding / Payroll",
+      "account": "CROSSPEAK SOLUTIONS — 45248",
+      "opened": "2026-06-23",
+      "updated": "2026-06-26",
+      "players": [
+        { "id": "brittany-taylor",  "issueRole": "Service Operations Supervisor; reported the pending I-9 approval was 'causing a halt to the Payroll' (6/25)" },
+        { "id": "jose-ochoa",       "issueRole": "Payroll contact looped in on the new-employee payroll question" },
+        { "id": "stella-anah",      "issueRole": "Senior HR Business Partner; added to the escalation thread" },
+        { "id": "brittany-shively", "issueRole": "AVP Service Operations; out of office 6/26 with payroll pending" },
+        { "id": "ty-mitchell",      "issueRole": "New hire (started 6/15) whose I-9 Section 2 approval is the item Vensure says is halting payroll" },
+        { "id": "olivia-small",     "issueRole": "New hire (started 6/15) held off the payroll sheet pending banking and tax-withholding information" },
+        { "id": "natalie-christie", "issueRole": "CrossPeak operations contact who flagged that one new hire was missing from the payroll sheet" },
+        { "id": "zane-perry",       "issueRole": "Raised the escalation; reported the PrismHR approval link did not work and that no I-9 appeared in the approvals queue" }
+      ],
+      "summary": "Two new hires (T.M. and O.S.) started June 15, 2026 under Vensure. On June 23 Vensure's system emailed CrossPeak to complete Section 2 of Form I-9 for T.M.; on June 25 CrossPeak's Service Operations Supervisor at Vensure said the pending I-9 approval was 'causing a halt to the Payroll.' When CrossPeak attempted to complete it, the PrismHR approval link did not work and no item appeared in CrossPeak's approvals queue — CrossPeak confirmed 'There is no I-9 awaiting approval.' Form I-9 Section 2 is the employer's responsibility and is normally due within three business days of the hire's first day (T.M. started 6/15, already past), yet the record Vensure pointed to was not actionable on CrossPeak's side — a catch-22 in which Vensure says payroll is halted while CrossPeak cannot clear the block as presented. Separately, O.S. was held off the payroll sheet pending banking and tax-withholding information. By June 26 both of CrossPeak's assigned Vensure contacts were out of office until June 29 with payroll still pending.",
+      "impact": [
+        "Vensure states a single unapproved I-9 is halting CrossPeak's entire payroll run — putting on-time pay for the team at risk over a process Vensure controls.",
+        "The PrismHR approval link CrossPeak was sent does not work and no I-9 appears in CrossPeak's approvals queue, so the action Vensure says is required cannot be completed as presented.",
+        "Form I-9 Section 2 was already past its standard three-business-day deadline (new hire started 6/15) while the record sat un-actionable — a statutory-timing risk.",
+        "No backup coverage: the blocker surfaced 6/25 and by 6/26 both assigned Vensure contacts were out of office until 6/29 with payroll pending.",
+        "A second new hire was held off the payroll sheet pending banking and tax-withholding details — a separate but concurrent onboarding-to-payroll gap."
+      ],
+      "timeline": [
+        { "date": "2026-06-23", "time": "11:10 AM ET", "actor": "N.C.", "role": "Operations, CrossPeak", "party": "crosspeak", "text": "Flags that new hire T.M. is on the payroll sheet but O.S. is not, and asks whether something is pending on the new hire's end." },
+        { "date": "2026-06-23", "time": "11:26 AM ET", "actor": "Brittany Taylor", "role": "Service Operations Supervisor, Vensure", "party": "vensure", "text": "Identifies that O.S. still needs banking information and tax verification before being added." },
+        { "date": "2026-06-23", "time": "3:24 PM ET", "actor": "Vensure (PrismHR system)", "role": "Automated notice", "party": "vensure", "text": "System emails CrossPeak two notices — 'ACTION REQUIRED: I-9 Needs Verification' and 'I-9 Section 2 Approval needed' — for new hire T.M., with a PrismHR approval link." },
+        { "date": "2026-06-25", "time": "4:35 PM ET", "actor": "Brittany Taylor", "role": "Service Operations Supervisor, Vensure", "party": "vensure", "text": "Reports the new hire's pending I-9 approval 'is causing a halt to the Payroll' and asks CrossPeak to approve it." },
+        { "date": "2026-06-26", "time": "11:02 AM ET", "actor": "Zane Perry", "role": "Partner, CrossPeak", "party": "crosspeak", "text": "Replies that the PrismHR approval link does not work and that nothing appears under approvals; asks where the second new hire's record is." },
+        { "date": "2026-06-26", "time": "11:03 AM ET", "actor": "Zane Perry", "role": "Partner, CrossPeak", "party": "crosspeak", "text": "Notes 'Payroll is pending this action' and adds the HR Business Partner to the thread." },
+        { "date": "2026-06-26", "time": "11:06 AM ET", "actor": "Zane Perry", "role": "Partner, CrossPeak", "party": "crosspeak", "text": "Finding both assigned Vensure contacts out of office, escalates to the wider account team and reiterates the request to meet account leadership." },
+        { "date": "2026-06-26", "time": "11:12 AM ET", "actor": "Zane Perry", "role": "Partner, CrossPeak", "party": "crosspeak", "text": "Confirms with a screenshot that 'There is no I-9 awaiting approval' in CrossPeak's PrismHR queue." }
+      ],
+      "asks": [
+        "Repair the PrismHR I-9 approval record (or provide a working link) so CrossPeak can complete Section 2 — or have Vensure complete the employer verification — before the payroll deadline.",
+        "Confirm in writing that both new hires' statutory I-9 / E-Verify items are complete or on a tracked deadline, independent of the payroll-system issue.",
+        "Decouple a single new-hire onboarding item from the entire payroll run, so one stuck approval cannot halt pay for the whole company.",
+        "Provide a named backup / escalation contact when the assigned representatives are out of office and payroll is pending.",
+        "Resolve the second new hire's banking and tax-withholding setup so she is added to the payroll sheet."
+      ],
+      "references": [
+        "Email threads (June 2026): 'I-9 Section 2 Approval needed (CROSSPEAK SOLUTIONS)'; 'ACTION REQUIRED: I-9 Needs Verification'; 'CrossPeak Solutions — New Employee'.",
+        "Vensure participants: Brittany Taylor (Service Operations Supervisor), Brittany Shively (AVP Service Operations), Stella Anah (Sr. HR Business Partner), Jose Ochoa (Payroll). CrossPeak: Zane Perry; new hires and staff referenced by initials only — no employee personal data, account numbers, or approval tokens included.",
+        "Form I-9 Section 2 is completed by the employer within three business days of the employee's first day (USCIS)."
       ]
     }
   ]

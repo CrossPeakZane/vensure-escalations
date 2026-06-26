@@ -191,11 +191,15 @@
       "id": "04",
       "slug": "account-never-properly-onboarded",
       "title": "CrossPeak's account was never properly onboarded — new-hire policy and agreement templates were never requested or loaded",
-      "status": "Open — templates delivered 6/16; Vensure quotes 2+ weeks to load",
+      "status": "Open — UNACCEPTABLE: as of 6/26 Vensure still has not delivered the templates to CrossPeak's two new hires for signature; CrossPeak is having to send them itself",
       "category": "Onboarding / Implementation",
       "account": "CROSSPEAK SOLUTIONS — 45248",
       "opened": "2026-06-15",
-      "updated": "2026-06-17",
+      "updated": "2026-06-26",
+      "note": {
+        "title": "Unacceptable: Vensure still is not getting the documents to CrossPeak's new hires — CrossPeak is having to do it itself",
+        "html": "<p>As of <strong>June 26, 2026</strong>, Vensure has <strong>still not delivered CrossPeak's policy and agreement templates to its two new hires for signature</strong>. With Vensure stalled, CrossPeak has been forced to send these documents out for signature on its own — the exact onboarding function CrossPeak pays Vensure, as its PEO, to perform.</p><p>This is <strong>unacceptable</strong>. The templates were delivered to Vensure on June 16; there is no justification for new hires sitting with nothing executed while the clock runs. Vensure needs to <strong>get CrossPeak's templates into the onboarding workflow and out to its staff for signature now</strong> — measured in days, not a multi-week queue.</p>"
+      },
       "players": [
         { "id": "stella-anah",      "issueRole": "Senior HR Business Partner; author of the 'Vensure does not create templates' and '2+ weeks' statements" },
         { "id": "brittany-taylor",  "issueRole": "Service Operations Supervisor; payroll/system POC and onboarding routing" },
@@ -206,6 +210,7 @@
       "summary": "When CrossPeak migrated from Engage to Vensure, Vensure's implementation scope covered only tax and payroll setup — it never requested CrossPeak's existing-employee hire paperwork or its new-hire policy, handbook, and agreement templates, and none were ever loaded into the onboarding workflow. Zane raised the question of company onboarding documents repeatedly from January onward, and the May 15 'responsibilities' outline assigned no owner for template creation. The gap surfaced concretely on Monday 6/15/2026 when two new hires — T.M. and O.S. — started and received nothing to sign. Only on 6/16 was CrossPeak first told in writing that the finished templates had to come from CrossPeak; CrossPeak rebuilt them overnight and delivered them. On 6/17 Vensure said the new templates will take its Client Solutions team '2+ weeks' to process, and separately ruled that NDAs, non-competes, confidentiality, arbitration, and employment-contract documents are not permitted in the onboarding workflow at all.",
       "impact": [
         "Two new hires started 6/15/2026 with no CrossPeak policy, handbook, or agreement documents to sign — no executed acknowledgements for either.",
+        "As of 6/26/2026 Vensure has still not delivered the templates to the two new hires for signature — CrossPeak is having to send its own onboarding documents out for signature, the exact function it pays its PEO to handle.",
         "Records gap: CrossPeak's signed employee-document library was never carried across PEO migrations (Engage never handed it over; Vensure never requested it).",
         "CrossPeak had to recreate its template set from scratch overnight under time pressure — work that should have been part of implementation.",
         "Even after delivery, Vensure quotes 2+ weeks to load the documents, extending the period new hires go unsigned.",
@@ -221,9 +226,11 @@
         { "date": "2026-06-16", "time": "12:16 PM ET", "actor": "Stella Anah", "role": "Senior HR Business Partner, Vensure", "party": "vensure", "text": "First clear written statement of ownership: 'Vensure does not create onboarding document templates. However, you are welcome to provide the specific templates you would like included…' — after the hires had already started." },
         { "date": "2026-06-16", "time": "11:38 PM ET", "actor": "Zane Perry", "role": "Partner, CrossPeak", "party": "crosspeak", "text": "Delivers the finalized, rebuilt template set to Vensure for loading — rebuilt from the document set Engage previously had every new hire sign." },
         { "date": "2026-06-17", "time": "9:52 AM ET", "actor": "Stella Anah", "role": "Senior HR Business Partner, Vensure", "party": "vensure", "text": "'It will likely take the Client Solutions team 2+ weeks to add the documents to onboarding due to the volume and customization required.'" },
-        { "date": "2026-06-17", "time": "11:20 AM ET", "actor": "Stella Anah", "role": "Senior HR Business Partner, Vensure", "party": "vensure", "text": "Rules that NDAs, confidentiality, non-compete, arbitration, and employment-contract documents are not permitted in the onboarding workflow and must be sent separately with the offer letter." }
+        { "date": "2026-06-17", "time": "11:20 AM ET", "actor": "Stella Anah", "role": "Senior HR Business Partner, Vensure", "party": "vensure", "text": "Rules that NDAs, confidentiality, non-compete, arbitration, and employment-contract documents are not permitted in the onboarding workflow and must be sent separately with the offer letter." },
+        { "date": "2026-06-26", "time": "", "actor": "Zane Perry", "role": "Partner, CrossPeak", "party": "crosspeak", "text": "Documents that, ten days after delivering the templates, Vensure has still not gotten them to the two new hires for signature — leaving CrossPeak to send its own onboarding documents out for signature. Calls the continued delay unacceptable and demands Vensure deliver the templates to its staff for signature now, not on a multi-week timeline." }
       ],
       "asks": [
+        "Immediately deliver CrossPeak's policy and agreement templates to its two new hires for signature, and confirm a same-week completion date — CrossPeak should not have to send its own onboarding documents out for signature.",
         "Acknowledge in writing that CrossPeak's existing-employee paperwork and new-hire templates were never requested during implementation, and confirm the corrected onboarding scope going forward.",
         "Expedite loading the delivered templates well inside the quoted '2+ weeks' — commit to a firm date — given two hires are already onboarded with nothing to sign.",
         "Provide a written, owner-assigned onboarding checklist (who provides what, by when) for implementation and for each future new hire, so this cannot recur.",

@@ -1400,11 +1400,11 @@
       "id": "08",
       "slug": "terminated-employees-billed-trustmark-2026",
       "title": "Employees never properly on- or off-boarded on the medical plan — Vensure never set up the broker access it proposed in December 2025",
-      "status": "Open — escalated to Vensure’s CEO and President 9/28. The broker has never had access to Vensure’s system, the system of record for every hire and termination: access was requested 12/19/2025, proposed by Vensure 12/29/2025, requested again 9/15/2026, and the user-access form was never sent. Vensure (9/28, 4:17 PM) denies responsibility and has not answered the errors and omissions claim. ~$20.9K unrecovered.",
+      "status": "Open — 9/29: broker access finally granted (9:20 AM), nine months after Vensure proposed it; the broker found one unenrolled new hire, whose enrollment is in progress. A meeting with Vensure service leadership was held at 11:30 AM (not yet the CEO or President). $20,873 unrecovered; the errors and omissions claim is still unanswered.",
       "category": "Benefits & Offboarding",
       "account": "CROSSPEAK SOLUTIONS — 45248",
       "opened": "2026-09-24",
-      "updated": "2026-09-28",
+      "updated": "2026-09-29",
       "players": [
         {
           "id": "brittany-shively",
@@ -1816,6 +1816,54 @@
           "role": "Managing Partner, CrossPeak",
           "party": "crosspeak",
           "text": "Replies to Vensure leadership, asking to meet the CEO and President on 9/29: states Vensure owns 100% of the miss, repeats the errors and omissions claim with a 9/30 deadline, lists every open item with supporting quotes, attaches the 40-page evidence packet, and issues a formal records-preservation demand."
+        },
+        {
+          "date": "2026-09-29",
+          "time": "8:38 AM ET",
+          "actor": "Nick Boeschen",
+          "role": "Broker, UNIQ Benefit Solutions",
+          "party": "uniq",
+          "text": "Compares Vensure’s census with Trustmark: \"it appears we are only missing\" one new hire (H.R.), and asks for his full profile and plan election."
+        },
+        {
+          "date": "2026-09-29",
+          "time": "8:50 AM ET",
+          "actor": "Brittany Shively",
+          "role": "AVP Service Operations, Vensure",
+          "party": "vensure",
+          "text": "\"His access will be set up here shortly.\" Later, on the leadership meeting: \"The people I need to speak with are not in at this time.\""
+        },
+        {
+          "date": "2026-09-29",
+          "time": "9:20 AM ET",
+          "actor": "Brittany Taylor",
+          "role": "Service Operations Supervisor, Vensure",
+          "party": "vensure",
+          "text": "Sends the broker his login to Vensure’s system: access granted nine months after it was proposed on 12/29/2025."
+        },
+        {
+          "date": "2026-09-29",
+          "time": "10:10 AM ET",
+          "actor": "Brittany Taylor",
+          "role": "Service Operations Supervisor, Vensure",
+          "party": "vensure",
+          "text": "Sends the unenrolled new hire’s enrollment details to the broker; the remaining sensitive identifiers go by phone."
+        },
+        {
+          "date": "2026-09-29",
+          "time": "10:16 AM ET",
+          "actor": "Brittany Shively",
+          "role": "AVP Service Operations, Vensure",
+          "party": "vensure",
+          "text": "Schedules a CrossPeak/Vensure call for 11:30 AM with Vensure service leadership. The broker cannot attend."
+        },
+        {
+          "date": "2026-09-29",
+          "time": "11:30 AM ET",
+          "actor": "Zane Perry",
+          "role": "Managing Partner, CrossPeak",
+          "party": "crosspeak",
+          "text": "Meets Vensure service leadership and walks them through the year with a visual timeline of every issue: https://crosspeakzane.github.io/vensure-escalations/journey.html"
         }
       ],
       "asks": [
@@ -1836,7 +1884,7 @@
         "All parties (Vensure, UNIQ, Trustmark): provide copies of every email, communication, training material, checklist or note that informed CrossPeak of its role in offboarding employees from the medical plan or notifying the carrier of terminations — from implementation (Nov–Dec 2025) and around each termination (Mar–May 2026).",
         "Formal preservation demand (all parties): preserve, and suspend any deletion or retention schedule for, every document and electronically stored information relating to CrossPeak Solutions LLC from first sales contact through final resolution — including emails, chats (Teams, Slack), texts, voicemails, call recordings and notes, CRM, case and ticket records, implementation checklists and worksheets, user-access requests, system audit trails and change logs, enrollment, eligibility, deduction, billing and termination records, and internal communications about CrossPeak — in native format with metadata, until this matter is fully resolved.",
         "Broker: itemize exactly what was paid for each of the three former employees after their termination dates, month by month (premium, stop-loss, admin and claims), against what Trustmark is crediting.",
-        "Vensure: activate the broker’s access within one business day of CrossPeak’s New User Request Form (submitted 9/28, 5:22 PM ET), confirm in writing what he can see (hires, terminations, enrollments), and confirm whether any access request for him exists in Vensure’s records.",
+        "DONE 9/29 9:20 AM — Vensure: activate the broker’s access within one business day of CrossPeak’s New User Request Form (submitted 9/28, 5:22 PM ET), confirm in writing what he can see (hires, terminations, enrollments), and confirm whether any access request for him exists in Vensure’s records.",
         "Vensure: CEO and President to answer the questions for leadership below, in writing, before or at the meeting."
       ],
       "references": [
@@ -1954,6 +2002,11 @@
       ],
       "evidenceIntro": "Email records compiled 9/28/2026 from CrossPeak’s mailbox. Each message shows its date, sender and recipients with its own text; quoted history and disclaimers are omitted, employee names are initials, and personal identifiers are redacted. Unaltered originals are preserved.",
       "evidence": [
+        {
+          "title": "Our Year with Vensure — 3D walk-through of every roadblock (present this)",
+          "href": "journey.html",
+          "pages": "interactive"
+        },
         {
           "title": "Complete evidence packet — all threads below",
           "href": "assets/evidence/00-evidence-packet-escalation-08.pdf",

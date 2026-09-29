@@ -113,10 +113,7 @@ a { color: var(--brand) }
   </article>
   <nav class="track" id="track" aria-label="Jump to a stop"></nav>
   <div class="hud">
-    <button class="btn" id="prev" type="button">← Back</button>
     <button class="btn primary" id="next" type="button">Walk on →</button>
-    <button class="btn" id="play" type="button">▶ Play the year</button>
-    <button class="btn" id="fs" type="button">⛶ Full screen</button>
     <span class="stepno" id="stepNo">1 / 20</span>
   </div>
 </section>
@@ -165,22 +162,23 @@ a { color: var(--brand) }
       title: 'Vensure proposes broker access, then drops it',
       text: 'Our broker asked for access to Vensure’s system, the only record of who is hired and who leaves. Vensure promised on 12/23 that "someone from our team" would be assigned, then proposed the access itself. The broker said yes; we said "let me know if you need anything from my side." No one was assigned and no access form was ever sent.',
       quote: 'All data will be housed in our system. However, Nick should have access to be able to pull reports, etc. … can we please initiate that if the client agrees.', cite: 'Business Consultant, Vensure, 12/29/2025 9:00 AM' },
-    { month: 'JAN 2026', date: 'Jan – Feb 2026', sev: 2, kind: 'rocks', h: 1.7, label: 'Team walks out', tag: 'Turnover', loss: 0, count: true, joins: [], leaves: ['brie'],
-      title: 'Go-live, while Vensure’s team changed around us',
-      text: 'Our understanding is that several people on Vensure’s side left in January and February, exactly while our account was being set up, and the December commitments went with them. The consultant who sold and onboarded us later left Vensure. More than twenty different Vensure people have been on our emails since.' },
     { month: 'MAR 2026', date: 'Mar 1, 2026', sev: 2, kind: 'barrier', h: 1.5, label: 'Termination #1 lost', tag: 'The bleeding starts', loss: 3700, count: true, joins: [],
       title: 'The first termination never reaches our health carrier',
       text: 'Terminated in Vensure’s system, still billed on our health plan. Two more follow in April and May. No one can see it: the broker has no access, and no one is checking.' },
     { month: 'MAR 2026', date: 'Mar 2, 2026', sev: 2, kind: 'wall', h: 1.9, label: 'States: not registered', tag: 'Compliance', loss: 3700, count: true, joins: [],
       title: 'Two months live, state tax registrations still not done',
       text: 'Vensure says it still needs to apply for our state tax IDs in South Carolina, Illinois, Georgia and California. It takes until September 16, about 40 weeks, to finish.' },
+    { month: 'MAR 2026', date: 'Mar 5 → Apr 15, 2026', sev: 2, kind: 'rocks', h: 1.9, label: 'ROOT CAUSE: team handoff', tag: 'Root cause: the team change', loss: 3700, count: true, joins: [], leaves: ['brie'],
+      title: 'The team that set us up handed us off, and everything open was dropped',
+      text: 'Our onboarding ran through a Business Consultant, who sold us and owned the 12/23 and 12/29 broker-access commitments, and a Senior Implementation Consultant, who ran our welcome call and then our payroll. On 3/5 Vensure closed out our implementation and handed us to its Benefits team, three days after saying our state tax IDs still had not been applied for, and with broker access never set up. On 3/16 a new benefits contact took over. On 4/13 Vensure formally announced its Service Operations reorganization, and by payroll day, 4/15, our implementation and payroll consultant was gone. Our Business Consultant later left Vensure. Nothing open with the original team was carried over: broker access, state registrations, onboarding documents.',
+      quote: 'The process of implementing your benefits with Vensure has been completed and it is time to introduce you to the Benefits [team].', cite: 'Vensure, 3/5/2026, with state registrations and broker access still open' },
     { month: 'MAR 2026', date: 'Mar 26, 2026 · 4:01 PM', sev: 1, kind: 'barrier', h: 1.3, label: 'Surprise: July renewal', tag: 'Never disclosed', loss: 3700, count: true, joins: ['kitisha'],
       title: '"All Vensure Master Plans renew on 7/1"',
       text: 'Three months after we enrolled on a January plan year, we learn our ancillary benefits run July to June, and will lapse unless everyone re-enrolls in June.',
       quote: 'All Vensure Master Plans renew on 7/1 annually.', cite: 'Vensure benefits team, 3/26/2026' },
     { month: 'APR 2026', date: 'Apr 13 → Apr 15, 2026', sev: 2, kind: 'wall', h: 2.0, label: 'Payroll late: a first', tag: 'First in our history', loss: 8800, count: true, joins: ['btaylor'],
       title: 'Reorganization on Monday. Late payroll on Wednesday.',
-      text: 'Vensure merged Client Relations and Payroll on 4/13. On 4/15 our payroll contact was gone with only an auto-reply, and payroll ran late for the first time in CrossPeak’s history. Brittany Taylor inherited the account that week and has since become our steady account manager.' },
+      text: 'On 4/13 Vensure formally told us it was merging Client Relations and Payroll into Service Operations; the change may have started before that notice. On 4/15 our payroll contact was gone with only an auto-reply, and payroll ran late for the first time in CrossPeak’s history. Brittany Taylor inherited the account that week and has since become our steady account manager.' },
     { month: 'MAY 2026', date: 'May 11 & May 14, 2026', sev: 2, kind: 'barrier', h: 1.8, label: 'Week 34, no owner', tag: 'Escalation', loss: 13700, count: true, joins: ['bshively', 'nate'],
       title: '"An absolute nightmare of an experience"',
       text: 'State items in their 34th week with no clear owner, and four months of asking about onboarding documents. Vensure’s status update left California out entirely. A new Client Growth Consultant, Nate, is introduced.',
@@ -257,16 +255,16 @@ a { color: var(--brand) }
   // ---------- controls (work even before the 3D scene loads)
   var playing = null, goImpl = null;
   function go(i) { i = Math.max(0, Math.min(STOPS.length - 1, i)); var back = i < cur; cur = i; renderCard(i); if (goImpl) goImpl(i, back); }
-  function stopPlay() { if (playing) { clearInterval(playing); playing = null; $('play').textContent = '▶ Play the year'; } }
+  function stopPlay() { if (playing) { clearInterval(playing); playing = null; } }
   $('next').onclick = function () { stopPlay(); go(cur + 1); };
-  $('prev').onclick = function () { stopPlay(); go(cur - 1); };
-  $('play').onclick = function () {
+  if ($('prev')) $('prev').onclick = function () { stopPlay(); go(cur - 1); };
+  if ($('play')) $('play').onclick = function () {
     if (playing) return stopPlay();
     if (cur >= STOPS.length - 1) go(0);
     $('play').textContent = '❚❚ Pause';
     playing = setInterval(function () { if (cur >= STOPS.length - 1) return stopPlay(); go(cur + 1); }, 7000);
   };
-  $('fs').onclick = function () {
+  function toggleFs() {
     var st = $('stage');
     try {
       if (document.fullscreenElement) document.exitFullscreen();
@@ -278,7 +276,7 @@ a { color: var(--brand) }
     if (/input|textarea|select/i.test((e.target && e.target.tagName) || '')) return;
     if (e.key === 'ArrowRight' || e.key === 'PageDown') { e.preventDefault(); stopPlay(); go(cur + 1); }
     else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); stopPlay(); go(cur - 1); }
-    else if (e.key === 'f' || e.key === 'F') { $('fs').click(); }
+    else if (e.key === 'f' || e.key === 'F') { toggleFs(); }
   });
 
   if (!window.THREE) { $('loading').textContent = '3D view unavailable; use the story card and arrows.'; return; }

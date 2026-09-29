@@ -37,7 +37,9 @@ a { color: var(--brand) }
 .agenda b { color: var(--ink); font-size: 14px; line-height: 1.25 }
 .agenda span { font-size: 13px; color: var(--muted); line-height: 1.35 }
 .agenda em { font: 500 12px var(--f-mono); font-style: normal; color: var(--muted) }
-@media (max-width: 980px) { .agenda { grid-template-columns: repeat(3, minmax(0, 1fr)) } }
+.agenda.two-part { grid-template-columns: 1fr 2fr }
+.agenda.two-part li:last-child { border-color: var(--gold) }
+@media (max-width: 980px) { .agenda { grid-template-columns: repeat(3, minmax(0, 1fr)) } .agenda.two-part { grid-template-columns: 1fr 1fr } }
 @media (max-width: 560px) { .agenda { grid-template-columns: 1fr } }
 
 .stage { position: relative; height: 100vh; height: 100dvh; min-height: 480px; background: #1a2a3a; overflow: hidden }
@@ -86,13 +88,9 @@ a { color: var(--brand) }
 <header class="intro">
   <div class="eyebrow">Customer experience review · CrossPeak Solutions LLC</div>
   <h1>Let's review my experience as a customer since we joined Vensure</h1>
-  <ol class="agenda" aria-label="Call agenda, 30 minutes">
-    <li><b>Why we're here</b><span>Our experience as a customer since November 2025.</span><em>1 min</em></li>
-    <li><b>The walk</b><span>November to September, every roadblock, in order.</span><em>10 min</em></li>
-    <li><b>The root cause</b><span>The team handoff: broker access and state registrations dropped.</span><em>3 min</em></li>
-    <li><b>Everyone's miss</b><span>Vensure, UNIQ and CrossPeak each own a part.</span><em>3 min</em></li>
-    <li><b>The money</b><span>$20,873 still open, plus state penalties.</span><em>3 min</em></li>
-    <li><b>Commitments</b><span>Dated owners and next steps, starting with the E&amp;O claim.</span><em>10 min</em></li>
+  <ol class="agenda two-part" aria-label="Call agenda, 30 minutes">
+    <li><b>The walk: our year as your customer</b><span>November to September, every roadblock in order, including the team handoff that dropped broker access and our state registrations, each party's own miss, and the $20,873 still open.</span><em>10 min</em></li>
+    <li><b>Resolution with Vensure leadership</b><span>The $20,873 and the state penalties, the errors and omissions claim, and dated commitments with named owners.</span><em>20 min</em></li>
   </ol>
 </header>
 

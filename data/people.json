@@ -73,7 +73,7 @@
     },
     "brittany-taylor": {
       "name": "Brittany Taylor",
-      "title": "Payroll Supervisor",
+      "title": "Service Operations Supervisor (account manager)",
       "company": "vensure",
       "photo": "assets/people/brittany-taylor.jpg",
       "linkedin": "https://www.linkedin.com/in/brittany-taylor-b6607347/"
@@ -253,6 +253,13 @@
       "company": "trustmark",
       "photo": null,
       "linkedin": "https://www.linkedin.com/showcase/trustmark-small-business-benefits/"
+    },
+    "nick-smith": {
+      "name": "Nick Smith",
+      "title": "Head of Delivery",
+      "company": "vensure",
+      "photo": null,
+      "linkedin": null
     }
   }
 }

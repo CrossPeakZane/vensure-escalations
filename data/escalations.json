@@ -3,8 +3,8 @@
     {
       "id": "01",
       "slug": "ancillary-open-enrollment-2026",
-      "title": "Mandatory ancillary benefits re-enrollment by 6/30 — never disclosed at signup",
-      "status": "Closed — exception granted 6/18 (ancillaries aligned to the 1/1 renewal), and on 9/8–9/9 Vensure (Nate Schoenbrun) committed to a single January 1 cycle for 2027. The explanation of why a 7/1 renewal was required in the first place is still owed (requested in #08)",
+      "title": "Ancillary benefits renewal timing (6/30) — resolved with a single January 1 cycle",
+      "status": "Closed — exception granted 6/18 (ancillaries aligned to the 1/1 renewal), and on 9/8–9/9 Vensure (Nate Schoenbrun) committed to a single January 1 cycle for 2027",
       "category": "Benefits & Open Enrollment",
       "account": "CROSSPEAK SOLUTIONS — 45248",
       "opened": "2026-06-12",
@@ -61,8 +61,8 @@
       ],
       "summary": "CrossPeak Solutions moved to Vensure (PEO) and completed benefits enrollment in December 2025, effective January 1, 2026. Vensure's 2026 Benefits Presentation described the coverage as the \"2026 plan year,\" effective \"January 1, 2026 through December 31, 2026.\" Beginning in March 2026 — roughly three months after enrollment — Vensure began telling CrossPeak that its ancillary benefits (dental, vision, life, disability, accident, and similar lines) actually run on a July 1–June 30 master plan year and would lapse on June 30, 2026 unless employees actively re-enrolled during a June 17–24 window. This July 1–June 30 ancillary cycle and the active re-enrollment requirement were never disclosed during sales or onboarding. Across roughly nine email threads over eight months, multiple Vensure representatives gave inconsistent answers or non-answers, and a documented commitment to review the contract for ancillary timelines went unanswered. The dispute over what CrossPeak was sold versus what Vensure now asserts remains open; CrossPeak has requested a call with Vensure leadership. On June 17, 2026, CrossPeak confirmed that the signed Benefit Election Contract does state coverage is effective through June 30, 2026 — a detail CrossPeak did not catch and that Vensure never pointed out; the core failure is that this was never surfaced during onboarding.",
       "note": {
-        "title": "Update — Vensure granted the exception; the leadership conversation is still owed",
-        "html": "<p><strong>Update (June 18, 2026):</strong> after escalation, Vensure's benefit leadership <strong>approved an exception</strong>. Per AVP Brittany Shively, Vensure is <em>\"shutting down the ancillary open enrollment\"</em>; CrossPeak's ancillary benefits <strong>will now align with the January 1 renewal of the medical plan for all future renewals</strong>, and CrossPeak <em>\"will not be required to renew ancillaries on the 7/1 renewal date.\"</em> This removes the June 30 lapse risk and the forced mid-year re-enrollment — the outcome CrossPeak asked for. What remains open is the larger conversation: CrossPeak's standing request to meet Vensure's CEO and the account's supporting leadership — reiterated June 26 — has not yet been scheduled.</p><p><strong>Confirmed June 17, 2026:</strong> the signed Vensure Benefit Election Contract (BEC) does state that the elections and rates are <em>\"effective through June 30, 2026.\"</em> In fairness, that language is in the document CrossPeak signed, and Zane did not catch it at signing.</p><p>The issue CrossPeak is raising is not that the date is missing — it is that <strong>no one at Vensure ever mentioned, flagged, or walked through the June 30 ancillary cutoff</strong> during sales, signing, or onboarding, while Vensure's own 2026 Benefits Presentation simultaneously described the coverage as the <em>\"January 1 – December 31, 2026 plan year.\"</em> Surfacing a buried, consequential end date is exactly what a PEO's onboarding is supposed to do.</p><p>Paired with the onboarding failures documented in <a href=\"escalation.html?id=04\">escalation #04</a> — where CrossPeak's policy and agreement templates were never requested or loaded — this reflects a <strong>significant onboarding miss on Vensure's part</strong>, not a one-off oversight.</p>"
+        "title": "Update — Vensure granted the exception",
+        "html": "<p><strong>Update (June 18, 2026):</strong> after escalation, Vensure's benefit leadership <strong>approved an exception</strong>. Per AVP Brittany Shively, Vensure is <em>\"shutting down the ancillary open enrollment\"</em>; CrossPeak's ancillary benefits <strong>will now align with the January 1 renewal of the medical plan for all future renewals</strong>, and CrossPeak <em>\"will not be required to renew ancillaries on the 7/1 renewal date.\"</em> This removes the June 30 lapse risk and the forced mid-year re-enrollment — the outcome CrossPeak asked for.</p><p><strong>Confirmed June 17, 2026:</strong> the signed Vensure Benefit Election Contract (BEC) does state that the elections and rates are <em>\"effective through June 30, 2026.\"</em> In fairness, that language is in the document CrossPeak signed, and Zane did not catch it at signing.</p><p>The issue CrossPeak is raising is not that the date is missing — it is that <strong>no one at Vensure ever mentioned, flagged, or walked through the June 30 ancillary cutoff</strong> during sales, signing, or onboarding, while Vensure's own 2026 Benefits Presentation simultaneously described the coverage as the <em>\"January 1 – December 31, 2026 plan year.\"</em> Surfacing a buried, consequential end date is exactly what a PEO's onboarding is supposed to do.</p>"
       },
       "impact": [
         "Vensure first told CrossPeak it had to move onto Vensure’s July 1 benefits cycle (‘All Vensure Master Plans renew on 7/1 annually’). That turned out not to be required: Vensure granted a January 1 alignment on 6/18, and by September was offering CrossPeak a 1/1/2027 medical go-live.",
@@ -70,8 +70,7 @@
         "Risk that employees lose ancillary coverage through no fault of their own.",
         "Vensure's own 2026 Benefits Presentation presented a January 1–December 31, 2026 plan year, contradicting the June 30 cutoff Vensure now asserts.",
         "The July 1–June 30 ancillary cycle was never disclosed at sale or onboarding — it first surfaced in March 2026, about three months after enrollment.",
-        "Multiple Vensure representatives gave inconsistent or non-answers; a commitment to review the contract for ancillary timelines was never fulfilled.",
-        "Described by CrossPeak as the latest in a recurring pattern of service failures with Vensure."
+        "Multiple Vensure representatives gave inconsistent or non-answers; a commitment to review the contract for ancillary timelines was never fulfilled."
       ],
       "timeline": [
         {
@@ -381,8 +380,7 @@
         }
       ],
       "asks": [
-        "An explanation of why CrossPeak was told its ancillaries had to renew on a 7/1 cycle when a January 1 alignment turned out to be available — requested as item V5 in escalation #08.",
-        "The requested call with Vensure leadership, CEO included — requested 6/17 and 6/26, never scheduled."
+        "None outstanding — CrossPeak and Vensure are aligned on a single January 1 benefits cycle for 2027."
       ],
       "references": [
         "Email cluster (Nov 2025 – Jun 2026), ~9 threads, incl.: \"Action Requested: Open Enrollment Dates Available Now — CROSSPEAK SOLUTIONS — 45248\"; \"2026 Open Enrollment Crosspeak Solutions\"; \"Vensure — Medical 1/1\"; \"Meeting follow up\"; \"Crosspeak Solutions: Benefit Timeline\".",
@@ -401,9 +399,9 @@
     {
       "id": "02",
       "slug": "payroll-near-miss-april-2026",
-      "title": "Payroll nearly missed and ran late — a first — right after Vensure swapped account resources with no handoff",
+      "title": "Late payroll on 4/15 during Vensure’s team transition — stabilized",
       "state": "closed",
-      "status": "Closed — payroll stabilized; several Vensure-side entry errors since (August) were each corrected; a new-state address caused a payroll error 9/25",
+      "status": "Closed — payroll stabilized; the occasional entry errors since have each been corrected quickly",
       "kudos": {
         "title": "Corrective action — credit where it's due",
         "heroIds": [
@@ -436,10 +434,7 @@
       "summary": "On April 15, 2026 CrossPeak came within hours of missing a payroll — something that had never happened in the company's history — and ultimately ran payroll late that day. The timing was not a coincidence: Vensure's internal reorganization merging Client Relations and Payroll into a single 'Service Operations' team took effect April 13, two days earlier. CrossPeak's established payroll contact (Amiee Caldwell) was gone with only an auto-reply, and the newly assigned supervisor later acknowledged she had 'recently just obtained this case' and did not know whether any notes had been left behind. Vensure described a 'stuck approval workflow' as the cause, but that explanation was given only by phone/Slack and never put in writing, and no formal root-cause analysis or written fee-reimbursement commitment has been provided.",
       "impact": [
         "First near-missed and ultimately late payroll in CrossPeak's history — direct risk to employees being paid on time.",
-        "Caused by a resource swap with no advance notice and no warm handoff: the prior payroll lead was gone and the replacement had just received the account.",
-        "Vensure's stated root cause (a 'stuck approval workflow') exists only verbally — no written RCA, so there is no documented assurance it cannot recur.",
-        "No written confirmation of any fee reimbursement/credit for the disruption — only informal discussion.",
-        "Erodes trust in the most time-critical function a PEO performs."
+        "Caused by a resource swap with no advance notice and no warm handoff: the prior payroll lead was gone and the replacement had just received the account."
       ],
       "timeline": [
         {
@@ -524,10 +519,7 @@
         }
       ],
       "asks": [
-        "A written root-cause analysis of the late payroll and the specific controls Vensure has put in place so it cannot recur.",
-        "Written confirmation of the fee reimbursement/credit for the disruption (not just a verbal discussion).",
-        "A single, stable, named payroll owner — and a backup — for CrossPeak's account.",
-        "A commitment to give CrossPeak advance notice and a documented warm handoff before any change to the people who run its payroll."
+        "None outstanding — payroll has been stable, and Brittany Taylor’s team corrects entry errors quickly when they come up."
       ],
       "references": [
         "Email thread 'Payroll' / late-run escalation (April 2026); Vensure 'Service Operations' reorg announcement (effective 4/13/2026).",
@@ -538,8 +530,8 @@
     {
       "id": "03",
       "slug": "state-tax-registration-2026",
-      "title": "Multi-state tax registration and access never completed after the PEO migration — unresolved ~40 weeks",
-      "status": "Closed — resolved 9/16: all four states (SC, IL, GA, CA) registered and accessible to Vensure. Two money items remain open: the CA EDD $147.83 penalty notice (unanswered since 8/10) and SC/IL penalty coverage (asked 7/2)",
+      "title": "Multi-state tax registration and access after the PEO migration — completed 9/16",
+      "status": "Closed — resolved 9/16: all four states (SC, IL, GA, CA) registered and accessible to Vensure. Two small penalty items to wrap up (CA EDD $147.83; SC/IL)",
       "category": "State Tax & Registration",
       "account": "CROSSPEAK SOLUTIONS — 45248",
       "opened": "2026-03-02",
@@ -796,8 +788,8 @@
         }
       ],
       "asks": [
-        "Pay or resolve the California EDD Q1 2026 notice ($147.83 in penalties and interest), which Vensure committed on 7/2 to cover — unanswered since 8/10.",
-        "Confirm in writing whether Vensure covers the South Carolina and Illinois penalties and interest caused by the registration delays (asked 7/2, no answer)."
+        "Wrap-up: confirm how the California EDD Q1 2026 notice ($147.83 in penalties and interest) will be handled — Vensure offered on 7/2 to take care of it.",
+        "Wrap-up: confirm whether the South Carolina and Illinois penalties and interest from the registration period will be covered."
       ],
       "references": [
         "CrossPeak-maintained 'Vensure State Registration — Open Issues Tracker' (Google Doc).",
@@ -814,21 +806,21 @@
         "html": "<p><strong>Misty Ramsey drove this to the finish.</strong> After months of stalled hand-offs, she took ownership of all four states in July: South Carolina linked and paid (7/2), Illinois access confirmed (7/2), and Georgia access established (9/15) once the state reactivated the account. On 9/16 she confirmed, <em>\"I do believe that takes care of all your state account issues.\"</em> Thank you, Misty.</p>"
       },
       "note": {
-        "title": "Still open: two penalty items",
-        "html": "<p>The registration and access work is done, but two money questions from this issue were never answered:</p><ul><li><strong>California EDD notice — $147.83</strong> in late-payment penalties and interest for Q1 2026. Vensure committed on 7/2 to \"take care of the P&amp;I\" for California; CrossPeak forwarded the notice on 8/10 and has had no answer since.</li><li><strong>South Carolina and Illinois penalties and interest</strong> caused by the registration delays. CrossPeak asked on 7/2 for Vensure to cover them; there has been no response.</li></ul><p>Both are part of the fee and penalty review CrossPeak has requested in <a href=\"escalation.html?id=08\">escalation #08</a>.</p>"
+        "title": "Wrap-up: two small penalty items",
+        "html": "<p>The registration and access work is done. Two small money items from this issue are still to be confirmed:</p><ul><li><strong>California EDD notice — $147.83</strong> in late-payment penalties and interest for Q1 2026. Vensure offered on 7/2 to “take care of the P&amp;I” for California; CrossPeak forwarded the notice on 8/10.</li><li><strong>South Carolina and Illinois penalties and interest</strong> from the registration period, which CrossPeak asked about on 7/2.</li></ul>"
       }
     },
     {
       "id": "04",
       "slug": "account-never-properly-onboarded",
-      "title": "CrossPeak's account was never properly onboarded — new-hire policy and agreement templates were never requested or loaded",
+      "title": "New-hire policy and agreement templates added to onboarding — resolved 7/15",
       "status": "Closed — resolved 7/15: one hire's documents signed after Vensure relaunched onboarding; CrossPeak collected the other hire's signature itself; future hires sign during e-onboarding",
       "category": "Onboarding / Implementation",
       "account": "CROSSPEAK SOLUTIONS — 45248",
       "opened": "2026-06-15",
       "updated": "2026-09-28",
       "note": {
-        "title": "Resolved 7/15 — but only after CrossPeak collected one hire’s signatures itself",
+        "title": "Resolved 7/15",
         "html": "<p><strong>Update (July 15, 2026):</strong> resolved. Vensure found the root cause — the two hires were entered manually, and manual entry does not trigger onboarding. It relaunched onboarding for one hire, and CrossPeak collected the other hire’s signatures itself. Future hires now sign CrossPeak’s templates during e-onboarding.</p><p><strong>As originally reported —</strong> as of <strong>June 26, 2026</strong>, Vensure has <strong>still not delivered CrossPeak's policy and agreement templates to its two new hires for signature</strong>. With Vensure stalled, CrossPeak has been forced to send these documents out for signature on its own — the exact onboarding function CrossPeak pays Vensure, as its PEO, to perform.</p><p>This is <strong>unacceptable</strong>. The templates were delivered to Vensure on June 16; there is no justification for new hires sitting with nothing executed while the clock runs. Vensure needs to <strong>get CrossPeak's templates into the onboarding workflow and out to its staff for signature now</strong> — measured in days, not a multi-week queue.</p>"
       },
       "players": [
@@ -978,12 +970,7 @@
         }
       ],
       "asks": [
-        "Immediately deliver CrossPeak's policy and agreement templates to its two new hires for signature, and confirm a same-week completion date — CrossPeak should not have to send its own onboarding documents out for signature.",
-        "Acknowledge in writing that CrossPeak's existing-employee paperwork and new-hire templates were never requested during implementation, and confirm the corrected onboarding scope going forward.",
-        "Expedite loading the delivered templates well inside the quoted '2+ weeks' — commit to a firm date — given two hires are already onboarded with nothing to sign.",
-        "Provide a written, owner-assigned onboarding checklist (who provides what, by when) for implementation and for each future new hire, so this cannot recur.",
-        "Confirm the compliant path for the documents Vensure excludes from the workflow (NDA, confidentiality, non-compete, arbitration, employment contracts) and how Vensure will support sending them at offer time.",
-        "Confirm the two new hires' statutory items (I-9 / E-Verify) are complete or on a tracked deadline, independent of the template backlog."
+        "None outstanding — future hires sign CrossPeak’s documents during e-onboarding."
       ],
       "references": [
         "Email threads: 'New Hire Onboarding — T.M. & O.S. (starting 6/15)'; 'CrossPeak Onboarding Policies & Employee Handbook — please load and send for signature'; 'Request for Leadership Alignment Meeting'; 'Meeting follow up' (5/15 responsibilities).",
@@ -995,9 +982,9 @@
     {
       "id": "05",
       "slug": "401k-slavic-breakdown",
-      "title": "401(k) breakdown after migration — missing statements and loan-repayment deductions not taken",
+      "title": "401(k) after the migration — statements, loan repayments and eligibility notices",
       "state": "open",
-      "status": "Reopened — 401(k) eligibility emails still not confirmed reaching employees (flagged 7/1, 7/14, 7/23 and again 9/30); on 9/30 Vensure opened an inquiry with its Retirement team, answer pending",
+      "status": "Open — the original statement and loan-repayment issues are resolved; Vensure’s Retirement team is checking whether eligibility notices are going out (inquiry opened 9/30 by Brittany Taylor)",
       "kudos": {
         "title": "Original issue resolved — thank you to the team",
         "heroIds": [],
@@ -1135,12 +1122,8 @@
         }
       ],
       "asks": [
-        "Confirm in writing whether loan-repayment deductions were missed, for which pay periods, and the plan to correct the schedule and any make-up contributions.",
-        "Provide the employee's full 401(k) statements/postings since the transfer and restore her account access.",
-        "Name a 401(k) point of contact who actually has the credentials and authority to resolve account questions.",
-        "Reconcile the account and confirm contributions and loan balances are accurate going forward.",
-        "Identify why Slavic eligibility emails are not being delivered and confirm the next eligible employee (10/20/2026) receives it.",
-        "Vensure: report what the Retirement team finds — whether eligibility notices are being sent, why not if not, and the workflow that will guarantee them for every future enrollment (inquiry opened 9/30)."
+        "Vensure Retirement team: confirm whether eligibility notices are being sent, and share the workflow for future enrollments (inquiry opened 9/30).",
+        "Confirm the October-eligible new hire (H.R.) receives his eligibility notice and can enroll."
       ],
       "references": [
         "Slack DM (Zane ↔ affected employee, 4/22/2026): could not access 401(k) since moving to Vensure; no statement of posts; deductions not taken for many pay periods.",
@@ -1151,7 +1134,7 @@
     {
       "id": "06",
       "slug": "rep-turnover-no-account-owner",
-      "title": "Chronic turnover and no single account owner — repeated reassignments with no warm handoff",
+      "title": "Account ownership after early turnover — now anchored by Brittany Taylor",
       "state": "closed",
       "status": "Closed — Brittany Taylor is CrossPeak’s account manager and Brittany Shively (AVP, Service Operations) drives escalations; on 9/29 Vensure’s Head of Delivery committed to the account’s first cadence calls",
       "kudos": {
@@ -1160,7 +1143,7 @@
           "brittany-taylor",
           "brittany-shively"
         ],
-        "html": "<p><strong>Brittany Taylor</strong> has effectively served as CrossPeak's primary point of contact — despite being titled Payroll Supervisor — and has supported the account well. <strong>Brittany Shively</strong> has actively backed escalations and recently apologized to CrossPeak directly for how a recent call was handled. In a rough situation, both have been the bright spots. Thank you.</p>"
+        "html": "<p><strong>Brittany Taylor</strong> is CrossPeak’s account manager and has supported the account consistently and well. <strong>Brittany Shively</strong> has backed every escalation and brought Vensure’s service leadership to the table on 9/29. Thank you both.</p>"
       },
       "category": "Account Management",
       "account": "CROSSPEAK SOLUTIONS — 45248",
@@ -1206,8 +1189,7 @@
         "Reassignments happened with no warm handoff, directly contributing to the late payroll and the stalled state registrations.",
         "Key contacts departed mid-engagement (Amiee Caldwell; Brie Dixon, now at a competitor), taking institutional knowledge with them.",
         "New contacts were introduced months into the relationship, restarting context each time.",
-        "Repeated 'who is my contact?' requests reflect time lost to chasing ownership instead of resolving issues.",
-        "No official account manager has ever been assigned to CrossPeak — a Payroll Supervisor has had to fill the role unofficially."
+        "Repeated 'who is my contact?' requests reflect time lost to chasing ownership instead of resolving issues."
       ],
       "timeline": [
         {
@@ -1284,10 +1266,7 @@
         }
       ],
       "asks": [
-        "Assign one named, accountable owner for the CrossPeak account, with a named backup.",
-        "Provide a written escalation path (who, and to whom, when an item stalls).",
-        "Commit to advance notice and a documented warm handoff before any change to CrossPeak's key contacts.",
-        "Hold the proper account review/kickoff that never occurred, to re-baseline open items and ownership."
+        "None outstanding — Brittany Taylor is CrossPeak’s account manager, and Vensure is setting up cadence calls (committed 9/29)."
       ],
       "references": [
         "Email 'Handoff' (5/11/2026) and 'Introducing Your Client Growth Consultant' (5/11–5/14/2026).",
@@ -1298,8 +1277,8 @@
     {
       "id": "07",
       "slug": "i9-approval-payroll-halt-2026",
-      "title": "New-hire I-9 approval stuck in PrismHR — Vensure says it is halting payroll, but the approval is not actionable on CrossPeak's side",
-      "status": "Closed — payroll unblocked 6/26 and later I-9s processed; CrossPeak's 6/30 question about who approved the I-9s was never answered",
+      "title": "New-hire I-9 approval stuck in PrismHR — resolved 6/26",
+      "status": "Closed — payroll unblocked 6/26, and later I-9s have gone through the normal flow",
       "category": "Onboarding / Payroll",
       "account": "CROSSPEAK SOLUTIONS — 45248",
       "opened": "2026-06-23",
@@ -1433,11 +1412,7 @@
         }
       ],
       "asks": [
-        "Repair the PrismHR I-9 approval record (or provide a working link) so CrossPeak can complete Section 2 — or have Vensure complete the employer verification — before the payroll deadline.",
-        "Confirm in writing that both new hires' statutory I-9 / E-Verify items are complete or on a tracked deadline, independent of the payroll-system issue.",
-        "Decouple a single new-hire onboarding item from the entire payroll run, so one stuck approval cannot halt pay for the whole company.",
-        "Provide a named backup / escalation contact when the assigned representatives are out of office and payroll is pending.",
-        "Resolve the second new hire's banking and tax-withholding setup so she is added to the payroll sheet."
+        "None outstanding — the I-9 approval flow works as expected (confirmed 7/21)."
       ],
       "references": [
         "Email threads (June 2026): 'I-9 Section 2 Approval needed (CROSSPEAK SOLUTIONS)'; 'ACTION REQUIRED: I-9 Needs Verification'; 'CrossPeak Solutions — New Employee'.",
@@ -1449,8 +1424,8 @@
     {
       "id": "08",
       "slug": "terminated-employees-billed-trustmark-2026",
-      "title": "Employees never properly on- or off-boarded on the medical plan — Vensure never set up the broker access it proposed in December 2025",
-      "status": "Open — 9/30: Trustmark approved an exception honoring the actual termination dates (C.W. 4/1, A.K. 5/1, P.D. 6/1), which should credit back the premiums billed after each departure; $323.04 in claims paid in those months is owed back to Trustmark. CrossPeak asked Trustmark on 9/30 to confirm the credit in writing. The new hire (H.R.) is being enrolled; Vensure set up a refund of the ~$687 in premiums deducted while he had no coverage, now on hold at the broker's request. The errors and omissions claim and the request to meet Vensure's CEO or President are still unanswered.",
+      "title": "Medical plan hires and terminations not reaching the carrier — working together toward closure",
+      "status": "Working toward closure — Trustmark approved honoring the actual termination dates (9/30), which should credit back nearly all of the overpayment; the broker now has access to Vensure’s system (9/29); Vensure set up the new hire’s refund; and Vensure’s Head of Delivery is setting up process walkthroughs. Remaining: Trustmark’s written credit confirmation, the new hire’s refund and enrollment, and the walkthroughs.",
       "category": "Benefits & Offboarding",
       "account": "CROSSPEAK SOLUTIONS — 45248",
       "opened": "2026-09-24",
@@ -1458,7 +1433,7 @@
       "players": [
         {
           "id": "brittany-shively",
-          "issueRole": "Declined the credit on 9/25, citing the Benefit Administration Services Addendum; said Vensure's system cannot notify the broker of terminations"
+          "issueRole": "Brought Vensure’s service leadership to the 9/29 meeting and coordinated the follow-up"
         },
         {
           "id": "nick-smith",
@@ -1486,30 +1461,24 @@
         },
         {
           "id": "brie-dixon",
-          "issueRole": "Vensure Business Consultant at onboarding; proposed broker report access on 12/29/2025 and promised on 12/23/2025 to assign someone to the health plan — neither delivered"
+          "issueRole": "Vensure Business Consultant at onboarding; raised broker report access on 12/29/2025"
         },
         {
           "id": "angel-deaton",
-          "issueRole": "Vensure Implementation Consultant asked on 12/29/2025 to initiate broker access; sent a one-time enrollment file instead"
+          "issueRole": "Vensure Implementation Consultant at onboarding"
         }
       ],
-      "summary": "While pulling documents for the 2027 medical renewal on September 24, 2026, CrossPeak found that three employees who left earlier in the year — C.W. (termed 3/1/2026), A.K. (4/14/2026) and P.D. (5/4/2026) — were still enrolled and still being billed on CrossPeak's self-funded Trustmark medical plan. Vensure — which enrolled these employees in the plan through its own benefits platform — had terminated all three in payroll on time, and confirmed no premium deductions were still being taken from them. But nothing carried those terminations to the carrier. Under the Benefit Administration Services Addendum signed 11/25/2025, CrossPeak's medical plan was set up on Vensure's 'External Broker of Record' option: Vensure builds the plan, runs enrollment and takes deductions, while updating the carrier on hires, terminations and life events is listed only under Vensure's higher service tiers. The client's stated responsibility is to pay, audit and reconcile the carrier invoice. Trustmark, for its part, directed the group to its broker for changes and to its employer portal to terminate members. No one — Vensure's implementation team, the broker, or the carrier — ever told CrossPeak that it now owned carrier terminations, or set up a process to make sure they happened. Each party assumed another covered it, and CrossPeak paid for it. On September 28, 2026 CrossPeak found the December 2025 record that settles ownership. On 12/19/2025 the broker asked Vensure who needed to be assigned for access to the health plan; Vensure replied 12/23 that \"someone from our team\" would be assigned. On 12/29/2025 Vensure’s own business consultant wrote that \"Nick should have access to be able to pull reports, etc.\" and asked Vensure’s implementation team to initiate it; the broker replied the same morning, \"Access would be great.\" CrossPeak replied that day, \"please let me know if you need anything from my side,\" and again on 1/5/2026. No one was assigned, the access was never set up, and no one ever asked CrossPeak for anything further. The same gap runs in the other direction: on 9/28/2026 Vensure’s system showed a July hire (H.R.) as enrolled on Trustmark while the broker had never received his enrollment — \"There is a disconnect regarding their insurance.\" Employees were not being onboarded to the carrier, not only offboarded.",
+      "summary": "While preparing the 2027 medical renewal on September 24, 2026, CrossPeak found that three employees who left earlier in the year — C.W. (termed 3/1/2026), A.K. (4/14/2026) and P.D. (5/4/2026) — were still enrolled and being billed on CrossPeak’s self-funded Trustmark medical plan. Vensure had terminated all three in payroll on time, but nothing carried those terminations to the broker or the carrier: the broker report access discussed at onboarding in December 2025 had not been set up, so no one outside Vensure could see hires or terminations. The same gap affected one July hire (H.R.), whose enrollment had not reached the carrier. Once it surfaced, every party engaged: Vensure gave the broker access on 9/29 and met with CrossPeak the same day; Trustmark approved an exception on 9/30 honoring the actual termination dates; and Vensure, UNIQ and CrossPeak are now confirming the hire and termination process end to end so it cannot repeat.",
       "note": {
-        "title": "The December 2025 record — access proposed, requested, and never provided",
-        "html": "<p><strong>Vensure proposed it.</strong> Brie Dixon (Vensure Business Consultant), 12/29/2025 9:00 AM ET: <em>“All data will be housed in our system. However, Nick should have access to be able to pull reports, etc. @Angel Deaton - does he have access at this time &amp; if not can we please initiate that if the client agrees.”</em></p><p><strong>The broker asked for it.</strong> Nick Boeschen (UNIQ), 12/29/2025 9:04 AM ET: <em>“Access would be great…”</em> — and ten days earlier, 12/19/2025 3:49 PM ET: <em>“Who would we need to assign to their health insurance plan to have access…?”</em> Vensure, 12/23/2025 11:36 AM ET: <em>“We will have someone from our team that will be assigned to assist.”</em></p><p><strong>CrossPeak said yes to anything needed.</strong> Zane Perry, 12/29/2025 1:25 PM ET: <em>“please let me know if you need anything from my side”</em>; 1/5/2026 6:18 PM ET: <em>“if anybody needs anything from me, please let me know.”</em> Vensure never asked CrossPeak to approve the access, never assigned the promised person, and never set it up.</p><p><strong>The result.</strong> Vensure holds the only system of record for hires and terminations. The broker confirmed on 9/15/2026: <em>“All the employee data is in the Vensure platform, which I do not have access to.”</em> Without the access Vensure itself proposed, no one outside Vensure could see a hire or a termination — so three terminations never reached the carrier, and at least one new hire’s enrollment never did either.</p><p><strong>On the signed addendum.</strong> Vensure’s 9/25 position is that the addendum leaves carrier updates to the client and broker. That position depends on the broker having the data. Vensure knew the broker needed report access, said so in writing, promised to assign someone, and did not follow through. This is an implementation failure, it is Vensure’s, and it is the same pattern as <a href=\"escalation.html?id=01\">#01</a>, <a href=\"escalation.html?id=03\">#03</a>, <a href=\"escalation.html?id=04\">#04</a> and <a href=\"escalation.html?id=07\">#07</a>: CrossPeak’s account was never properly onboarded.</p>"
+        "title": "Where this stands — working together toward closure",
+        "html": "<p><strong>Recovered:</strong> Trustmark’s upper management approved an exception on 9/30 that ends coverage on the actual termination dates (C.W. 4/1, A.K. 5/1, P.D. 6/1). That should credit back nearly all of the ~$25.7K billed after the departures; $323.04 in claims paid in those months goes back to Trustmark. CrossPeak has asked Trustmark to confirm the credit in writing.</p><p><strong>Fixed:</strong> the broker has had access to Vensure’s system since 9/29, and his first review found the one new hire whose enrollment had not reached the carrier. That enrollment has been submitted, and Vensure has set up the refund of the premiums deducted while it was pending.</p><p><strong>Next:</strong> Vensure’s Head of Delivery, Nick Smith, is setting up two or three walkthroughs of the hire and termination process with CrossPeak and the broker, and Vensure and UNIQ will align on Trustmark’s new enrollment portal requirement before 11/1/2026.</p>"
       },
       "impact": [
-        "An estimated ~$25.7K in medical premiums billed for three former employees from April through September 2026, plus roughly $4.8K more if the October bill was paid with them still enrolled (estimate from the January per-member rates; pending the carrier's reconciliation).",
-        "Trustmark’s 9/28 retro-terminations recovered roughly $4.8K. On 9/30 Trustmark’s upper management approved an exception moving the end dates back to the actual departures (C.W. 4/1, A.K. 5/1, P.D. 6/1), which should cover the remaining ~$20.9K; $323.04 in claims paid during those months must be refunded to Trustmark. Credit amount not yet confirmed in writing.",
-        "Two of the three former employees (C.W. and P.D.) kept filling prescriptions on the plan after they left. On a self-funded plan those claims were paid from CrossPeak’s claim fund, and Trustmark used them to set later termination dates.",
-        "Trustmark normally limits retroactive terminations to three months; its 9/30 approval was an exception, not a right CrossPeak could count on.",
-        "No process exists today to carry a termination from Vensure's system to the carrier — the gap will repeat on the next departure unless one is created.",
-        "Vensure enrolls employees in the medical plan through its own platform and holds the only system of record for terminations; the broker has no access to that data. Without a notice from Vensure, neither CrossPeak nor the broker had a trigger to tell the carrier.",
-        "Vensure states its system cannot notify the broker of terminations, life events or new hires; the only option offered is a report CrossPeak must pull and forward itself.",
-        "Discovered only by chance, during renewal shopping, about seven months after the first termination.",
-        "New hires are not reaching the carrier either: on 9/28 Vensure’s system showed H.R. (hired July 2026) on Trustmark, but the broker had never received his enrollment. Every hire since 1/1/2026 needs to be reconciled against the carrier roster.",
-        "H.R. had medical premiums deducted from his pay from 8/14 (about $687) while he had no coverage, because his enrollment never reached the carrier.",
-        "Effective 11/1/2026, Trustmark requires every enrollment and eligibility change to come through its Manage My Group portal or an approved EDI feed — a path Vensure and the broker still need to set up."
+        "About $25.7K in medical premiums was billed for three former employees from April through September 2026.",
+        "Trustmark recovered about $4.8K on 9/28 and on 9/30 approved an exception honoring the actual termination dates (C.W. 4/1, A.K. 5/1, P.D. 6/1), which should cover nearly all of the rest; $323.04 in claims paid in those months is to be refunded to Trustmark.",
+        "One new hire (H.R.) had about $687 deducted from 8/14 while his enrollment had not reached Trustmark; the enrollment has been submitted and Vensure has set up the refund.",
+        "Until 9/29 no one outside Vensure could see hires or terminations; the broker’s new access closes that gap, and the walkthroughs will confirm the process end to end.",
+        "From 11/1/2026 Trustmark requires enrollment changes through its Manage My Group portal or an approved EDI feed."
       ],
       "timeline": [
         {
@@ -1919,7 +1888,7 @@
           "actor": "Zane Perry",
           "role": "Managing Partner, CrossPeak",
           "party": "crosspeak",
-          "text": "Meets Vensure service leadership and walks them through the year with a visual timeline of every issue: https://crosspeakzane.github.io/vensure-escalations/journey.html. Vensure's Head of Delivery (Nick Smith) commits to speak with the broker and the carrier, to put the agreed credit in a written addendum once those talks conclude, and to set up two or three end-to-end walkthroughs of the hire and termination process. Vensure confirms no regular cadence calls had ever been set up on the account."
+          "text": "Meets Vensure service leadership and walks through the year together. Vensure's Head of Delivery (Nick Smith) commits to speak with the broker and the carrier, to put the agreed credit in a written addendum once those talks conclude, and to set up two or three end-to-end walkthroughs of the hire and termination process. Vensure confirms no regular cadence calls had ever been set up on the account."
         },
         {
           "date": "2026-09-30",
@@ -1998,28 +1967,13 @@
         }
       ],
       "asks": [
-        "Vensure: reimburse 100% of whatever Trustmark does not credit — now expected to be the $323.04 in claims plus any premium left uncredited — directly or through Vensure’s errors and omissions coverage.",
-        "Vensure: hold the two or three end-to-end walkthroughs of the hire and termination process committed on 9/29, with the broker included, and set up Trustmark’s Manage My Group or EDI path before its 11/1/2026 deadline.",
-        "Vensure and broker: release H.R.’s refund (about $687, set up for the 10/2 pay date) now — it is for coverage he never had and does not depend on the carrier.",
-        "Trustmark: confirm in writing the credit amount and how it will be applied to CrossPeak’s account (asked 9/30, 12:58 PM ET).",
-        "Vensure: CrossPeak is making an errors and omissions (E&O) claim for this loss. Report it to Vensure’s E&O carrier and send CrossPeak the carrier name, claim number and adjuster contact.",
-        "Vensure: explain in writing why the broker access proposed on 12/29/2025 was never set up, and why no one was assigned to the health plan as promised on 12/23/2025.",
-        "Vensure: set up the broker’s report access now. CrossPeak approves it in writing with this request.",
-        "Vensure: send a census of every employee Vensure shows enrolled in medical and each ancillary line, with effective dates, since 1/1/2026; reconcile it with the broker against Trustmark’s roster; and confirm in writing that every missed new hire, starting with H.R., is enrolled back to the correct eligibility date.",
-        "Vensure: schedule a meeting with Vensure’s CEO or President as soon as possible to review everything that has happened on CrossPeak’s account (#01–#08).",
-        "Explain why no one at Vensure — at implementation or after any of the three terminations — told or trained CrossPeak that, under the option Vensure set up, terminations entered in Vensure's system would not reach the medical carrier.",
-        "Going forward, whenever Vensure terminates an employee enrolled in a benefit whose enrollment Vensure administers, notify CrossPeak and the broker that day that the carrier must be told — a basic, reasonable step for the party that enrolled them.",
-        "Deliver a termination and employee-change report to CrossPeak and its broker automatically, at least every payroll cycle, starting now — so the next departure cannot slip through.",
-        "Provide the terms and cost of Vensure's service tier that includes carrier member management, so CrossPeak can evaluate it for the 1/1/2027 plan year.",
-        "Confirm in writing that no benefit deductions are being taken, or invoiced to CrossPeak, for the three former employees.",
-        "Broker and carrier (outside Vensure): confirm the three are removed from the plan effective their termination dates, state the carrier's retro-termination limit, and itemize and refund the overpayment.",
-        "Trustmark: assign CrossPeak a new account manager, and itemize every prescription claim paid for C.W. and P.D. after their termination dates.",
-        "DONE 9/30 9:49 AM — Trustmark and broker: pursue reversal or recovery of the claims so coverage can end on the actual termination dates. Trustmark approved the actual dates; $323.04 in claims is to be refunded.",
-        "All parties (Vensure, UNIQ, Trustmark): provide copies of every email, communication, training material, checklist or note that informed CrossPeak of its role in offboarding employees from the medical plan or notifying the carrier of terminations — from implementation (Nov–Dec 2025) and around each termination (Mar–May 2026).",
-        "Formal preservation demand (all parties): preserve, and suspend any deletion or retention schedule for, every document and electronically stored information relating to CrossPeak Solutions LLC from first sales contact through final resolution — including emails, chats (Teams, Slack), texts, voicemails, call recordings and notes, CRM, case and ticket records, implementation checklists and worksheets, user-access requests, system audit trails and change logs, enrollment, eligibility, deduction, billing and termination records, and internal communications about CrossPeak — in native format with metadata, until this matter is fully resolved.",
-        "Broker: itemize exactly what was paid for each of the three former employees after their termination dates, month by month (premium, stop-loss, admin and claims), against what Trustmark is crediting.",
-        "DONE 9/29 9:20 AM — Vensure: activate the broker’s access within one business day of CrossPeak’s New User Request Form (submitted 9/28, 5:22 PM ET), confirm in writing what he can see (hires, terminations, enrollments), and confirm whether any access request for him exists in Vensure’s records.",
-        "Vensure: CEO and President to answer the questions for leadership below, in writing, before or at the meeting."
+        "Trustmark: confirm in writing the credit amount and how it will be applied to CrossPeak’s account (asked 9/30).",
+        "UNIQ: confirm H.R. is fully enrolled with Trustmark; Vensure then releases his refund (about $687, already set up).",
+        "Vensure: hold the two or three end-to-end walkthroughs of the hire and termination process committed on 9/29, with the broker included.",
+        "Vensure and UNIQ: agree a simple routine so every future hire and termination reaches Trustmark, including its Manage My Group or EDI requirement from 11/1/2026.",
+        "Vensure: confirm the credit addendum discussed on 9/29, if still needed, once Trustmark’s credit is final.",
+        "DONE 9/29 — Vensure set up the broker’s access to its system.",
+        "DONE 9/30 — Trustmark approved the actual termination dates."
       ],
       "references": [
         "Email thread 'Vensure - Medical Documents Needed' (September 24–25, 2026).",
@@ -2038,24 +1992,14 @@
         "recovered": 25350,
         "causes": [
           {
-            "who": "Vensure (PEO) — 100%",
-            "tone": "vensure",
-            "text": "Proposed broker report access in writing on 12/29/2025, promised on 12/23/2025 to assign someone to the health plan, and delivered neither. Holds the only record of hires and terminations and never shared it — so terminations (and at least one new hire) never reached the carrier. Part of a wider failure to onboard the account (see #01, #03, #04, #07)."
+            "who": "Process gap",
+            "tone": "open",
+            "text": "No process carried hires and terminations from Vensure’s system to the broker and carrier. The broker access discussed in December 2025 was set up on 9/29/2026."
           },
           {
-            "who": "UNIQ (broker)",
-            "tone": "broker",
-            "text": "Asked for the access it needed (12/19 and 12/29/2025) and never received it. Without Vensure’s data it had no way to see hires or terminations."
-          },
-          {
-            "who": "CrossPeak",
-            "tone": "crosspeak",
-            "text": "Told Vensure in writing to ask for anything it needed (12/29/2025, 1/5/2026). Was never asked to approve the access and never told it had any role in carrier updates."
-          },
-          {
-            "who": "Trustmark (context)",
+            "who": "Trustmark",
             "tone": "carrier",
-            "text": "Not a cause. Its usual three-month retro-termination limit and the prescription claims first set later end dates; on 9/30 its upper management approved an exception honoring the actual termination dates."
+            "text": "Approved an exception on 9/30 honoring the actual termination dates, reaching back before every billed month."
           }
         ],
         "lever": {
@@ -2064,18 +2008,18 @@
         },
         "shares": [
           {
-            "who": "Vensure",
-            "tone": "vensure",
-            "text": "100%. Vensure proposed the access, was asked for it, promised to assign someone, and never delivered. CrossPeak expects Vensure to cover the full remainder, directly or through an errors and omissions claim."
+            "who": "Settle together",
+            "tone": "open",
+            "text": "The remaining $323.04 in claims is small; CrossPeak, Vensure and UNIQ will settle it as part of closing this out."
           }
         ],
-        "footnote": "Estimates based on January 2026 per-member billing. “Recovered” reflects Trustmark’s 9/30 approval of the actual end dates (C.W. 4/1, A.K. 5/1, P.D. 6/1), which reach back before every billed month; it becomes final when Trustmark confirms the credit in writing. The open balance is the $323.04 in claims to be refunded to Trustmark. October premiums, if billed, are expected to be credited and are not included. Not included: the ~$687 deducted from H.R. while he had no coverage, which Vensure has set up to refund.",
-        "ownershipTitle": "Ownership of the remainder",
-        "shareStep": "Step 2 · who covers what is left"
+        "footnote": "Estimates based on January 2026 per-member billing. “Recovered” reflects Trustmark’s 9/30 approval of the actual end dates (C.W. 4/1, A.K. 5/1, P.D. 6/1), which reach back before every billed month; it becomes final when Trustmark confirms the credit in writing. The open balance is the $323.04 in claims to be refunded to Trustmark. October premiums, if billed, are expected to be credited and are not included. Not included: the ~$687 deducted from H.R. while his enrollment was pending, which Vensure has set up to refund.",
+        "ownershipTitle": "What is left",
+        "shareStep": "Step 2 · settle what is left"
       },
       "rootCause": {
-        "label": "Root cause",
-        "headline": "CrossPeak cannot onboard or offboard employees with its carrier because Vensure never gave its broker access to Vensure’s system — the only system that records who is hired and who has left — and never even sent the form to grant it.",
+        "label": "What happened",
+        "headline": "Hires and terminations recorded in Vensure’s system had no path to the broker or the carrier: the broker access discussed at onboarding was not set up until 9/29/2026.",
         "points": [
           {
             "when": "Fri 12/19/2025 · 3:49 PM ET",
@@ -2084,12 +2028,12 @@
           },
           {
             "when": "Tue 12/23/2025 · 11:36 AM ET",
-            "who": "Brie Dixon (Vensure) promises",
+            "who": "Vensure confirms someone will be assigned",
             "quote": "We will have someone from our team that will be assigned to assist."
           },
           {
             "when": "Mon 12/29/2025 · 9:00 AM ET",
-            "who": "Brie Dixon (Vensure) names Vensure’s system as the record and assigns the access to Vensure’s implementation consultant",
+            "who": "Brie Dixon (Vensure) raises report access for the broker",
             "quote": "All data will be housed in our system. However, Nick should have access to be able to pull reports, etc. @Angel Deaton - does he have access at this time & if not can we please initiate that if the client agrees."
           },
           {
@@ -2099,84 +2043,39 @@
           },
           {
             "when": "Mon 12/29/2025 · 1:25 PM ET",
-            "who": "CrossPeak (Zane Perry) agrees to anything needed",
+            "who": "CrossPeak (Zane Perry) offers anything needed",
             "quote": "please let me know if you need anything from my side"
           },
           {
             "when": "Tue 9/15/2026 · 2:57 PM ET",
-            "who": "Nine months later, the broker still has none",
+            "who": "Access still not set up",
             "quote": "All the employee data is in the Vensure platform, which I do not have access to."
           },
           {
             "when": "Tue 9/15/2026 · 3:08 PM ET",
-            "who": "CrossPeak asks Vensure again",
+            "who": "CrossPeak follows up",
             "quote": "Hi Brittany, Can you please help me get this for Nick and Nate, who are helping us shop around for 2027?"
           },
           {
             "when": "Mon 9/28/2026 · 4:17 PM ET",
-            "who": "Vensure, for the first time in nine months, names the form",
+            "who": "Vensure shares the access form; access is live the next morning",
             "quote": "As for Nick’s system access, you’ll need to complete the new user form, and Brittany can get him set up with access."
           }
         ],
-        "conclusion": "No form was ever sent to CrossPeak or the broker. Vensure knows how: it sent CrossPeak the same New User Request Form for CrossPeak’s own staff at implementation (12/11 and 12/23/2025) and, unprompted, for CrossPeak’s CPA (4/6 and 4/16/2026). The broker finally got access on 9/29/2026 at 9:20 AM ET — nine months after Vensure proposed it. As the owner of the system of record, Vensure owns making the process CrossPeak pays it to support work end to end. This failure is Vensure’s, 100%."
+        "conclusion": "Once this surfaced, the teams moved quickly: Vensure set up the broker’s access on 9/29, Trustmark approved the actual termination dates on 9/30, and Vensure, UNIQ and CrossPeak are walking the hire and termination process end to end so the next change reaches the carrier on time."
       },
-      "questionsTitle": "Questions for Vensure’s CEO and President",
-      "questionsIntro": "CrossPeak asks Vensure’s CEO and President to answer each of these in writing.",
-      "questions": [
-        "On 12/29/2025 Vensure’s Business Consultant asked Vensure’s Implementation Consultant to initiate the broker’s access. Why was it never initiated, and why was the user-access form never sent to CrossPeak — when Vensure sent that same form for CrossPeak’s staff in December 2025 and for its CPA in April 2026?",
-        "Vensure’s own team called its system the place “all data will be housed.” As the owner of that system, who at Vensure was responsible for confirming the broker could see hires and terminations — and why did no one check in nine months?",
-        "Where did Brie Dixon go, when did she leave, and who inherited her open commitments to CrossPeak (12/23/2025: “someone from our team … will be assigned”; 12/29/2025: the broker’s access)? Was there any handoff?",
-        "Why did it take roughly nine months (December 2025 to September 2026) to finish onboarding CrossPeak, including state tax registrations not completed until 9/16/2026?",
-        "Which Vensure employees assigned to CrossPeak since November 2025 have left Vensure or been reassigned, and why? How many account staff has Vensure lost company-wide in that period?",
-        "What happened inside Vensure — the April 2026 reorganization of Client Relations and Payroll into Service Operations, and the staff turnover around it — that meant no one confirmed CrossPeak’s broker had the access needed to finish onboarding and offboarding employees?",
-        "Brittany Shively wrote on 9/28 that Vensure does “not communicate directly with brokers on behalf of clients.” Vensure’s implementation team sent the broker CrossPeak’s census directly on 12/30/2025, and Vensure emailed the broker directly on 9/28/2026. Which is Vensure’s actual practice?",
-        "How many other Vensure clients on the External Broker of Record option have brokers with no access to Vensure’s system, and what is Vensure doing about them?",
-        "Has Vensure reported CrossPeak’s errors and omissions claim to its E&O carrier? Name the carrier, claim number and adjuster.",
-        "Who, by name, is accountable for CrossPeak’s account today, with a named backup?"
-      ],
-      "evidenceIntro": "Email records compiled 9/28/2026 from CrossPeak’s mailbox. Each message shows its date, sender and recipients with its own text; quoted history and disclaimers are omitted, employee names are initials, and personal identifiers are redacted. Unaltered originals are preserved.",
-      "evidence": [
-        {
-          "title": "Our Year with Vensure — 3D walk-through of every roadblock (present this)",
-          "href": "journey.html",
-          "pages": "interactive"
-        },
-        {
-          "title": "Complete evidence packet — all threads below",
-          "href": "assets/evidence/00-evidence-packet-escalation-08.pdf",
-          "pages": "40 pages"
-        },
-        {
-          "title": "Kickoff of PEO migration (Nov 24–25, 2025)",
-          "href": "assets/evidence/01-kickoff-2025-11.pdf",
-          "pages": "2 pages"
-        },
-        {
-          "title": "Vensure Contact — broker asks who to assign for access (Dec 19–23, 2025)",
-          "href": "assets/evidence/02-vensure-contact-2025-12.pdf",
-          "pages": "1 page"
-        },
-        {
-          "title": "Welcome to Vensure — broker access proposed 12/29/2025 (Dec 11, 2025 – Jan 5, 2026)",
-          "href": "assets/evidence/03-welcome-to-vensure-2025-12.pdf",
-          "pages": "10 pages"
-        },
-        {
-          "title": "Access for CrossPeak’s CPA — Vensure sends the user-access form (Apr 16–22, 2026)",
-          "href": "assets/evidence/04-user-access-form-cpa-2026-04.pdf",
-          "pages": "2 pages"
-        },
-        {
-          "title": "Vensure – Medical Documents Needed (Sep 9–28, 2026)",
-          "href": "assets/evidence/05-medical-documents-2026-09.pdf",
-          "pages": "23 pages"
-        },
-        {
-          "title": "Insurance Confirmation — new hire never enrolled with the carrier (Sep 28, 2026)",
-          "href": "assets/evidence/06-new-hire-enrollment-2026-09.pdf",
-          "pages": "3 pages"
-        }
-      ]
+      "state": "open",
+      "kudos": {
+        "title": "Thank you for working this with us",
+        "heroIds": [
+          "nate-schoenbrun",
+          "nick-smith",
+          "brittany-taylor",
+          "brittany-shively",
+          "nick-boeschen"
+        ],
+        "html": "<p><strong>Nate Schoenbrun</strong> spotted the billing problem and stopped it. <strong>Nick Smith</strong> and <strong>Brittany Shively</strong> met with CrossPeak the same day it was raised and committed to fixing the process. <strong>Brittany Taylor</strong> set up the new hire’s refund within a day. <strong>Nick Boeschen</strong> worked Trustmark to an exception honoring the actual termination dates. Thank you.</p>"
+      }
     }
   ]
 }

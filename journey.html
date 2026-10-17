@@ -365,7 +365,7 @@ a { color: var(--brand) }
     for (var i = 0; i < n; i++) { var v = (rnd() - 0.5) * spread; g.fillStyle = 'rgba(' + (v > 0 ? '255,255,255,' : '0,0,0,') + Math.abs(v) + ')'; var s = size * (0.4 + rnd()); g.fillRect(rnd() * w, rnd() * h, s, s); }
   }
 
-  var SPACING = 11; function stopX(i) { return i * SPACING + 6; }
+  var SPACING = 11; function stopX(i) { return i * SPACING + 6 + (STOPS[i] && STOPS[i].owners ? 4 : 0); } // extra road before the closing stop so its sign stands apart
   var LEN = STOPS.length * SPACING + 40;
   var grassTex = canvasTex(512, 512, function (g, w, h) { noise(g, w, h, '#4d6b2e', 0.22, 26000, 3); for (var i = 0; i < 2200; i++) { g.strokeStyle = 'rgba(' + (60 + rnd() * 50) + ',' + (100 + rnd() * 60) + ',' + (30 + rnd() * 30) + ',0.55)'; var x = rnd() * w, y = rnd() * h; g.beginPath(); g.moveTo(x, y); g.lineTo(x + (rnd() - .5) * 4, y - 6 - rnd() * 8); g.stroke(); } }, [LEN / 6, 14]);
   var asphaltTex = canvasTex(512, 512, function (g, w, h) { noise(g, w, h, '#3b3f44', 0.18, 40000, 2); }, [LEN / 5, 1]);
@@ -631,7 +631,7 @@ a { color: var(--brand) }
     pendingBack = back; arrived = false; bonk = null; bubbleT = 0; sayAt = -1;
     targetX = (bonks(i) && !back) ? contactX(i) : restX(i);
     var gap = targetX - walker.position.x;
-    if (Math.abs(gap) > SPACING * 1.25 && !reduce) { walker.position.x = targetX - Math.sign(gap) * SPACING * 0.85; v = 0; } // a jump of several stops skips ahead and walks the last stretch
+    if (Math.abs(gap) > SPACING * 1.6 && !reduce) { walker.position.x = targetX - Math.sign(gap) * SPACING * 0.85; v = 0; } // a jump of several stops skips ahead and walks the last stretch
     setSun(i / (STOPS.length - 1));
     if (reduce) { walker.position.x = restX(i); targetX = walker.position.x; }
   };

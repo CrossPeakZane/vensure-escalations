@@ -8,7 +8,7 @@
       "category": "Benefits & Open Enrollment",
       "account": "CROSSPEAK SOLUTIONS — 45248",
       "opened": "2026-06-12",
-      "updated": "2026-09-29",
+      "updated": "2026-10-16",
       "players": [
         {
           "id": "jadiel-aponte",
@@ -377,6 +377,14 @@
           "party": "other",
           "partyLabel": "Broker",
           "text": "Sends Vensure the census with chosen plans, claims reporting and invoice for underwriting of the 1/1/2027 Vensure Master Plan quote."
+        },
+        {
+          "date": "2026-10-15",
+          "time": "11:43 AM ET",
+          "actor": "Nate Schoenbrun",
+          "role": "Client Growth Consultant, Vensure",
+          "party": "vensure",
+          "text": "Reports that CrossPeak was declined from the Vensure Master Plan, the 1/1/2027 route committed to on 9/9. Tracked as escalation #09."
         }
       ],
       "asks": [
@@ -2076,6 +2084,100 @@
         ],
         "html": "<p><strong>Nate Schoenbrun</strong> spotted the billing problem and stopped it. <strong>Nick Smith</strong> and <strong>Brittany Shively</strong> met with CrossPeak the same day it was raised and committed to fixing the process. <strong>Brittany Taylor</strong> set up the new hire’s refund within a day. <strong>Nick Boeschen</strong> worked Trustmark to an exception honoring the actual termination dates. Thank you.</p>"
       }
+    },
+    {
+      "id": "09",
+      "slug": "jan-1-2027-master-plan-declined",
+      "title": "January 1, 2027 Master Plan: committed in September, declined in October",
+      "state": "open",
+      "status": "Open: on 10/15 Vensure said CrossPeak was declined from the Master Plan it had committed to for 1/1/2027. CrossPeak has asked for everything that was submitted, the reason for the decline, and a meeting with Vensure's CEO.",
+      "category": "Benefits & Open Enrollment",
+      "account": "CROSSPEAK SOLUTIONS — 45248",
+      "opened": "2026-10-15",
+      "updated": "2026-10-16",
+      "players": [
+        {
+          "id": "nate-schoenbrun",
+          "issueRole": "Proposed the 1/1/2027 go-live on 9/8, committed to the Master Plan route on 9/9, and reported the decline on 10/15"
+        },
+        {
+          "id": "nick-boeschen",
+          "issueRole": "CrossPeak's broker; sent Vensure the census, claims reporting and invoice for Master Plan underwriting on 9/29"
+        },
+        {
+          "id": "brittany-shively",
+          "issueRole": "AVP, Service Operations; copied on the decline"
+        },
+        {
+          "id": "brittany-taylor",
+          "issueRole": "Account manager; copied on the decline"
+        },
+        {
+          "id": "richard-heckner",
+          "issueRole": "Vensure leadership; included in CrossPeak's request for a CEO meeting"
+        },
+        {
+          "id": "elizabeth-kinsella",
+          "issueRole": "Vensure leadership; included in CrossPeak's request for a CEO meeting"
+        },
+        {
+          "id": "zane-perry",
+          "issueRole": "Raised the escalation on behalf of CrossPeak"
+        }
+      ],
+      "summary": "This follows escalation #01. After months of being told every Vensure Master Plan renews on July 1, CrossPeak was told in September that it could stay on one January 1 benefits cycle. On 9/8 Nate Schoenbrun proposed \"1/1/27 Go-Live Planning,\" and on the 9/9 benefits call Vensure committed to a January 1 renewal with its Master Plan as the primary route and the open market only as a backup. CrossPeak's broker sent the census, claims reporting and invoice for underwriting on 9/29. On 10/15, about ten weeks before the plan year starts, Vensure wrote that CrossPeak's group \"was declined from our master plan\" and offered to look at open-market options and \"another solution\" instead. No reason for the decline was given.",
+      "impact": [
+        "The January 1 Master Plan was the plan Vensure itself put forward as the primary route on 9/9. It was withdrawn about ten weeks before the 1/1/2027 plan year.",
+        "CrossPeak now has to find, price and enroll replacement medical coverage for January 1 on a compressed timeline, during the busiest weeks of the renewal season.",
+        "No reason for the decline has been given, so CrossPeak cannot tell whether anything in its submission could have been corrected.",
+        "Another reversal on the same topic: in March Vensure said all Master Plans renew on 7/1, in June and September it moved CrossPeak to January 1, and in October the January 1 Master Plan is off the table."
+      ],
+      "timeline": [
+        {
+          "date": "2026-09-08",
+          "time": "12:25 PM ET",
+          "actor": "Nate Schoenbrun",
+          "role": "Client Growth Consultant, Vensure",
+          "party": "vensure",
+          "text": "Proposes 'Benefits Discussion and 1/1/27 Go-Live Planning': a January 1 renewal through Vensure."
+        },
+        {
+          "date": "2026-09-09",
+          "time": "",
+          "actor": "Nate Schoenbrun",
+          "role": "Client Growth Consultant, Vensure",
+          "party": "vensure",
+          "text": "On the benefits strategy call, commits to a 1/1 renewal so CrossPeak avoids two open enrollments in one year, with Vensure's Master Plan as the primary route and the open market as a backup."
+        },
+        {
+          "date": "2026-09-29",
+          "time": "4:30 PM ET",
+          "actor": "Nick Boeschen",
+          "role": "President & CEO, UNIQ Benefit Solutions (broker)",
+          "party": "other",
+          "partyLabel": "Broker",
+          "text": "Sends Vensure the census with chosen plans, claims reporting and invoice for underwriting of the 1/1/2027 Vensure Master Plan quote."
+        },
+        {
+          "date": "2026-10-15",
+          "time": "11:43 AM ET",
+          "actor": "Nate Schoenbrun",
+          "role": "Client Growth Consultant, Vensure",
+          "party": "vensure",
+          "text": "'Unfortunately, your group was declined from our master plan.' Says he is working with Vensure's Open Market team on alternatives and asks to set up a call with a Benefits Consultant. No reason for the decline is given."
+        }
+      ],
+      "asks": [
+        "A copy of everything submitted for the 1/1/2027 Master Plan underwriting, and the specific reason the group was declined.",
+        "A meeting with Vensure's CEO to review this and the other open issues on this log.",
+        "Replacement January 1, 2027 coverage at comparable rates and terms, delivered in time for a normal open enrollment and without moving CrossPeak to a second benefits cycle."
+      ],
+      "references": [
+        "Email: \"Update on Your Health Plan Options\", Nate Schoenbrun to Zane Perry, 10/15/2026, copying Brittany Taylor and Brittany Shively.",
+        "Email: \"Benefits Discussion and 1/1/27 Go-Live Planning\", 9/8/2026, and the 9/9/2026 benefits strategy call.",
+        "Broker underwriting submission to Vensure, 9/29/2026 (see escalation #01).",
+        "Related: escalation #01 (ancillary renewal timing and the single January 1 cycle)."
+      ]
     }
   ]
 }

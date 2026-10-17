@@ -82,6 +82,9 @@ a { color: var(--brand) }
 @media (max-width: 700px) {
   .card { top: auto; bottom: 108px; width: calc(100% - 28px); max-height: 44% } .track { bottom: 96px } .meters { top: 56px; left: 14px; right: auto } .meter { min-width: 0 }
 }
+.say { position: absolute; left: 0; top: 0; z-index: 6; background: #FFFFFF; color: #0B1622; font: 800 18px var(--f-display); padding: 9px 16px; border-radius: 18px; box-shadow: 0 6px 18px rgba(0, 0, 0, .28); pointer-events: none; opacity: 0; transition: opacity .18s; white-space: nowrap; will-change: transform }
+.say::before { content: ''; position: absolute; left: -11px; top: 50%; margin-top: -8px; border-style: solid; border-width: 8px 12px 8px 0; border-color: transparent #FFFFFF transparent transparent }
+.say.on { opacity: 1 }
 .foot { max-width: 1240px; margin: 0 auto; padding-inline: 18px; padding-block: 14px 28px; font-size: 13px; color: var(--muted) }
 </style>
 
@@ -89,17 +92,17 @@ a { color: var(--brand) }
   <div class="eyebrow">Customer experience review · CrossPeak Solutions LLC</div>
   <h1>Let's review my experience as a customer since we joined Vensure</h1>
   <ol class="agenda two-part" aria-label="Call agenda, 30 minutes">
-    <li><b>The walk: our year as your customer</b><span>November to October, every roadblock in order, including the team handoff that dropped broker access and our state registrations, each party's own miss, and the $20,873 still open.</span><em>10 min</em></li>
-    <li><b>Resolution with Vensure leadership</b><span>The $20,873 and the state penalties, the errors and omissions claim, and dated commitments with named owners.</span><em>20 min</em></li>
+    <li><b>The walk: our year as your customer</b><span>November to October, every roadblock in order: the team handoff that dropped broker access and our state registrations, the $25,673 overpayment and how most of it came back, and the January 1 plan that was promised and then declined.</span><em>10 min</em></li>
+    <li><b>Resolution with Vensure leadership</b><span>Our January 1, 2027 coverage after the Master Plan decline, Trustmark's written credit, the new hire's refund, the state penalties, and dated commitments with named owners.</span><em>20 min</em></li>
   </ol>
 </header>
 
-<section class="stage" id="stage" aria-label="Animated 3D timeline: CrossPeak walks from November 2025 to September 2026 and hits a roadblock at each major issue">
+<section class="stage" id="stage" aria-label="Animated 3D timeline: CrossPeak walks from November 2025 to October 2026 and hits a roadblock at each major issue">
   <canvas id="scene" aria-hidden="true"></canvas>
   <div class="loading" id="loading">Loading the road…</div>
   <div class="chip" id="monthTag">NOV 2025</div>
   <div class="meters" aria-live="polite">
-    <div class="meter"><b id="mLoss">$0</b><span>Premiums lost</span></div>
+    <div class="meter"><b id="mLoss">$0</b><span>Overpayment still out</span></div>
     <div class="meter"><b id="mBlocks">0</b><span>Roadblocks hit</span></div>
   </div>
   <article class="card" id="card" aria-live="polite">
@@ -109,6 +112,7 @@ a { color: var(--brand) }
     <blockquote id="cQuote" hidden><span id="cQuoteText"></span><cite id="cCite"></cite></blockquote>
     <div class="owners" id="cOwners" hidden></div>
   </article>
+  <div class="say" id="say" aria-hidden="true"></div>
   <nav class="track" id="track" aria-label="Jump to a stop"></nav>
   <div class="hud">
     <button class="btn primary" id="next" type="button">Walk on →</button>
@@ -140,94 +144,117 @@ a { color: var(--brand) }
     jadiel: { name: 'Jadiel Aponte', role: 'Benefits enrollment', co: 'vensure', photo: 'yr/people/jadiel-aponte.jpg' },
     heckner: { name: 'Richard Heckner', role: 'Vensure leadership', co: 'vensure', photo: 'yr/people/richard-heckner.jpg' },
     misty: { name: 'Misty Ramsey', role: 'Payroll tax lead', co: 'vensure', photo: 'yr/people/misty-ramsey.jpg' },
+    nicksmith: { name: 'Nick Smith', role: 'Head of Delivery', co: 'vensure', photo: '' },
     zane: { name: 'Zane Perry', role: 'Managing Partner', co: 'crosspeak', photo: 'yr/people/zane-perry.jpg' }
   };
 
   // sev: 0 info, 1 miss, 2 major, 3 hero.  kind: obstacle.  h: height.  joins: people who enter the scene here.
   var STOPS = [
-    { month: 'NOV 2025', date: 'Nov 13, 2025', sev: 0, kind: 'sign', h: 1.8, label: 'Better service ahead', tag: 'The promise', loss: 0, count: false, joins: ['zane', 'arron', 'brie'],
+    { month: 'NOV 2025', date: 'Nov 13, 2025', sev: 0, kind: 'sign', h: 1.8, label: 'Better service ahead', say: 'Sounds great!', tag: 'The promise', loss: 0, count: false, joins: ['zane', 'arron', 'brie'],
       title: 'We said no. Vensure promised better service.',
       text: 'We told Vensure we were staying with our previous PEO because of the added risk. Vensure’s Regional VP of Sales called within minutes, cut the admin fee, and made the service promise explicit. We signed on November 25.',
       quote: 'We got into this process because of the customer service challenges you were facing at Engage. We don’t want to lose you as a potential client.', cite: 'Regional VP of Sales, Vensure, 11/13/2025 4:04 PM' },
-    { month: 'NOV 2025', date: 'Nov 6 & Nov 10, 2025', sev: 1, kind: 'cones', h: 0.9, label: 'Two quotes, 4 days', tag: 'Broker', loss: 0, count: true, joins: ['nick'],
+    { month: 'NOV 2025', date: 'Nov 6 & Nov 10, 2025', sev: 1, kind: 'cones', h: 0.9, label: 'Two quotes, 4 days', say: 'Already moving?', tag: 'Broker', loss: 0, count: true, joins: ['nick'],
       title: 'Two health-plan comparisons in four days',
       text: 'The broker who brought us to Vensure sent a comparison on 11/6 and a revised one on 11/10. The revision noted the PEO health rates shown left out a 9% increase. The numbers were moving before we had signed anything.',
       quote: 'Remember that the current PEO health rates shown on the attached do not include the 9% increase each employee will receive.', cite: 'Broker, 11/10/2025 10:05 AM' },
-    { month: 'DEC 2025', date: 'Dec 10, 2025', sev: 1, kind: 'barrier', h: 1.0, label: 'Half an onboarding', tag: 'Scope gap', loss: 0, count: true, joins: ['angel'],
+    { month: 'DEC 2025', date: 'Dec 10, 2025', sev: 1, kind: 'barrier', h: 1.0, label: 'Half an onboarding', say: 'Just payroll? Okay…', tag: 'Scope gap', loss: 0, count: true, joins: ['angel'],
       title: 'The welcome call covers tax and payroll. That’s it.',
       text: 'Implementation never asked for our onboarding documents, handbook or employee agreements. That gap came back in June.' },
-    { month: 'DEC 2025', date: 'Dec 29, 2025 · 9:00 AM', sev: 2, kind: 'wall', h: 2.4, label: 'ROOT CAUSE', tag: 'Root cause', loss: 0, count: true, joins: [],
+    { month: 'DEC 2025', date: 'Dec 29, 2025 · 9:00 AM', sev: 2, kind: 'wall', h: 2.4, label: 'ROOT CAUSE', say: 'Someone will be assigned. Right?', tag: 'Root cause', loss: 0, count: true, joins: [],
       title: 'Vensure proposes broker access, then drops it',
       text: 'Our broker asked for access to Vensure’s system, the only record of who is hired and who leaves. Vensure promised on 12/23 that "someone from our team" would be assigned, then proposed the access itself. The broker said yes; we said "let me know if you need anything from my side." No one was assigned and no access form was ever sent.',
       quote: 'All data will be housed in our system. However, Nick should have access to be able to pull reports, etc. … can we please initiate that if the client agrees.', cite: 'Business Consultant, Vensure, 12/29/2025 9:00 AM' },
-    { month: 'MAR 2026', date: 'Mar 1, 2026', sev: 2, kind: 'barrier', h: 1.5, label: 'Termination #1 lost', tag: 'The bleeding starts', loss: 3700, count: true, joins: [],
+    { month: 'MAR 2026', date: 'Mar 1, 2026', sev: 2, kind: 'barrier', h: 1.5, label: 'Termination #1 lost', say: 'He left in March…', tag: 'The bleeding starts', loss: 3700, count: true, joins: [],
       title: 'The first termination never reaches our health carrier',
       text: 'Terminated in Vensure’s system, still billed on our health plan. Two more follow in April and May. No one can see it: the broker has no access, and no one is checking.' },
-    { month: 'MAR 2026', date: 'Mar 2, 2026', sev: 2, kind: 'wall', h: 1.9, label: 'States: not registered', tag: 'Compliance', loss: 3700, count: true, joins: [],
+    { month: 'MAR 2026', date: 'Mar 2, 2026', sev: 2, kind: 'wall', h: 1.9, label: 'States: not registered', say: 'Two months in?', tag: 'Compliance', loss: 3700, count: true, joins: [],
       title: 'Two months live, state tax registrations still not done',
       text: 'Vensure says it still needs to apply for our state tax IDs in South Carolina, Illinois, Georgia and California. It takes until September 16, about 40 weeks, to finish.' },
-    { month: 'MAR 2026', date: 'Mar 5 → Apr 15, 2026', sev: 2, kind: 'rocks', h: 1.9, label: 'ROOT CAUSE: team handoff', tag: 'Root cause: the team change', loss: 3700, count: true, joins: [], leaves: ['brie'],
+    { month: 'MAR 2026', date: 'Mar 5 → Apr 15, 2026', sev: 2, kind: 'rocks', h: 1.9, label: 'ROOT CAUSE: team handoff', say: 'Hello? New team?', tag: 'Root cause: the team change', loss: 3700, count: true, joins: [], leaves: ['brie'],
       title: 'The team that set us up handed us off, and everything open was dropped',
       text: 'Our onboarding ran through a Business Consultant, who sold us and owned the 12/23 and 12/29 broker-access commitments, and a Senior Implementation Consultant, who ran our welcome call and then our payroll. On 3/5 Vensure closed out our implementation and handed us to its Benefits team, three days after saying our state tax IDs still had not been applied for, and with broker access never set up. On 3/16 a new benefits contact took over. On 4/13 Vensure formally announced its Service Operations reorganization, and by payroll day, 4/15, our implementation and payroll consultant was gone. Our Business Consultant later left Vensure. Nothing open with the original team was carried over: broker access, state registrations, onboarding documents.',
       quote: 'The process of implementing your benefits with Vensure has been completed and it is time to introduce you to the Benefits [team].', cite: 'Vensure, 3/5/2026, with state registrations and broker access still open' },
-    { month: 'MAR 2026', date: 'Mar 26, 2026 · 4:01 PM', sev: 1, kind: 'barrier', h: 1.3, label: 'Surprise: July renewal', tag: 'Never disclosed', loss: 3700, count: true, joins: ['kitisha'],
+    { month: 'MAR 2026', date: 'Mar 26, 2026 · 4:01 PM', sev: 1, kind: 'barrier', h: 1.3, label: 'Surprise: July renewal', say: 'Since when?', tag: 'Never disclosed', loss: 3700, count: true, joins: ['kitisha'],
       title: '"All Vensure Master Plans renew on 7/1"',
       text: 'Three months after we enrolled on a January plan year, we learn our ancillary benefits run July to June, and will lapse unless everyone re-enrolls in June.',
       quote: 'All Vensure Master Plans renew on 7/1 annually.', cite: 'Vensure benefits team, 3/26/2026' },
-    { month: 'APR 2026', date: 'Apr 13 → Apr 15, 2026', sev: 2, kind: 'wall', h: 2.0, label: 'Payroll late: a first', tag: 'First in our history', loss: 8800, count: true, joins: ['btaylor'],
+    { month: 'APR 2026', date: 'Apr 13 → Apr 15, 2026', sev: 2, kind: 'wall', h: 2.0, label: 'Payroll late: a first', say: 'Payroll. Late. Oof.', tag: 'First in our history', loss: 8800, count: true, joins: ['btaylor'],
       title: 'Reorganization on Monday. Late payroll on Wednesday.',
       text: 'On 4/13 Vensure formally told us it was merging Client Relations and Payroll into Service Operations; the change may have started before that notice. On 4/15 our payroll contact was gone with only an auto-reply, and payroll ran late for the first time in CrossPeak’s history. Brittany Taylor inherited the account that week and has since become our steady account manager.' },
-    { month: 'MAY 2026', date: 'May 11 & May 14, 2026', sev: 2, kind: 'barrier', h: 1.8, label: 'Week 34, no owner', tag: 'Escalation', loss: 13700, count: true, joins: ['bshively', 'nate'],
+    { month: 'MAY 2026', date: 'May 11 & May 14, 2026', sev: 2, kind: 'barrier', h: 1.8, label: 'Week 34, no owner', say: 'Who do I call?', tag: 'Escalation', loss: 13700, count: true, joins: ['bshively', 'nate'],
       title: '"An absolute nightmare of an experience"',
       text: 'State items in their 34th week with no clear owner, and four months of asking about onboarding documents. Vensure’s status update left California out entirely. A new Client Growth Consultant, Nate, is introduced.',
       quote: 'This has been an absolute nightmare of an experience… Who is my official HR contact moving forward?', cite: 'Zane Perry, 5/11/2026' },
-    { month: 'JUN 2026', date: 'Jun 2 → Jun 12, 2026', sev: 2, kind: 'barrier', h: 2.0, label: 'Enroll or lose it', tag: 'Pressure', loss: 18600, count: true, joins: ['jadiel'],
+    { month: 'JUN 2026', date: 'Jun 2 → Jun 12, 2026', sev: 2, kind: 'barrier', h: 2.0, label: 'Enroll or lose it', say: 'By noon tomorrow?!', tag: 'Pressure', loss: 18600, count: true, joins: ['jadiel'],
       title: 'Enroll by July 1 or lose coverage',
       text: 'A "Non-Responsive Protocol" notice gave us until noon the next day to decide, then a forced enrollment window of June 17–24, all for a July cycle we were never told about.' },
-    { month: 'JUN 2026', date: 'Jun 15 → Jun 17, 2026', sev: 2, kind: 'wall', h: 2.0, label: 'Nothing to sign', tag: 'Onboarding', loss: 18600, count: true, joins: [],
+    { month: 'JUN 2026', date: 'Jun 15 → Jun 17, 2026', sev: 2, kind: 'wall', h: 2.0, label: 'Nothing to sign', say: '2+ weeks?', tag: 'Onboarding', loss: 18600, count: true, joins: [],
       title: 'New hires start with nothing to sign',
       text: 'Our onboarding documents were never requested at implementation. We rebuilt them overnight; Vensure said loading them would take "2+ weeks."',
       quote: 'Vensure does not create onboarding document templates.', cite: 'Vensure, 6/16/2026, after the hires had started' },
-    { month: 'JUN 2026', date: 'Jun 17 & Jun 26, 2026', sev: 2, kind: 'door', h: 2.6, label: 'CEO: no reply', tag: 'No reply', loss: 18600, count: true, joins: ['heckner'],
+    { month: 'JUN 2026', date: 'Jun 17 & Jun 26, 2026', sev: 2, kind: 'door', h: 2.6, label: 'CEO: no reply', say: 'Knock knock…', tag: 'No reply', loss: 18600, count: true, joins: ['heckner'],
       title: 'We reached out to the CEO directly. No reply.',
       text: 'We asked for a call with Vensure’s CEO and messaged him directly on LinkedIn on 6/17, then asked again on 6/26. The CEO never replied, and the meeting was never scheduled. Benefits leadership did grant an exception on 6/18. A week later a stuck I-9 approval was "causing a halt to the Payroll."' },
-    { month: 'JUL 2026', date: 'Jul 2 → Aug 10, 2026', sev: 1, kind: 'cones', h: 1.3, label: 'Penalties? Silence.', tag: 'Unanswered', loss: 23300, count: true, joins: ['misty'],
+    { month: 'JUL 2026', date: 'Jul 2 → Aug 10, 2026', sev: 1, kind: 'cones', h: 1.3, label: 'Penalties? Silence.', say: 'Anyone?', tag: 'Unanswered', loss: 23300, count: true, joins: ['misty'],
       title: 'A summer of unanswered questions',
       text: 'Who pays the state penalties? California was confirmed; South Carolina and Illinois were never answered. A $147.83 California notice sent 8/10 got "I will reach out to our team." Nothing since. The dental rate "lock" turned out not to exist either.',
       quote: 'Since the delay was on Vensure’s side, I expect any penalties and interest to be covered by Vensure - please confirm.', cite: 'Zane Perry, 7/2/2026 3:45 PM' },
-    { month: 'SEP 2026', date: 'Sep 16, 2026', sev: 0, kind: 'sign', h: 1.6, label: 'States done: wk 40', tag: 'Finally', loss: 25673, count: false, joins: [],
+    { month: 'SEP 2026', date: 'Sep 16, 2026', sev: 0, kind: 'sign', h: 1.6, label: 'States done: wk 40', say: 'Finally!', tag: 'Finally', loss: 25673, count: false, relief: true, joins: [],
       title: 'State registrations complete, about 40 weeks in',
       text: 'The one roadblock that finally cleared, with real credit to Vensure’s tax lead for pushing it over the line.' },
-    { month: 'SEP 2026', date: 'Sep 9 → Sep 24, 2026', sev: 3, kind: 'hero', h: 1.6, label: 'Nate spots it', tag: 'The hero', loss: 25673, count: false, joins: [], hero: 'nate',
+    { month: 'SEP 2026', date: 'Sep 9 → Sep 24, 2026', sev: 3, kind: 'hero', h: 1.6, label: 'Nate spots it', say: 'Thanks, Nate!', tag: 'The hero', loss: 25673, count: false, joins: [], hero: 'nate',
       title: 'Nate’s renewal work puts the problem on the table',
       text: 'Nate started our 2027 renewal on 9/9 and asked for the current medical documents. That request put the Trustmark invoice in front of us on 9/24, still listing three former employees. When we flagged it, Nate had the three termination dates back to us in 24 minutes, and he kept our 2027 quotes moving the whole time.',
       quote: 'Please see below with the term dates.', cite: 'Nate Schoenbrun, Vensure, 9/24/2026 3:30 PM' },
-    { month: 'SEP 2026', date: 'Sep 24, 2026', sev: 2, kind: 'wall', h: 2.8, label: '$25,673', tag: 'The discovery', loss: 25673, count: true, joins: [],
+    { month: 'SEP 2026', date: 'Sep 24, 2026', sev: 2, kind: 'wall', h: 2.8, label: '$25,673', say: 'How much?!', tag: 'The discovery', loss: 25673, count: true, joins: [],
       title: 'Three former employees still on our health plan',
-      text: 'Terminated in March, April and May; billed every month since. Trustmark retro-terminated what it could on 9/28 and credited about $4,800. Its rules capped the look-back at three months, and prescription claims after two departures pushed their end dates later. $20,873 is still open.' },
-    { month: 'SEP 2026', date: 'Sep 28, 2026 · 1:55 PM', sev: 2, kind: 'rocks', h: 1.9, label: 'New hires missing too', tag: 'Both directions', loss: 25673, count: true, joins: [],
+      text: 'Terminated in March, April and May; billed every month since. Trustmark retro-terminated what it could on 9/28 and credited about $4,800. Its rules capped the look-back at three months, and prescription claims after two departures pushed their end dates later. $20,873 is still open, for now.' },
+    { month: 'SEP 2026', date: 'Sep 25, 2026 · 10:35 → 11:00 AM', sev: 2, kind: 'wall', h: 2.6, label: '"System does not allow"', say: 'A report. Every time?', tag: 'Can\'t, won\'t', loss: 25673, count: true, joins: [],
+      title: 'Can Vensure just tell the broker when someone leaves?',
+      text: 'Vensure declined the overpayment, attaching the signed addendum: carrier notices fall to us and the broker. The broker asked for a simple alert on every hire, termination or life event. The answer is below. The alternative offered: we pull a report ourselves and email it to the broker. Every time.',
+      quote: 'Our system does not allow for that at this time.', cite: 'AVP, Service Operations, Vensure, 9/25/2026 11:00 AM' },
+    { month: 'SEP 2026', date: 'Sep 28, 2026 · 8:00 AM', sev: 1, kind: 'cones', h: 1.1, label: 'Email: blocked', say: 'Even the email?', tag: 'Carrier', loss: 25673, count: true, joins: [],
+      title: 'Even the email hit a wall',
+      text: 'We sent one message to Vensure, the broker and Trustmark laying out every request with a deadline. The copy to our assigned Trustmark Client Manager bounced as blocked. It turns out our group had no named account manager at the carrier either. Trustmark did reply within 21 minutes and retro-terminated what its rules allowed.' },
+    { month: 'SEP 2026', date: 'Sep 28, 2026 · 1:55 PM', sev: 2, kind: 'rocks', h: 1.9, label: 'New hires missing too', say: 'Both directions?', tag: 'Both directions', loss: 25673, count: true, joins: [],
       title: 'New hires never reached the carrier either',
       text: 'A July hire shows as enrolled in Vensure’s system and was never enrolled with the carrier. Onboarding and offboarding both broke for the same reason: nobody outside Vensure could see the changes.',
       quote: 'There is a disconnect regarding their insurance.', cite: 'Broker, 9/28/2026 1:55 PM' },
-    { month: 'SEP 2026', date: 'Sep 28, 2026 · 4:17 PM', sev: 2, kind: 'wall', h: 3.4, label: '"Not our responsibility"', tag: 'Denied', loss: 20873, count: true, joins: [],
+    { month: 'SEP 2026', date: 'Sep 28, 2026 · 4:17 PM', sev: 2, kind: 'wall', h: 3.4, label: '"Not our responsibility"', say: 'Then whose?', tag: 'Denied', loss: 20873, count: true, joins: [],
       title: 'Vensure’s answer',
       text: 'The same message named, for the first time in nine months, "the new user form" our broker needed. We submitted it that evening.',
       quote: 'Vensure cannot assume responsibility for any losses, claims, or costs that may result from delays in enrollment or termination processing.', cite: 'Vensure, 9/28/2026' },
-    { month: 'SEP 29, 2026', date: 'Sep 29, 2026 · 9:20 AM', sev: 0, kind: 'sign', h: 1.6, label: 'Access: 9 months late', tag: 'Finally', loss: 20873, count: false, joins: [],
+    { month: 'SEP 29, 2026', date: 'Sep 29, 2026 · 9:20 AM', sev: 0, kind: 'sign', h: 1.6, label: 'Access: 9 months late', say: 'Only nine months.', tag: 'Finally', loss: 20873, count: false, joins: [],
       title: 'Broker access granted, nine months after Vensure proposed it',
       text: 'The morning after our escalation, the broker received his login at 9:20 AM. By 8:38 AM he had already compared Vensure’s census with Trustmark: one new hire was never enrolled, and his details are now being sent. Still open: the $20,873, the state penalties, and an answer on the errors and omissions claim.' },
-    { month: 'OCT 2026', date: 'Oct 15, 2026 · 11:43 AM', sev: 2, kind: 'wall', h: 3.6, label: '1/1 plan: declined', tag: 'Promise withdrawn', loss: 20873, count: true, joins: [],
+    { month: 'SEP 29, 2026', date: 'Sep 29, 2026 · 8:50 → 11:30 AM', sev: 1, kind: 'door', h: 2.4, label: 'Leadership: "not in"', say: 'Is anyone in?', tag: 'Knock knock', loss: 20873, count: true, joins: ['nicksmith'],
+      title: '"The people I need to speak with are not in at this time."',
+      text: 'That was the 8:50 answer on the leadership meeting. By 11:30 Vensure\'s Head of Delivery, Nick Smith, sat down with us, walked the year, committed to two or three walkthroughs of the hire and termination process, and offered to put any agreed credit in writing. He also confirmed that in nine months no one had set up a single regular check-in call on our account.',
+      quote: 'The people I need to speak with are not in at this time.', cite: 'AVP, Service Operations, Vensure, 9/29/2026 8:50 AM' },
+    { month: 'SEP 30, 2026', date: 'Sep 30, 2026 · 9:49 AM', sev: 0, kind: 'sign', h: 1.6, label: 'Trustmark: yes', say: 'A yes! A real yes!', tag: 'A real yes', loss: 323, count: false, relief: true, joins: [],
+      title: 'Trustmark\'s upper management approves an exception',
+      text: 'Trustmark agreed to honor the real termination dates: April 1, May 1 and June 1, each before the first month we were overbilled. Once it confirms the credit in writing, nearly all of the $25,673 comes back. What is left is $323.04 in claims to refund. Credit where it is due.',
+      quote: 'An exception has been approved to honor the requested termination dates.', cite: 'Trustmark, 9/30/2026 9:49 AM' },
+    { month: 'OCT 2026', date: 'Sep 30 → Oct 1, 2026', sev: 1, kind: 'barrier', h: 1.4, label: '$687 for no coverage', say: 'Refund him, please.', tag: 'Refund on hold', loss: 323, count: true, joins: [],
+      title: 'A new hire paid for health coverage he never had',
+      text: 'His enrollment never reached the carrier, but his medical deductions started on 8/14: about $687 by the end of September. Vensure set up his refund on a manual payroll for 10/2. Then the broker asked to hold it until the carrier answered. We asked for it to be released: he paid for coverage he did not have, and that should not wait on anyone.' },
+    { month: 'OCT 2026', date: 'Sep 30 → Oct 1, 2026', sev: 1, kind: 'cones', h: 1.0, label: '401(k) notice: sent?', say: 'Did it ever send?', tag: 'Checking', loss: 323, count: true, joins: [],
+      title: 'Did the 401(k) eligibility notice ever go out?',
+      text: 'The same new hire becomes eligible for the 401(k) in October, and no enrollment shows. We asked whether the automatic notice at three months failed. Our account manager opened an inquiry with the Retirement team the same day.',
+      quote: 'I am waiting for our retirement team to confirm or deny it was sent.', cite: 'Account manager, Vensure, 10/1/2026 8:40 AM' },
+    { month: 'OCT 2026', date: 'Oct 15, 2026 · 11:43 AM', sev: 2, kind: 'wall', h: 3.6, label: '1/1 plan: declined', say: 'Not again.', tag: 'Promise withdrawn', loss: 323, count: true, joins: [],
       title: 'The January 1 plan we were promised is pulled',
       text: 'On 9/9 Vensure committed to a January 1, 2027 renewal on its own Master Plan, so we would never face two open enrollments in one year. Our broker sent everything for underwriting on 9/29. Ten weeks before the plan year, the answer came back: declined, with no reason given. After the July cycle in March and the January fix in June, it is the third time the ground has moved under the same benefits.',
       quote: 'Unfortunately, your group was declined from our master plan.', cite: 'Nate Schoenbrun, Vensure, 10/15/2026 11:43 AM' },
-    { month: 'TODAY', date: 'Where we go from here', sev: 0, kind: 'owners', h: 1.9, label: 'Everyone owns a miss', tag: 'A fair picture', loss: 20873, count: false, joins: [],
-      title: 'Everyone owns their part of this',
-      text: 'No one party caused $20,873 on its own. Here is each party’s miss, including ours.',
+    { month: 'TODAY', date: 'Where we go from here', sev: 0, kind: 'owners', h: 1.9, label: 'Everyone owns a miss', say: 'Let\'s fix it together.', tag: 'A fair picture', loss: 323, count: false, joins: [],
+      title: 'Where it stands, and what each of us owns',
+      text: 'Trustmark’s exception should bring back nearly all of the $25,673 once it is in writing. What is left is process and promises: a January 1 plan, a refund, the state penalties, and a routine that keeps this from happening again. Here is each party’s part, including ours.',
       owners: [
-        ['Vensure (PEO)', 'Proposed broker access on 12/29 and never set it up. Never told us terminations in its system would not reach the carrier. No status check in nine months. Committed to a January 1, 2027 Master Plan in September, then declined us from it in October.'],
+        ['Vensure (PEO)', 'Proposed broker access 12/29, set it up 9/29. Never said terminations would not reach the carrier. No check-ins in nine months. Promised a 1/1/2027 Master Plan, then declined us.'],
         ['UNIQ (broker)', 'Never trained us to report terminations to the broker, never ran a periodic enrollment check, and did not chase the access it asked for.'],
         ['CrossPeak (us)', 'We should have run our own status checks, and we paid invoices that still listed the three names.'],
-        ['Trustmark (context)', 'Not a cause, but its three-month retro cap and the prescription claims shaped what could be refunded.']
+        ['Trustmark (carrier)', 'Not a cause. Approved an exception on 9/30 to honor the real termination dates; the credit is waiting on written confirmation.']
       ] }
   ];
 
@@ -404,34 +431,34 @@ a { color: var(--brand) }
   }
   var obstacles = [];
   function buildObstacle(s, i) {
-    var g = new THREE.Group(), x = stopX(i) + 1.3, hgt = s.h;
+    var g = new THREE.Group(), body = new THREE.Group(), x = stopX(i) + 1.3, hgt = s.h; g.add(body); g.userData.body = body;
     if (s.kind === 'wall') {
       var tex = bricks(s.sev === 2 ? '#9e4032' : '#9a7a3a'); tex.repeat.set(2.2, hgt * 1.1);
-      var w = new THREE.Mesh(new THREE.BoxGeometry(0.6, hgt, 3.5), std({ map: tex, roughness: 0.92 })); w.position.y = hgt / 2; w.castShadow = w.receiveShadow = true; g.add(w);
-      var cap = new THREE.Mesh(new THREE.BoxGeometry(0.72, 0.1, 3.62), std({ color: 0x9a948c, roughness: 0.9 })); cap.position.y = hgt + 0.05; cap.castShadow = true; g.add(cap);
+      var w = new THREE.Mesh(new THREE.BoxGeometry(0.6, hgt, 3.5), std({ map: tex, roughness: 0.92 })); w.position.y = hgt / 2; w.castShadow = w.receiveShadow = true; body.add(w);
+      var cap = new THREE.Mesh(new THREE.BoxGeometry(0.72, 0.1, 3.62), std({ color: 0x9a948c, roughness: 0.9 })); cap.position.y = hgt + 0.05; cap.castShadow = true; body.add(cap);
     } else if (s.kind === 'barrier') {
       var st = stripes('#f5f5f2', s.sev === 2 ? '#c8321f' : '#e0961a'); st.wrapS = THREE.RepeatWrapping; st.repeat.set(4, 1);
-      for (var k = 0; k < 2; k++) { var bar = new THREE.Mesh(new THREE.BoxGeometry(0.08, 0.3, 3.3), std({ map: st, roughness: 0.45 })); bar.position.y = hgt * (0.5 + k * 0.38); bar.castShadow = true; g.add(bar); }
-      [-1.45, 1.45].forEach(function (z) { var a = new THREE.Mesh(new THREE.BoxGeometry(0.06, hgt * 1.05, 0.08), std({ color: 0xe8e8e3 })); a.position.set(0.25, hgt / 2, z); a.rotation.z = 0.18; var b2 = a.clone(); b2.position.x = -0.25; b2.rotation.z = -0.18; a.castShadow = b2.castShadow = true; g.add(a, b2); });
-      var lamp = new THREE.Mesh(new THREE.SphereGeometry(0.08, 12, 12), std({ color: 0xffa31a, emissive: 0xff8a00, emissiveIntensity: 2 })); lamp.position.set(0, hgt * 0.88 + 0.22, 1.45); g.add(lamp); g.userData.lamp = lamp;
+      for (var k = 0; k < 2; k++) { var bar = new THREE.Mesh(new THREE.BoxGeometry(0.08, 0.3, 3.3), std({ map: st, roughness: 0.45 })); bar.position.y = hgt * (0.5 + k * 0.38); bar.castShadow = true; body.add(bar); }
+      [-1.45, 1.45].forEach(function (z) { var a = new THREE.Mesh(new THREE.BoxGeometry(0.06, hgt * 1.05, 0.08), std({ color: 0xe8e8e3 })); a.position.set(0.25, hgt / 2, z); a.rotation.z = 0.18; var b2 = a.clone(); b2.position.x = -0.25; b2.rotation.z = -0.18; a.castShadow = b2.castShadow = true; body.add(a, b2); });
+      var lamp = new THREE.Mesh(new THREE.SphereGeometry(0.08, 12, 12), std({ color: 0xffa31a, emissive: 0xff8a00, emissiveIntensity: 2 })); lamp.position.set(0, hgt * 0.88 + 0.22, 1.45); body.add(lamp); g.userData.lamp = lamp;
     } else if (s.kind === 'cones') {
       var coneMat = std({ color: 0xff6a13, roughness: 0.55 }), bandMat = std({ color: 0xf2f2f2, roughness: 0.3, metalness: 0.2 }), baseMat = std({ color: 0x222222, roughness: 0.8 });
       for (var c = -1; c <= 1; c++) {
         var cone = new THREE.Mesh(new THREE.ConeGeometry(0.26, hgt, 24, 1, true), coneMat); cone.position.set(0, hgt / 2 + 0.04, c * 1.05); cone.castShadow = true;
         var band = new THREE.Mesh(new THREE.CylinderGeometry(0.135, 0.165, hgt * 0.16, 24, 1, true), bandMat); band.position.set(0, hgt * 0.55, c * 1.05);
         var base = new THREE.Mesh(new THREE.BoxGeometry(0.62, 0.05, 0.62), baseMat); base.position.set(0, 0.025, c * 1.05); base.castShadow = true;
-        g.add(cone, band, base);
+        body.add(cone, band, base);
       }
     } else if (s.kind === 'rocks') {
       var rockMat = std({ color: 0x8a8d8f, roughness: 0.95, flatShading: true });
       for (var r2 = 0; r2 < 9; r2++) { var sz = 0.35 + rnd() * 0.6, geo2 = new THREE.DodecahedronGeometry(sz, 1), pp = geo2.attributes.position; for (var q = 0; q < pp.count; q++) { var f = 0.8 + rnd() * 0.35; pp.setXYZ(q, pp.getX(q) * f, pp.getY(q) * f * 0.8, pp.getZ(q) * f); } geo2.computeVertexNormals();
-        var rock = new THREE.Mesh(geo2, rockMat); rock.position.set(rnd() * 1 - 0.5, sz * 0.7 + (r2 > 5 ? 0.6 : 0), (r2 % 6) * 0.65 - 1.6); rock.rotation.set(rnd() * 3, rnd() * 3, 0); rock.castShadow = rock.receiveShadow = true; g.add(rock); }
+        var rock = new THREE.Mesh(geo2, rockMat); rock.position.set(rnd() * 1 - 0.5, sz * 0.7 + (r2 > 5 ? 0.6 : 0), (r2 % 6) * 0.65 - 1.6); rock.rotation.set(rnd() * 3, rnd() * 3, 0); rock.castShadow = rock.receiveShadow = true; body.add(rock); }
     } else if (s.kind === 'door') {
-      var frame = new THREE.Mesh(new THREE.BoxGeometry(0.4, hgt + 0.25, 2.1), std({ color: 0x3b2a1f, roughness: 0.8 })); frame.position.y = (hgt + 0.25) / 2; frame.castShadow = true; g.add(frame);
+      var frame = new THREE.Mesh(new THREE.BoxGeometry(0.4, hgt + 0.25, 2.1), std({ color: 0x3b2a1f, roughness: 0.8 })); frame.position.y = (hgt + 0.25) / 2; frame.castShadow = true; body.add(frame);
       var woodTex = canvasTex(256, 512, function (gg, w, h) { gg.fillStyle = '#6b4226'; gg.fillRect(0, 0, w, h); for (var y = 0; y < 400; y++) { gg.strokeStyle = 'rgba(40,20,10,' + (rnd() * 0.18) + ')'; gg.beginPath(); var yy = rnd() * h; gg.moveTo(0, yy); gg.bezierCurveTo(w / 3, yy + (rnd() - .5) * 10, 2 * w / 3, yy + (rnd() - .5) * 10, w, yy); gg.stroke(); } gg.strokeStyle = 'rgba(0,0,0,.35)'; gg.lineWidth = 6; gg.strokeRect(30, 40, w - 60, h * 0.4); gg.strokeRect(30, h * 0.52, w - 60, h * 0.4); });
-      var door = new THREE.Mesh(new THREE.BoxGeometry(0.46, hgt, 1.5), std({ map: woodTex, roughness: 0.7 })); door.position.y = hgt / 2; door.castShadow = true; g.add(door);
-      var knob = new THREE.Mesh(new THREE.SphereGeometry(0.06, 16, 16), std({ color: 0xd4af37, metalness: 1, roughness: 0.25 })); knob.position.set(-0.26, hgt * 0.48, 0.5); g.add(knob);
-      var plate = new THREE.Mesh(new THREE.PlaneGeometry(0.9, 0.24), std({ map: labelTex('CEO', '#d4af37', '#1b1206'), metalness: 0.6, roughness: 0.3 })); plate.rotation.y = -Math.PI / 2; plate.position.set(-0.24, hgt * 0.78, 0); g.add(plate);
+      var door = new THREE.Mesh(new THREE.BoxGeometry(0.46, hgt, 1.5), std({ map: woodTex, roughness: 0.7 })); door.position.y = hgt / 2; door.castShadow = true; body.add(door);
+      var knob = new THREE.Mesh(new THREE.SphereGeometry(0.06, 16, 16), std({ color: 0xd4af37, metalness: 1, roughness: 0.25 })); knob.position.set(-0.26, hgt * 0.48, 0.5); body.add(knob);
+      var plate = new THREE.Mesh(new THREE.PlaneGeometry(0.9, 0.24), std({ map: labelTex('CEO', '#d4af37', '#1b1206'), metalness: 0.6, roughness: 0.3 })); plate.rotation.y = -Math.PI / 2; plate.position.set(-0.24, hgt * 0.78, 0); body.add(plate);
     }
     // the sign that names the roadblock
     var standing = s.kind === 'sign' || s.kind === 'hero' || s.kind === 'owners';
@@ -518,14 +545,47 @@ a { color: var(--brand) }
   var heroSpot = null;
 
   // ---------- the walker (rigged, animated)
-  var walker = new THREE.Group(); scene.add(walker); var mixer = null, actions = {}, activeAct = null, nod = null, shake = null;
-  function setAction(name) { var a = actions[name]; if (!a || a === activeAct) return; a.reset().setEffectiveWeight(1).play(); if (activeAct) activeAct.crossFadeTo(a, 0.35, false); activeAct = a; }
+  // Gait rule: the body's ground speed is always WALK_BASE x the walk clip's tempo, so planted feet never slide.
+  // WALK_BASE is measured from the model's own foot on load; speed eases in and out so it never stops mid-stride.
+  var walker = new THREE.Group(); scene.add(walker); var mixer = null, actions = {}, model = null;
+  var WALK_BASE = 1.2, WALK_TS = 1.25, ACC = 2.0;
+  var add = { headShake: { w: 0, peak: 1, base: 0, until: 0 }, agree: { w: 0, peak: 1, base: 0, until: 0 }, sad_pose: { w: 0, peak: 0, base: 0, until: 0 } };
   var tag = new THREE.Sprite(new THREE.SpriteMaterial({ map: labelTex('CrossPeak', '#52D18F', '#0B1622'), depthWrite: false })); tag.scale.set(0.9, 0.225, 1); tag.position.y = 2.15; walker.add(tag);
   var cloud = new THREE.Group(); var puffMat = std({ color: 0x5d6873, roughness: 1, transparent: true, opacity: 0.92 });
   for (var qq = 0; qq < 7; qq++) { var puff = new THREE.Mesh(new THREE.SphereGeometry(0.22 + rnd() * 0.12, 16, 12), puffMat); puff.position.set((qq - 3) * 0.17, rnd() * 0.12, (rnd() - .5) * 0.2); puff.castShadow = true; cloud.add(puff); }
   cloud.position.y = 2.75; cloud.scale.setScalar(0.001); walker.add(cloud);
   var rain = new THREE.Points(new THREE.BufferGeometry().setAttribute('position', new THREE.Float32BufferAttribute(new Array(120 * 3).fill(0).map(function (v, i) { return i % 3 === 1 ? rnd() * 0.9 : (rnd() - .5) * 0.9; }), 3)), new THREE.PointsMaterial({ color: 0x9fc3e0, size: 0.03, transparent: true, opacity: 0 }));
   rain.position.y = 1.85; walker.add(rain);
+
+  // speech bubble: one short line per stop (HTML, so it stays crisp and never hides behind the story card)
+  var sayEl = $('say'), sayV = new THREE.Vector3(), bubbleT = 0, sayAt = -1, sayText = '';
+  function say(text, delay) { if (!text) return; sayText = text; sayAt = clock.elapsedTime + (delay || 0); }
+  function showSay() { sayEl.textContent = sayText; sayEl.classList.add('on'); bubbleT = 3.4; sayAt = -1; }
+  function placeSay() {
+    sayV.set(walker.position.x + 0.3, 1.72 + walker.position.y, 0.5).project(camera);
+    var W = canvas.clientWidth, H = canvas.clientHeight, px = (sayV.x + 1) / 2 * W, py = (1 - sayV.y) / 2 * H;
+    var w = sayEl.offsetWidth, hh = sayEl.offsetHeight, L = Math.min(px + 20, W - w - 12), T = py - hh / 2;
+    var c = $('card'), cl = c.offsetLeft, ct = c.offsetTop, cr = cl + c.offsetWidth, cb = ct + c.offsetHeight;
+    if (L < cr && L + w > cl && T < cb && T + hh > ct) T = ct < H / 2 ? cb + 10 : ct - hh - 10;
+    sayEl.style.transform = 'translate(' + Math.round(L) + 'px,' + Math.round(T) + 'px)';
+  }
+
+  // cartoon stars after a bonk
+  var starTex = canvasTex(128, 128, function (g) { g.fillStyle = '#FFD43B'; g.strokeStyle = '#8a5a00'; g.lineWidth = 6; g.beginPath(); for (var k = 0; k < 10; k++) { var r = k % 2 ? 24 : 56, a = -Math.PI / 2 + k * Math.PI / 5; g.lineTo(64 + r * Math.cos(a), 64 + r * Math.sin(a)); } g.closePath(); g.fill(); g.stroke(); });
+  var stars = []; for (var si = 0; si < 3; si++) { var sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: starTex, depthWrite: false, transparent: true })); sp.scale.set(0.001, 0.001, 1); scene.add(sp); stars.push(sp); }
+  var starT = 0;
+
+  function measureWalk(clip) { // play the walk clip alone; a planted foot moves backward at exactly the ground speed
+    var foot = null; model.traverse(function (o) { if (!foot && o.isBone && /LeftFoot$/i.test(o.name)) foot = o; });
+    if (!foot) return null;
+    var m2 = new THREE.AnimationMixer(model), a = m2.clipAction(clip); a.play();
+    var N = 160, step = clip.duration / N, ys = [], xs = [], p = new THREE.Vector3();
+    for (var i = 0; i <= N; i++) { m2.setTime(i * step); model.updateMatrixWorld(true); foot.getWorldPosition(p); walker.worldToLocal(p); ys.push(p.y); xs.push(p.x); }
+    m2.stopAllAction(); m2.uncacheRoot(model);
+    var minY = Math.min.apply(null, ys), sum = 0, n = 0;
+    for (var j = 1; j <= N; j++) if (ys[j] < minY + 0.025 && ys[j - 1] < minY + 0.025) { sum += Math.abs(xs[j] - xs[j - 1]) / step; n++; }
+    return n > 4 ? sum / n : null;
+  }
 
   function loadWalker() {
     return new Promise(function (res) {
@@ -537,58 +597,106 @@ a { color: var(--brand) }
         new THREE.GLTFLoader().parse(buf.buffer, '', onModel, fallback);
       }).catch(fallback);
       function onModel(gltf) {
-        var model = gltf.scene; model.traverse(function (o) { if (o.isMesh) { o.castShadow = true; o.receiveShadow = true;
+        model = gltf.scene; model.traverse(function (o) { if (o.isMesh) { o.castShadow = true; o.receiveShadow = true;
           if (!o.material) return;
           var joint = /joint/i.test((o.material.name || '') + ' ' + (o.name || ''));
-          var mm = new THREE.MeshStandardMaterial({ color: joint ? 0x1d2a36 : 0x2f86b8, metalness: joint ? 0.4 : 0.15, roughness: joint ? 0.45 : 0.5, skinning: true });
-          o.material = mm; } });
-        model.rotation.y = Math.PI / 2; walker.add(model);
+          o.material = new THREE.MeshStandardMaterial({ color: joint ? 0x1d2a36 : 0x2f86b8, metalness: joint ? 0.4 : 0.15, roughness: joint ? 0.45 : 0.5, skinning: true }); } });
+        model.rotation.y = Math.PI / 2; walker.add(model); walker.updateMatrixWorld(true);
+        var walkClip = gltf.animations.filter(function (c) { return c.name === 'walk'; })[0];
+        var measured = walkClip ? measureWalk(walkClip) : null;
+        if (measured && measured > 0.5 && measured < 3) WALK_BASE = measured;
+        window.__walkBase = WALK_BASE;
         mixer = new THREE.AnimationMixer(model);
         gltf.animations.forEach(function (clip) {
-          var name = clip.name;
-          if (/headShake|agree|sad_pose|sneak_pose/.test(name)) { THREE.AnimationUtils.makeClipAdditive(clip); if (/pose/.test(name)) clip = THREE.AnimationUtils.subclip(clip, name, 2, 3, 30); }
+          var name = clip.name, additive = /headShake|agree|sad_pose|sneak_pose/.test(name);
+          if (additive) { THREE.AnimationUtils.makeClipAdditive(clip); if (/pose/.test(name)) clip = THREE.AnimationUtils.subclip(clip, name, 2, 3, 30); }
           var a = mixer.clipAction(clip); actions[name] = a;
-          if (/headShake|agree|sad_pose|sneak_pose/.test(name)) { a.blendMode = THREE.AdditiveAnimationBlendMode; a.setEffectiveWeight(0); a.play(); }
+          if (additive) a.blendMode = THREE.AdditiveAnimationBlendMode;
+          a.setEffectiveWeight(0); if (additive || name === 'idle' || name === 'walk') a.play();
         });
-        setAction('idle'); res(true);
+        if (actions.idle) actions.idle.setEffectiveWeight(1);
+        res(true);
       }
     });
   }
-  function pulse(action, dur) { if (!action) return; action.setEffectiveWeight(1); action.reset().play(); setTimeout(function () { action.setEffectiveWeight(0); }, dur); }
+  function pulse(name, dur, delay) { var o = add[name], a = actions[name]; if (!o || !a) return; var t0 = clock.elapsedTime + (delay || 0); o.from = t0; o.until = t0 + dur; o.fired = false; }
 
   // ---------- motion
-  var targetX = stopX(0) - 0.6, arrived = true, bump = 0, pendingBack = false, camPos = new THREE.Vector3(), camLook = new THREE.Vector3();
+  var BLOCKS = { wall: 0.36, barrier: 0.3, door: 0.24, rocks: 1.35, cones: 0.32 }; // how far each obstacle reaches toward the walker
+  function contactX(i) { return stopX(i) + 1.3 - BLOCKS[STOPS[i].kind] - 0.2; }
+  function restX(i) { return BLOCKS[STOPS[i].kind] !== undefined ? contactX(i) - 0.3 : stopX(i) - 0.6; }
+  function bonks(i) { return BLOCKS[STOPS[i].kind] !== undefined && STOPS[i].count; }
+  var kS = 0, targetX = restX(0), arrived = true, pendingBack = false, v = 0, bonk = null, camPos = new THREE.Vector3(), camLook = new THREE.Vector3();
   goImpl = function (i, back) {
-    targetX = stopX(i) - 0.6; pendingBack = back; arrived = false;
+    pendingBack = back; arrived = false; bonk = null; bubbleT = 0; sayAt = -1;
+    targetX = (bonks(i) && !back) ? contactX(i) : restX(i);
+    var gap = targetX - walker.position.x;
+    if (Math.abs(gap) > SPACING * 1.25 && !reduce) { walker.position.x = targetX - Math.sign(gap) * SPACING * 0.85; v = 0; } // a jump of several stops skips ahead and walks the last stretch
     setSun(i / (STOPS.length - 1));
-    if (reduce) { walker.position.x = targetX; }
+    if (reduce) { walker.position.x = restX(i); targetX = walker.position.x; }
   };
-  function onArrive() {
-    arrived = true; setAction('idle');
-    var s = STOPS[cur];
-    if (!pendingBack && s.count) { bump = 1; pulse(actions.headShake, 1600); }
-    if (s.hero || s.kind === 'sign') pulse(actions.agree, 1600);
-    if (s.sev === 2 && !pendingBack) { if (actions.sad_pose) { actions.sad_pose.setEffectiveWeight(Math.min(0.6, 0.15 + cur * 0.03)); } }
-    if (s.hero && actions.sad_pose) actions.sad_pose.setEffectiveWeight(0);
+  function mood() { var hits = 0, relief = 0; for (var k = 0; k <= cur; k++) { if (STOPS[k].count) hits++; if (STOPS[k].relief) relief++; } return { hits: hits, level: Math.max(0, hits - relief * 2.5) }; }
+  function onArrive(initial) {
+    arrived = true; v = 0;
+    var s = STOPS[cur], m = mood();
+    add.sad_pose.base = s.hero || s.relief ? 0 : Math.min(0.32, 0.06 + m.level * 0.013);
+    if (!initial && !pendingBack && bonks(cur) && !reduce) { bonk = { t: 0, x0: walker.position.x }; say(s.say, 0.32); pulse('headShake', 1.5, 0.55); return; }
+    if (s.hero || s.kind === 'sign' || s.relief) pulse('agree', 1.6, 0.1);
+    else if (s.count && !pendingBack) pulse('headShake', 1.5, 0.1);
+    say(s.say, 0.15);
   }
   function resize() { var w = canvas.clientWidth, h = canvas.clientHeight; if (!w || !h) return; renderer.setSize(w, h, false); camera.aspect = w / h; camera.fov = w < 700 ? 48 : 34; camera.updateProjectionMatrix(); }
   window.addEventListener('resize', resize); document.addEventListener('fullscreenchange', function () { setTimeout(resize, 60); });
 
+  function ease(u) { return u < 0 ? 0 : u > 1 ? 1 : u * u * (3 - 2 * u); }
   var clock = new THREE.Clock();
   function frame() {
     var dt = Math.min(clock.getDelta(), 0.05), t = clock.elapsedTime;
-    if (mixer) mixer.update(dt);
-    var dx = targetX - walker.position.x, moving = Math.abs(dx) > 0.03 && !reduce;
-    if (moving) {
-      setAction('walk'); if (actions.walk) actions.walk.timeScale = 1.35;
-      walker.position.x += Math.sign(dx) * Math.min(Math.abs(dx), 2.1 * dt);
-      walker.rotation.y += ((dx < 0 ? Math.PI : 0) - walker.rotation.y) * Math.min(1, dt * 8);
-    } else if (!arrived) { walker.position.x = targetX; walker.rotation.y = 0; onArrive(); }
-    if (bump > 0) { bump = Math.max(0, bump - dt * 1.4); var b = Math.sin((1 - bump) * Math.PI); walker.position.x = targetX - b * 0.45; var ob = obstacles[cur]; if (ob) ob.position.z = Math.sin(bump * 45) * 0.05 * bump; }
-    // stress cloud + rain grow with roadblocks hit; clears at the hero stop
-    var hits = 0; for (var k = 0; k <= cur; k++) if (STOPS[k].count) hits++;
-    var target = STOPS[cur].hero ? 0.25 : hits / 15; cloud.scale.lerp(new THREE.Vector3(target, target, target), 0.04); cloud.rotation.y += dt * 0.3;
-    rain.material.opacity += ((hits > 8 && !STOPS[cur].hero ? 0.8 : 0) - rain.material.opacity) * 0.05;
+    // walking: turn first, then ease in, cruise, and ease out exactly onto the mark
+    var dx = targetX - walker.position.x, dist = Math.abs(dx), dir = dx < 0 ? -1 : 1;
+    var wantFace = (!arrived && dist > 0.02 && dir < 0) ? Math.PI : 0;
+    var turnErr = wantFace - walker.rotation.y; walker.rotation.y += turnErr * Math.min(1, dt * 7);
+    if (!arrived && !reduce) {
+      var floor = (bonks(cur) && !pendingBack) ? 0.55 : 0; // walk into a wall at a stroll, not a crawl
+      var vWant = Math.abs(turnErr) < 0.35 ? Math.max(Math.min(WALK_BASE * WALK_TS, Math.sqrt(2 * ACC * dist)), floor) : 0;
+      v += Math.max(-ACC * 1.6 * dt, Math.min(ACC * dt, vWant - v));
+      var stepX = Math.min(dist, v * dt); walker.position.x += dir * stepX;
+      if (dist - stepX < 0.004) { walker.position.x = targetX; onArrive(false); }
+    } else if (!arrived) { onArrive(false); }
+    // the bonk: contact, a small hop back, settle
+    if (bonk) {
+      bonk.t += dt; var u = bonk.t;
+      var back = ease(u / 0.36) * 0.3; walker.position.x = bonk.x0 - back;
+      walker.position.y = u < 0.36 ? Math.sin(Math.PI * u / 0.36) * 0.09 : 0;
+      var ob = obstacles[cur], body = ob && ob.userData.body; if (body) body.position.z = u < 0.6 ? Math.sin(u * 60) * 0.06 * (1 - u / 0.6) : 0;
+      if (u < dt * 1.5) starT = 2.1;
+      if (u > 0.4) { walker.position.y = 0; walker.position.x = bonk.x0 - 0.3; targetX = walker.position.x; bonk = null; }
+    }
+    // animation blend follows real speed, so stride length always matches the ground covered
+    if (mixer) {
+      kS += (Math.min(1, v / (WALK_BASE * 0.5)) - kS) * Math.min(1, dt * 9); var k = kS;
+      if (actions.walk) { actions.walk.setEffectiveWeight(k); actions.walk.timeScale = Math.max(0.4, v / WALK_BASE); }
+      if (actions.idle) actions.idle.setEffectiveWeight(1 - k);
+      Object.keys(add).forEach(function (nm) {
+        var o = add[nm], a = actions[nm]; if (!a) return;
+        if (o.until && t >= o.from && !o.fired) { a.reset().play(); o.fired = true; }
+        var on = o.until && t >= o.from && t < o.until;
+        var tw = nm === 'sad_pose' ? o.base * (1 - k) : (on ? o.peak : 0);
+        o.w += (tw - o.w) * Math.min(1, dt * 6); a.setEffectiveWeight(o.w);
+      });
+      mixer.update(dt);
+    }
+    // bubble + stars
+    if (sayAt >= 0 && t >= sayAt) showSay();
+    bubbleT = Math.max(0, bubbleT - dt); if (bubbleT > 0) placeSay(); else if (sayEl.classList.contains('on')) sayEl.classList.remove('on');
+    starT = Math.max(0, starT - dt);
+    stars.forEach(function (sp, j) { var a = t * 7 + j * 2.094, sc = starT > 0 ? 0.2 * Math.min(1, starT * 2) : 0.001; sp.scale.set(sc, sc, 1); sp.position.set(walker.position.x + Math.cos(a) * 0.34, 1.98 + Math.sin(a * 2) * 0.04, 0.5 + Math.sin(a) * 0.34); });
+    // walls behind us sink away, so we never walk through bricks
+    obstacles.forEach(function (o, j) { var body = o.userData.body; if (!body) return; var up = j > cur || (j === cur && (arrived || !pendingBack)); var wy = up ? 0 : -(STOPS[j].h + 0.8); body.position.y += (wy - body.position.y) * Math.min(1, dt * (up ? 5 : 6)); });
+    // stress cloud + rain grow with roadblocks hit; they ease off when things go right
+    var md = mood();
+    var target = STOPS[cur].hero ? 0.25 : md.level / 15; cloud.scale.lerp(new THREE.Vector3(target + 0.001, target + 0.001, target + 0.001), 0.04); cloud.rotation.y += dt * 0.3;
+    rain.material.opacity += ((md.level > 8 && !STOPS[cur].hero && !STOPS[cur].relief ? 0.8 : 0) - rain.material.opacity) * 0.05;
     var rp = rain.geometry.attributes.position; for (var r = 0; r < rp.count; r++) { var y = rp.getY(r) - dt * 2.2; if (y < 0) y = 0.9; rp.setY(r, y); } rp.needsUpdate = true;
     // people pop up as they join
     standees.forEach(function (sd) { var want = cur >= sd.stop ? 1 : 0.001; var sc2 = sd.obj.scale.x + (want - sd.obj.scale.x) * Math.min(1, dt * 5); sd.obj.scale.setScalar(sc2); if (sd.hero && cur === sd.stop) sd.obj.rotation.y = 0.08 + Math.sin(t * 1.5) * 0.04; });
@@ -608,13 +716,15 @@ a { color: var(--brand) }
 
   resize(); setSun(0);
   var hm = /^#s(\d+)$/.exec(location.hash || '');
-  if (hm) { go(+hm[1] - 1); targetX = stopX(cur) - 0.6; }
+  if (hm) go(+hm[1] - 1);
+  targetX = restX(cur); arrived = true;
   walker.position.set(targetX, 0, 0.5);
   camera.position.set(targetX + 2.8, 2.8, 13.5);
   Promise.all([Promise.all(toLoad), fontsReady]).then(function () {
     STOPS.forEach(buildObstacle); placePeople();
     return loadWalker();
-  }).then(function () { $('loading').classList.add('gone'); onArrive(); });
+  }).then(function () { $('loading').classList.add('gone'); onArrive(true); window.__ready = true; });
+  window.__journey = { go: go, model: function () { return model; }, info: function () { var i = renderer.info; return { geo: i.memory.geometries, tex: i.memory.textures, calls: i.render.calls, tris: i.render.triangles }; }, state: function () { return { cur: cur, x: walker.position.x, targetX: targetX, v: v, arrived: arrived, walkBase: WALK_BASE }; } };
   frame();
 })();
 </script>

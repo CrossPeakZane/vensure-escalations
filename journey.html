@@ -92,8 +92,8 @@ a { color: var(--brand) }
   <div class="eyebrow">Customer experience review · CrossPeak Solutions LLC</div>
   <h1>Let's review my experience as a customer since we joined Vensure</h1>
   <ol class="agenda two-part" aria-label="Call agenda, 30 minutes">
-    <li><b>The walk: our year as your customer</b><span>November to October, every roadblock in order: the team handoff that dropped broker access and our state registrations, the $25,673 overpayment and how most of it came back, and the January 1 plan that was promised and then declined.</span><em>10 min</em></li>
-    <li><b>Resolution with Vensure leadership</b><span>Our January 1, 2027 coverage after the Master Plan decline, Trustmark's written credit, the new hire's refund, the state penalties, and dated commitments with named owners.</span><em>20 min</em></li>
+    <li><b>The walk: our year as your customer</b><span>November to October, every roadblock in order: the team handoff that dropped broker access and our state registrations, the $25,673 we were overbilled and how Trustmark, not Vensure, gave it back, and the January 1 plan that was promised and then declined.</span><em>10 min</em></li>
+    <li><b>Resolution with Vensure leadership</b><span>The coverage Vensure committed to: our January 1, 2027 health plan, why the Master Plan declined us, and what replaces it. Then the state penalties and dated commitments with named owners.</span><em>20 min</em></li>
   </ol>
 </header>
 
@@ -102,7 +102,7 @@ a { color: var(--brand) }
   <div class="loading" id="loading">Loading the road…</div>
   <div class="chip" id="monthTag">NOV 2025</div>
   <div class="meters" aria-live="polite">
-    <div class="meter"><b id="mLoss">$0</b><span>Overpayment still out</span></div>
+    <div class="meter"><b id="mLoss">$0</b><span id="mLossLbl">Overbilled so far</span></div>
     <div class="meter"><b id="mBlocks">0</b><span>Roadblocks hit</span></div>
   </div>
   <article class="card" id="card" aria-live="polite">
@@ -209,7 +209,7 @@ a { color: var(--brand) }
       quote: 'Please see below with the term dates.', cite: 'Nate Schoenbrun, Vensure, 9/24/2026 3:30 PM' },
     { month: 'SEP 2026', date: 'Sep 24, 2026', sev: 2, kind: 'wall', h: 2.8, label: '$25,673', say: 'How much?!', tag: 'The discovery', loss: 25673, count: true, joins: [],
       title: 'Three former employees still on our health plan',
-      text: 'Terminated in March, April and May; billed every month since. Trustmark retro-terminated what it could on 9/28 and credited about $4,800. Its rules capped the look-back at three months, and prescription claims after two departures pushed their end dates later. $20,873 is still open, for now.' },
+      text: 'Terminated in March, April and May; billed every month since: about $25,673 by our count. Trustmark’s first answer on 9/28 backdated the terminations only partway, because its standard rules cap the look-back. Vensure’s system was the only place the terminations were recorded.' },
     { month: 'SEP 2026', date: 'Sep 25, 2026 · 10:35 → 11:00 AM', sev: 2, kind: 'wall', h: 2.6, label: '"System does not allow"', say: 'A report. Every time?', tag: 'Can\'t, won\'t', loss: 25673, count: true, joins: [],
       title: 'Can Vensure just tell the broker when someone leaves?',
       text: 'Vensure declined the overpayment, attaching the signed addendum: carrier notices fall to us and the broker. The broker asked for a simple alert on every hire, termination or life event. The answer is below. The alternative offered: we pull a report ourselves and email it to the broker. Every time.',
@@ -221,40 +221,41 @@ a { color: var(--brand) }
       title: 'New hires never reached the carrier either',
       text: 'A July hire shows as enrolled in Vensure’s system and was never enrolled with the carrier. Onboarding and offboarding both broke for the same reason: nobody outside Vensure could see the changes.',
       quote: 'There is a disconnect regarding their insurance.', cite: 'Broker, 9/28/2026 1:55 PM' },
-    { month: 'SEP 2026', date: 'Sep 28, 2026 · 4:17 PM', sev: 2, kind: 'wall', h: 3.4, label: '"Not our responsibility"', say: 'Then whose?', tag: 'Denied', loss: 20873, count: true, joins: [],
+    { month: 'SEP 2026', date: 'Sep 28, 2026 · 4:17 PM', sev: 2, kind: 'wall', h: 3.4, label: '"Not our responsibility"', say: 'Then whose?', tag: 'Denied', loss: 25673, count: true, joins: [],
       title: 'Vensure’s answer',
       text: 'The same message named, for the first time in nine months, "the new user form" our broker needed. We submitted it that evening.',
       quote: 'Vensure cannot assume responsibility for any losses, claims, or costs that may result from delays in enrollment or termination processing.', cite: 'Vensure, 9/28/2026' },
-    { month: 'SEP 29, 2026', date: 'Sep 29, 2026 · 9:20 AM', sev: 0, kind: 'sign', h: 1.6, label: 'Access: 9 months late', say: 'Only nine months.', tag: 'Finally', loss: 20873, count: false, joins: [],
-      title: 'Broker access granted, nine months after Vensure proposed it',
-      text: 'The morning after our escalation, the broker received his login at 9:20 AM. By 8:38 AM he had already compared Vensure’s census with Trustmark: one new hire was never enrolled, and his details are now being sent. Still open: the $20,873, the state penalties, and an answer on the errors and omissions claim.' },
-    { month: 'SEP 29, 2026', date: 'Sep 29, 2026 · 8:50 → 11:30 AM', sev: 1, kind: 'door', h: 2.4, label: 'Leadership: "not in"', say: 'Is anyone in?', tag: 'Knock knock', loss: 20873, count: true, joins: ['nicksmith'],
+    { month: 'SEP 29, 2026', date: 'Sep 29, 2026 · 8:38 → 8:50 AM', sev: 0, kind: 'sign', h: 1.6, label: 'Access: 9 months late', say: 'Only nine months.', tag: 'Finally', loss: 25673, count: false, joins: [],
+      title: 'Broker access finally set in motion, nine months after Vensure proposed it',
+      text: 'The morning after our escalation, Vensure told us the broker’s access would be set up shortly. The broker did not wait for it: by 8:38 AM he had compared the census Nate sent with Trustmark’s list and found a new hire who was never enrolled. One look from outside Vensure’s system found in a morning what nine months had not.',
+      quote: 'His access will be set up here shortly.', cite: 'Vensure, 9/29/2026 8:50 AM' },
+    { month: 'SEP 29, 2026', date: 'Sep 29, 2026 · 8:50 → 11:30 AM', sev: 1, kind: 'door', h: 2.4, label: 'Leadership: "not in"', say: 'Is anyone in?', tag: 'Knock knock', loss: 25673, count: true, joins: ['nicksmith'],
       title: '"The people I need to speak with are not in at this time."',
       text: 'That was the 8:50 answer on the leadership meeting. By 11:30 Vensure\'s Head of Delivery, Nick Smith, sat down with us, walked the year, committed to two or three walkthroughs of the hire and termination process, and offered to put any agreed credit in writing. He also confirmed that in nine months no one had set up a single regular check-in call on our account.',
       quote: 'The people I need to speak with are not in at this time.', cite: 'AVP, Service Operations, Vensure, 9/29/2026 8:50 AM' },
-    { month: 'SEP 30, 2026', date: 'Sep 30, 2026 · 9:49 AM', sev: 0, kind: 'sign', h: 1.6, label: 'Trustmark: yes', say: 'A yes! A real yes!', tag: 'A real yes', loss: 323, count: false, relief: true, joins: [],
+    { month: 'SEP 30, 2026', date: 'Sep 30, 2026 · 9:49 AM', sev: 0, kind: 'sign', h: 1.6, label: 'Trustmark: yes', say: 'A yes! A real yes!', tag: 'A real yes', loss: 25673, refunded: true, count: false, relief: true, joins: [],
       title: 'Trustmark\'s upper management approves an exception',
-      text: 'Trustmark agreed to honor the real termination dates: April 1, May 1 and June 1, each before the first month we were overbilled. Once it confirms the credit in writing, nearly all of the $25,673 comes back. What is left is $323.04 in claims to refund. Credit where it is due.',
+      text: 'Trustmark agreed to honor the real termination dates: April 1, May 1 and June 1, each before the first month we were overbilled. The overbilled premiums came back to us as a credit on the revised invoice, less $323.04 in claims. The carrier made this right after Vensure said it was not Vensure’s responsibility. Credit where it is due.',
       quote: 'An exception has been approved to honor the requested termination dates.', cite: 'Trustmark, 9/30/2026 9:49 AM' },
-    { month: 'OCT 2026', date: 'Sep 30 → Oct 1, 2026', sev: 1, kind: 'barrier', h: 1.4, label: '$687 for no coverage', say: 'Refund him, please.', tag: 'Refund on hold', loss: 323, count: true, joins: [],
+    { month: 'OCT 2026', date: 'Sep 30 → Oct 1, 2026', sev: 1, kind: 'barrier', h: 1.4, label: '$687 for no coverage', say: 'Refund him, please.', tag: 'Paid for nothing', loss: 25673, refunded: true, count: true, joins: [],
       title: 'A new hire paid for health coverage he never had',
-      text: 'His enrollment never reached the carrier, but his medical deductions started on 8/14: about $687 by the end of September. Vensure set up his refund on a manual payroll for 10/2. Then the broker asked to hold it until the carrier answered. We asked for it to be released: he paid for coverage he did not have, and that should not wait on anyone.' },
-    { month: 'OCT 2026', date: 'Sep 30 → Oct 1, 2026', sev: 1, kind: 'cones', h: 1.0, label: '401(k) notice: sent?', say: 'Did it ever send?', tag: 'Checking', loss: 323, count: true, joins: [],
+      text: 'His enrollment never reached the carrier, but his medical deductions started on 8/14: $686.76 by the end of September for coverage he did not have. Vensure refunded him on a manual payroll on 10/2, after we pushed to keep it from being held. One more employee who felt Vensure’s miss in his own paycheck.' },
+    { month: 'OCT 2026', date: 'Sep 30 → Oct 1, 2026', sev: 1, kind: 'cones', h: 1.0, label: '401(k) notice: sent?', say: 'Did it ever send?', tag: 'Checking', loss: 25673, refunded: true, count: true, joins: [],
       title: 'Did the 401(k) eligibility notice ever go out?',
       text: 'The same new hire becomes eligible for the 401(k) in October, and no enrollment shows. We asked whether the automatic notice at three months failed. Our account manager opened an inquiry with the Retirement team the same day.',
       quote: 'I am waiting for our retirement team to confirm or deny it was sent.', cite: 'Account manager, Vensure, 10/1/2026 8:40 AM' },
-    { month: 'OCT 2026', date: 'Oct 15, 2026 · 11:43 AM', sev: 2, kind: 'wall', h: 3.6, label: '1/1 plan: declined', say: 'Not again.', tag: 'Promise withdrawn', loss: 323, count: true, joins: [],
+    { month: 'OCT 2026', date: 'Oct 15, 2026 · 11:43 AM', sev: 2, kind: 'wall', h: 3.6, label: '1/1 plan: declined', say: 'Not again.', tag: 'Promise withdrawn', loss: 25673, refunded: true, count: true, joins: [],
       title: 'The January 1 plan we were promised is pulled',
-      text: 'On 9/9 Vensure committed to a January 1, 2027 renewal on its own Master Plan, so we would never face two open enrollments in one year. Our broker sent everything for underwriting on 9/29. Ten weeks before the plan year, the answer came back: declined, with no reason given. After the July cycle in March and the January fix in June, it is the third time the ground has moved under the same benefits.',
+      text: 'On 9/9 Vensure committed to a January 1, 2027 renewal on its own Master Plan, so we would never face two open enrollments in one year. Our broker sent everything for underwriting on 9/29. Ten weeks before the plan year, the answer came back: declined, with no reason given. After the July cycle in March and the January fix in June, it is the third time the ground has moved under the same benefits. As of today, Vensure has not committed to what replaces it.',
       quote: 'Unfortunately, your group was declined from our master plan.', cite: 'Nate Schoenbrun, Vensure, 10/15/2026 11:43 AM' },
-    { month: 'TODAY', date: 'Where we go from here', sev: 0, kind: 'owners', h: 1.9, label: 'Everyone owns a miss', say: 'Let\'s fix it together.', tag: 'A fair picture', loss: 323, count: false, joins: [],
-      title: 'Where it stands, and what each of us owns',
-      text: 'Trustmark’s exception should bring back nearly all of the $25,673 once it is in writing. What is left is process and promises: a January 1 plan, a refund, the state penalties, and a routine that keeps this from happening again. Here is each party’s part, including ours.',
+    { month: 'TODAY', date: 'Where we go from here', sev: 0, kind: 'owners', h: 1.9, label: 'Everyone owns a miss', say: 'Let\'s fix it together.', tag: 'What we are asking', loss: 25673, refunded: true, count: false, joins: [],
+      title: 'The money is back. The coverage you promised is not.',
+      text: 'Trustmark refunded the overbilled premiums; we are not asking Vensure to pay for them. We are asking Vensure to deliver what it committed to on 9/9: health coverage for our team starting January 1, 2027, with the underwriting submission and the reason for the decline by 10/21. Then the state penalties, and a routine that keeps this from happening again. Here is each party’s part, including ours.',
       owners: [
-        ['Vensure (PEO)', 'Proposed broker access 12/29, set it up 9/29. Never said terminations would not reach the carrier. No check-ins in nine months. Promised a 1/1/2027 Master Plan, then declined us.'],
+        ['Vensure (PEO)', 'Proposed broker access 12/29, started on it only after our 9/28 escalation. Never said terminations would not reach the carrier. No check-ins in nine months. Promised a 1/1/2027 Master Plan, then declined us.'],
         ['UNIQ (broker)', 'Never trained us to report terminations to the broker, never ran a periodic enrollment check, and did not chase the access it asked for.'],
         ['CrossPeak (us)', 'We should have run our own status checks, and we paid invoices that still listed the three names.'],
-        ['Trustmark (carrier)', 'Not a cause. Approved an exception on 9/30 to honor the real termination dates; the credit is waiting on written confirmation.']
+        ['Trustmark (carrier)', 'Not a cause. Approved an exception on 9/30 to honor the real termination dates and refunded the overbilled premiums.']
       ] }
   ];
 
@@ -277,6 +278,7 @@ a { color: var(--brand) }
     $('monthTag').textContent = s.month; $('stepNo').textContent = (i + 1) + ' / ' + STOPS.length;
     var blocks = 0; for (var k = 0; k <= i; k++) if (STOPS[k].count) blocks++;
     $('mBlocks').textContent = blocks; lossTarget = s.loss;
+    $('mLossLbl').textContent = s.refunded ? 'Overbilled · refunded by Trustmark' : 'Overbilled so far'; $('mLoss').style.color = s.refunded ? 'var(--ok)' : '';
     Array.prototype.forEach.call(track.children, function (b, k) { b.classList.toggle('done', k <= i); b.classList.toggle('cur', k === i); });
   }
   renderCard(0);
